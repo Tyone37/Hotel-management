@@ -16,5 +16,10 @@ namespace HotelManagementApp
         {
             InitializeComponent();
         }
+
+        private void Log_in_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

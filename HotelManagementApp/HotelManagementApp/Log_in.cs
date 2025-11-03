@@ -21,5 +21,17 @@ namespace HotelManagementApp
         {
 
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            Sign_in sign_In = new Sign_in();
+            sign_In.Show();
+            this.Hide();
+        }
     }
 }

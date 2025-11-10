@@ -10,22 +10,24 @@ using System.Windows.Forms;
 
 namespace HotelManagementApp
 {
-    public partial class Sign_in : Form
+    public partial class Trang_Chu : Form
     {
-        public Sign_in()
+        public Trang_Chu()
         {
             InitializeComponent();
-        }
-
-        private void Sign_in_Load(object sender, EventArgs e)
-        {
-
         }
 
         private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             Log_in log_in = new Log_in();
             log_in.Show();
+            this.Hide();
+        }
+
+        private void linkLabel2_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            Sign_in sign_In = new Sign_in();
+            sign_In.Show();
             this.Hide();
         }
     }

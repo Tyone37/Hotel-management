@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace HotelManagementApp
 {
-    public partial class Staff : Form
+    public partial class trang_kh : Form
     {
-        public Staff()
+        public trang_kh()
         {
             InitializeComponent();
         }

@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
@@ -46,6 +46,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="nhanvien\nv_capnhap\capNhap.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="nhanvien\nv_capnhap\capNhap.Designer.cs">
+      <DependentUpon>capNhap.cs</DependentUpon>
+    </Compile>
     <Compile Include="Log_in.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -58,6 +64,60 @@
     <Compile Include="Manager.Designer.cs">
       <DependentUpon>Manager.cs</DependentUpon>
     </Compile>
+    <Compile Include="nhanvien\nv_cacphong.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="nhanvien\nv_cacphong.Designer.cs">
+      <DependentUpon>nv_cacphong.cs</DependentUpon>
+    </Compile>
+    <Compile Include="nhanvien\nv_capnhap\trang_kh_sua.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="nhanvien\nv_capnhap\trang_kh_sua.Designer.cs">
+      <DependentUpon>trang_kh_sua.cs</DependentUpon>
+    </Compile>
+    <Compile Include="nhanvien\nv_capnhap\trang_kh_them.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="nhanvien\nv_capnhap\trang_kh_them.Designer.cs">
+      <DependentUpon>trang_kh_them.cs</DependentUpon>
+    </Compile>
+    <Compile Include="nhanvien\nv_capnhap\trang_kh_xoa.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="nhanvien\nv_capnhap\trang_kh_xoa.Designer.cs">
+      <DependentUpon>trang_kh_xoa.cs</DependentUpon>
+    </Compile>
+    <Compile Include="nhanvien\nv_capnhap\trang_phong.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="nhanvien\nv_capnhap\trang_phong.Designer.cs">
+      <DependentUpon>trang_phong.cs</DependentUpon>
+    </Compile>
+    <Compile Include="nhanvien\nv_capnhap\trang_phong_sua.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="nhanvien\nv_capnhap\trang_phong_sua.Designer.cs">
+      <DependentUpon>trang_phong_sua.cs</DependentUpon>
+    </Compile>
+    <Compile Include="nhanvien\nv_capnhap\trang_phong_them.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="nhanvien\nv_capnhap\trang_phong_them.Designer.cs">
+      <DependentUpon>trang_phong_them.cs</DependentUpon>
+    </Compile>
+    <Compile Include="nhanvien\nv_capnhap\trang_phong_xoa.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="nhanvien\nv_capnhap\trang_phong_xoa.Designer.cs">
+      <DependentUpon>trang_phong_xoa.cs</DependentUpon>
+    </Compile>
+    <Compile Include="nhanvien\nv_khachhang.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="nhanvien\nv_khachhang.Designer.cs">
+      <DependentUpon>nv_khachhang.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Sign_in.cs">
@@ -66,11 +126,17 @@
     <Compile Include="Sign_in.Designer.cs">
       <DependentUpon>Sign_in.cs</DependentUpon>
     </Compile>
-    <Compile Include="Staff.cs">
+    <Compile Include="nhanvien\Staff.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Staff.Designer.cs">
+    <Compile Include="nhanvien\Staff.Designer.cs">
       <DependentUpon>Staff.cs</DependentUpon>
+    </Compile>
+    <Compile Include="nhanvien\tk_nhanvien.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="nhanvien\tk_nhanvien.Designer.cs">
+      <DependentUpon>tk_nhanvien.cs</DependentUpon>
     </Compile>
     <Compile Include="Trang_Chu.cs">
       <SubType>Form</SubType>
@@ -78,8 +144,44 @@
     <Compile Include="Trang_Chu.Designer.cs">
       <DependentUpon>Trang_Chu.cs</DependentUpon>
     </Compile>
+    <Compile Include="nhanvien\nv_capnhap\trang_kh.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="nhanvien\nv_capnhap\trang_kh.Designer.cs">
+      <DependentUpon>trang_kh.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="nhanvien\nv_capnhap\capNhap.resx">
+      <DependentUpon>capNhap.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Log_in.resx">
       <DependentUpon>Log_in.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="nhanvien\nv_cacphong.resx">
+      <DependentUpon>nv_cacphong.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="nhanvien\nv_capnhap\trang_kh_sua.resx">
+      <DependentUpon>trang_kh_sua.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="nhanvien\nv_capnhap\trang_kh_them.resx">
+      <DependentUpon>trang_kh_them.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="nhanvien\nv_capnhap\trang_kh_xoa.resx">
+      <DependentUpon>trang_kh_xoa.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="nhanvien\nv_capnhap\trang_phong.resx">
+      <DependentUpon>trang_phong.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="nhanvien\nv_capnhap\trang_phong_sua.resx">
+      <DependentUpon>trang_phong_sua.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="nhanvien\nv_capnhap\trang_phong_them.resx">
+      <DependentUpon>trang_phong_them.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="nhanvien\nv_capnhap\trang_phong_xoa.resx">
+      <DependentUpon>trang_phong_xoa.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="nhanvien\nv_khachhang.resx">
+      <DependentUpon>nv_khachhang.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -94,8 +196,17 @@
     <EmbeddedResource Include="Sign_in.resx">
       <DependentUpon>Sign_in.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="nhanvien\Staff.resx">
+      <DependentUpon>Staff.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="nhanvien\tk_nhanvien.resx">
+      <DependentUpon>tk_nhanvien.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Trang_Chu.resx">
       <DependentUpon>Trang_Chu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="nhanvien\nv_capnhap\trang_kh.resx">
+      <DependentUpon>trang_kh.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -116,5 +227,15 @@
   <ItemGroup>
     <None Include="Resources\hotel.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\user_9055398.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\user_90553981.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\premium_photo-1701646600168-5d599b350398.jpg" />
+  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

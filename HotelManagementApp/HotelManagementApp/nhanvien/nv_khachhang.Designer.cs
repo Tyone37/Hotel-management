@@ -252,6 +252,7 @@
             this.Controls.Add(this.pictureBox3);
             this.Name = "nv_khachhang";
             this.Text = "nv_khachhang";
+            this.Load += new System.EventHandler(this.nv_khachhang_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();

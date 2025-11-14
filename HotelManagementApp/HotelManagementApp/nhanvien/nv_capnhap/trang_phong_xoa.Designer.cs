@@ -311,6 +311,7 @@
             this.Controls.Add(this.pictureBox3);
             this.Name = "trang_phong_xoa";
             this.Text = "trang_phong_xoa";
+            this.Load += new System.EventHandler(this.trang_phong_xoa_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();

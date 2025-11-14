@@ -252,6 +252,7 @@
             this.Controls.Add(this.pictureBox3);
             this.Name = "nv_cacphong";
             this.Text = "nv_cacphong";
+            this.Load += new System.EventHandler(this.nv_cacphong_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();

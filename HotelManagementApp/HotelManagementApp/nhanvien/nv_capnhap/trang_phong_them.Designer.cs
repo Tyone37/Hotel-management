@@ -350,6 +350,7 @@
             this.Controls.Add(this.pictureBox3);
             this.Name = "trang_phong_them";
             this.Text = "trang_phong_them";
+            this.Load += new System.EventHandler(this.trang_phong_them_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();

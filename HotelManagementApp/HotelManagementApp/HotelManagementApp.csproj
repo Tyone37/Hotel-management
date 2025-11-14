@@ -46,6 +46,24 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DatPhongKhachHang.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DatPhongKhachHang.Designer.cs">
+      <DependentUpon>DatPhongKhachHang.cs</DependentUpon>
+    </Compile>
+    <Compile Include="KhachHangDatPhong.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="KhachHangDatPhong.Designer.cs">
+      <DependentUpon>KhachHangDatPhong.cs</DependentUpon>
+    </Compile>
+    <Compile Include="LichSuGiaoDichKhachHang.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LichSuGiaoDichKhachHang.Designer.cs">
+      <DependentUpon>LichSuGiaoDichKhachHang.cs</DependentUpon>
+    </Compile>
     <Compile Include="nhanvien\nv_capnhap\capNhap.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -120,6 +138,10 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Room.cs" />
+    <Compile Include="RoomDetailForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Session.cs" />
     <Compile Include="Sign_in.cs">
       <SubType>Form</SubType>
@@ -133,6 +155,24 @@
     <Compile Include="nhanvien\Staff.Designer.cs">
       <DependentUpon>Staff.cs</DependentUpon>
     </Compile>
+    <Compile Include="TaiKhoanKhachHang.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TaiKhoanKhachHang.Designer.cs">
+      <DependentUpon>TaiKhoanKhachHang.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ThanhToanKhachHang.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ThanhToanKhachHang.Designer.cs">
+      <DependentUpon>ThanhToanKhachHang.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TinhTrangPhongKhachHang.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TinhTrangPhongKhachHang.Designer.cs">
+      <DependentUpon>TinhTrangPhongKhachHang.cs</DependentUpon>
+    </Compile>
     <Compile Include="nhanvien\tk_nhanvien.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -145,6 +185,15 @@
     <Compile Include="Trang_Chu.Designer.cs">
       <DependentUpon>Trang_Chu.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="DatPhongKhachHang.resx">
+      <DependentUpon>DatPhongKhachHang.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="KhachHangDatPhong.resx">
+      <DependentUpon>KhachHangDatPhong.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LichSuGiaoDichKhachHang.resx">
+      <DependentUpon>LichSuGiaoDichKhachHang.cs</DependentUpon>
+    </EmbeddedResource>
     <Compile Include="nhanvien\nv_capnhap\trang_kh.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -185,7 +234,7 @@
       <DependentUpon>nv_khachhang.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
-      <Generator>ResXFileCodeGenerator</Generator>
+      <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
     </EmbeddedResource>
@@ -194,8 +243,20 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="RoomDetailForm.resx">
+      <DependentUpon>RoomDetailForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Sign_in.resx">
       <DependentUpon>Sign_in.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TaiKhoanKhachHang.resx">
+      <DependentUpon>TaiKhoanKhachHang.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ThanhToanKhachHang.resx">
+      <DependentUpon>ThanhToanKhachHang.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TinhTrangPhongKhachHang.resx">
+      <DependentUpon>TinhTrangPhongKhachHang.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="nhanvien\Staff.resx">
       <DependentUpon>Staff.cs</DependentUpon>
@@ -227,6 +288,45 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\hotel.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\1375106.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Ảnh chụp màn hình 2025-11-13 101541.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\calendar-day_9586165.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\home_3917033.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\pngtree-search-icon-png-image_15738214.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\pngtree-sky-blue-background-design-template-image_599644.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\user_3917688.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\user_icon-icons.com_66546.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\room102.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\room101.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\default.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\room101_3.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\room101_2.jpg" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\user_9055398.png" />

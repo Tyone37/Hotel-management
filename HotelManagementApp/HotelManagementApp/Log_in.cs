@@ -51,9 +51,10 @@ namespace HotelManagementApp
 
                         if (userCount > 0)
                         {
-                            Trang_Chu trang_Chu = new Trang_Chu();
-                            trang_Chu.Show();
-                            this.Hide();
+                            // ✅ Khi người dùng đăng nhập đúng, chuyển sang form KhachHangDatPhong
+                            KhachHangDatPhong khachHangDatPhong = new KhachHangDatPhong();
+                            khachHangDatPhong.Show();
+                            this.Hide(); 
                         }
                     }
                     using (SqlCommand command = new SqlCommand(query1, connection))

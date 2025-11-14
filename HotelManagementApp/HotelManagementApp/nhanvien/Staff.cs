@@ -29,13 +29,13 @@ namespace HotelManagementApp
 
         private void linkLabel5_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            nv_cacphong CapNhapForm = new capNhap();
+            capNhap CapNhapForm = new capNhap();
             CapNhapForm.Show();
         }
 
         private void linkLabel4_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            nv_cacphong nvKhachHangForm = new nv_khachhang();
+            nv_khachhang nvKhachHangForm = new nv_khachhang();
             nvKhachHangForm.Show();
         }
 

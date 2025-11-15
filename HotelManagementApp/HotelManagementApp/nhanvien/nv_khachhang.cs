@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.IO;
 using System.Linq;
@@ -29,6 +30,31 @@ namespace HotelManagementApp
                 label2.Text = "Tên người dùng";
             }
             ImageHelper.SetAvatarToPictureBox(pictureBox2);
+
+            string connectionString = "Data Source=26.250.133.82,5000;Initial Catalog=QLKS;User ID=admin;Password=12345678";
+            string query = "SELECT Name, Phone, Email, Account, Password FROM User_infor";
+
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+                try
+                {
+
+                    SqlDataAdapter adapter = new SqlDataAdapter(query, connection);
+
+
+                    DataTable dt = new DataTable();
+
+
+                    adapter.Fill(dt);
+
+
+                    dataGridView1.DataSource = dt;
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Lỗi khi tải dữ liệu: " + ex.Message);
+                }
+            }
         }
 
         public static class ImageHelper
@@ -65,6 +91,42 @@ namespace HotelManagementApp
             Staff staffForm = new Staff();
             staffForm.Show();
             this.Close();
+        }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            string infor_searching = textBox2.Text.ToString();
+
+            string connectionString = "Data Source=26.250.133.82,5000;Initial Catalog=QLKS;User ID=admin;Password=12345678";
+            string query = "SELECT Name, Phone, Email, Account, Password FROM User_infor where Name = @infor_searching OR Phone = @infor_searching OR Email = @infor_searching OR Account = @infor_searching";
+
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+                try
+                {
+
+                    SqlDataAdapter adapter = new SqlDataAdapter(query, connection);
+
+                    adapter.SelectCommand.Parameters.AddWithValue("@infor_searching", infor_searching);
+
+                    DataTable dt = new DataTable();
+
+
+                    adapter.Fill(dt);
+
+
+                    dataGridView1.DataSource = dt;
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Lỗi khi tải dữ liệu: " + ex.Message);
+                }
+            }
         }
     }
 }

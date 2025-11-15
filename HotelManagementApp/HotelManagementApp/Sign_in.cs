@@ -126,5 +126,12 @@ namespace HotelManagementApp
                 return;
             }
         }
+
+        private void checkBox1_CheckedChanged(object sender, EventArgs e)
+        {
+            bool ticked = checkBox1.Checked;
+
+            button1.Enabled = ticked;
+        }
     }
 }

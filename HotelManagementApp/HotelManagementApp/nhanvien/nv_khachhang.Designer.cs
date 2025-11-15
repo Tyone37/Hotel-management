@@ -135,6 +135,7 @@
             this.button2.TabIndex = 35;
             this.button2.Text = "Đăng xuất";
             this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // label2
             // 
@@ -173,6 +174,7 @@
             this.label1.Size = new System.Drawing.Size(185, 26);
             this.label1.TabIndex = 30;
             this.label1.Text = "Khách sạn Lý Anh";
+            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // pictureBox2
             // 

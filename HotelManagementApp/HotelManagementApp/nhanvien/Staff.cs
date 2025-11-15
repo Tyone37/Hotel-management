@@ -106,14 +106,9 @@ namespace HotelManagementApp
 
         private void label2_Click(object sender, EventArgs e)
         {
-            //if (!string.IsNullOrEmpty(Session.DisplayName))
-            //{
-            //    label2.Text = Session.DisplayName;
-            //}
-            //else
-            //{
-            //    label2.Text = "Tên người dùng";
-            //}
+            tk_nhanvien tkNhanVienForm = new tk_nhanvien();
+            tkNhanVienForm.Show();
+            this.Close();
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -129,6 +124,21 @@ namespace HotelManagementApp
         }
 
         private void pictureBox2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button2_Click_1(object sender, EventArgs e)
+        {
+            Session.Username = null;
+            Session.DisplayName = null;
+
+            Log_in loginForm = new Log_in();
+            loginForm.Show();
+            this.Close();
+        }
+
+        private void pictureBox2_Click_1(object sender, EventArgs e)
         {
 
         }

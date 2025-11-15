@@ -52,5 +52,22 @@ namespace HotelManagementApp
                 }
             }
         }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            Session.Username = null;
+            Session.DisplayName = null;
+
+            Log_in loginForm = new Log_in();
+            loginForm.Show();
+            this.Close();
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+            Staff staffForm = new Staff();
+            staffForm.Show();
+            this.Close();
+        }
     }
 }

@@ -77,7 +77,7 @@ namespace HotelManagementApp
         {
             if (string.IsNullOrEmpty(Session.Username)) return;
 
-            string connectionString = "Your_Connection_String_Here";
+            string connectionString = "Data Source=26.250.133.82,5000;Initial Catalog=QLKS;User ID=admin;Password=12345678";
 
             using (SqlConnection connection = new SqlConnection(connectionString))
             {
@@ -260,6 +260,28 @@ namespace HotelManagementApp
         private void label11_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            Session.Username = null;
+            Session.DisplayName = null;
+
+            Log_in loginForm = new Log_in();
+            loginForm.Show();
+            this.Close();
+        }
+
+        private void button3_Click_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label1_Click_1(object sender, EventArgs e)
+        {
+            Staff staffForm = new Staff();
+            staffForm.Show();
+            this.Close();
         }
     }
 }

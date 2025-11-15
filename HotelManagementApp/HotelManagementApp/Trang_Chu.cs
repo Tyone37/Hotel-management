@@ -30,5 +30,24 @@ namespace HotelManagementApp
             sign_In.Show();
             this.Hide();
         }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            Log_in log_in = new Log_in();
+            log_in.Show();
+            this.Hide();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            Sign_in sign_In = new Sign_in();
+            sign_In.Show();
+            this.Hide();
+        }
+
+        private void Trang_Chu_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -132,5 +132,12 @@ namespace HotelManagementApp
         {
 
         }
+
+        private void button2_Click_1(object sender, EventArgs e)
+        {
+            Log_in loginForm = new Log_in();
+            loginForm.Show();
+            this.Close();
+        }
     }
 }

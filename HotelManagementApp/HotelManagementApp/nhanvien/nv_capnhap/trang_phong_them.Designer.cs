@@ -182,6 +182,7 @@
             this.button2.TabIndex = 133;
             this.button2.Text = "Đăng xuất";
             this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // label2
             // 
@@ -241,6 +242,7 @@
             this.pictureBox1.Size = new System.Drawing.Size(805, 63);
             this.pictureBox1.TabIndex = 129;
             this.pictureBox1.TabStop = false;
+            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
             // pictureBox3
             // 

@@ -52,5 +52,19 @@ namespace HotelManagementApp.nv_capnhap
                 }
             }
         }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            Log_in loginForm = new Log_in();
+            loginForm.Show();
+            this.Close();
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+            Staff staffForm = new Staff();
+            staffForm.Show();
+            this.Close();
+        }
     }
 }

@@ -70,7 +70,9 @@ namespace HotelManagementApp.nv_capnhap
 
         private void button2_Click(object sender, EventArgs e)
         {
-
+            Log_in loginForm = new Log_in();
+            loginForm.Show();
+            this.Close();
         }
 
         private void label2_Click(object sender, EventArgs e)
@@ -90,7 +92,9 @@ namespace HotelManagementApp.nv_capnhap
 
         private void label1_Click(object sender, EventArgs e)
         {
-
+            Staff staffForm = new Staff();
+            staffForm.Show();
+            this.Close();
         }
 
         private void pictureBox2_Click(object sender, EventArgs e)

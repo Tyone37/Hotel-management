@@ -21,6 +21,12 @@ namespace HotelManagementApp
         private Button btnPayment;
         private Button btnClose;
 
+        // New: date pickers
+        private DateTimePicker dtpFrom;
+        private DateTimePicker dtpTo;
+        private Label lblFrom;
+        private Label lblTo;
+
         public RoomDetailForm(Room room)
         {
             InitializeComponent(); // giữ nếu Designer có; file là partial
@@ -77,15 +83,17 @@ namespace HotelManagementApp
             {
                 Dock = DockStyle.Fill,
                 ColumnCount = 1,
-                RowCount = 6,
+                RowCount = 7,
                 Padding = new Padding(6)
             };
+            // rows: 0 name,1 status,2 price,3 dates,4 spacer,5 description,6 buttons
             infoTbl.RowStyles.Add(new RowStyle(SizeType.Absolute, 32)); // name
             infoTbl.RowStyles.Add(new RowStyle(SizeType.Absolute, 26)); // status
             infoTbl.RowStyles.Add(new RowStyle(SizeType.Absolute, 26)); // price
-            infoTbl.RowStyles.Add(new RowStyle(SizeType.Absolute, 8));  // spacer
+            infoTbl.RowStyles.Add(new RowStyle(SizeType.Absolute, 34)); // dates panel
+            infoTbl.RowStyles.Add(new RowStyle(SizeType.Absolute, 6));  // spacer
             infoTbl.RowStyles.Add(new RowStyle(SizeType.Percent, 100)); // description
-            infoTbl.RowStyles.Add(new RowStyle(SizeType.Absolute, 48)); // buttons
+            infoTbl.RowStyles.Add(new RowStyle(SizeType.Absolute, 56)); // buttons
 
             lblName = new Label { Dock = DockStyle.Fill, Font = new Font("Segoe UI", 12, FontStyle.Bold), TextAlign = ContentAlignment.MiddleLeft };
             lblStatus = new Label { Dock = DockStyle.Fill, Font = new Font("Segoe UI", 9), TextAlign = ContentAlignment.MiddleLeft };
@@ -93,21 +101,36 @@ namespace HotelManagementApp
 
             txtDescription = new TextBox { Dock = DockStyle.Fill, Multiline = true, ReadOnly = true, ScrollBars = ScrollBars.Vertical };
 
-            btnPayment = new Button { Text = "Thanh toán", Width = 120, Height = 34, Anchor = AnchorStyles.Right };
+            // Date pickers
+            lblFrom = new Label { Text = "Ngày đến:", AutoSize = true, TextAlign = ContentAlignment.MiddleLeft, Anchor = AnchorStyles.Left };
+            dtpFrom = new DateTimePicker { Format = DateTimePickerFormat.Short, Width = 120, MinDate = DateTime.Today, Value = DateTime.Today };
+
+            lblTo = new Label { Text = "Ngày rời:", AutoSize = true, TextAlign = ContentAlignment.MiddleLeft, Anchor = AnchorStyles.Left };
+            dtpTo = new DateTimePicker { Format = DateTimePickerFormat.Short, Width = 120, MinDate = DateTime.Today.AddDays(1), Value = DateTime.Today.AddDays(1) };
+
+            var datePanel = new FlowLayoutPanel { FlowDirection = FlowDirection.LeftToRight, AutoSize = true, Dock = DockStyle.Fill, Padding = new Padding(2) };
+            datePanel.Controls.Add(lblFrom);
+            datePanel.Controls.Add(dtpFrom);
+            datePanel.Controls.Add(new Label { Width = 12 }); // spacer
+            datePanel.Controls.Add(lblTo);
+            datePanel.Controls.Add(dtpTo);
+
+            btnPayment = new Button { Text = "Thanh toán / Đặt", Width = 140, Height = 34, Anchor = AnchorStyles.Right };
             btnPayment.Click += BtnPayment_Click;
             btnClose = new Button { Text = "Đóng", Width = 90, Height = 34, Anchor = AnchorStyles.Right };
             btnClose.Click += (s, e) => this.Close();
 
-            var pnlButtons = new FlowLayoutPanel { Dock = DockStyle.Fill, FlowDirection = FlowDirection.RightToLeft };
+            var pnlButtons = new FlowLayoutPanel { Dock = DockStyle.Fill, FlowDirection = FlowDirection.RightToLeft, Padding = new Padding(4) };
             pnlButtons.Controls.Add(btnClose);
             pnlButtons.Controls.Add(btnPayment);
 
             infoTbl.Controls.Add(lblName, 0, 0);
             infoTbl.Controls.Add(lblStatus, 0, 1);
             infoTbl.Controls.Add(lblPrice, 0, 2);
-            infoTbl.Controls.Add(new Label() { Height = 8 }, 0, 3);
-            infoTbl.Controls.Add(txtDescription, 0, 4);
-            infoTbl.Controls.Add(pnlButtons, 0, 5);
+            infoTbl.Controls.Add(datePanel, 0, 3);
+            infoTbl.Controls.Add(new Label() { Height = 6 }, 0, 4);
+            infoTbl.Controls.Add(txtDescription, 0, 5);
+            infoTbl.Controls.Add(pnlButtons, 0, 6);
 
             // Thumbnails panel (bottom)
             flThumbnails = new FlowLayoutPanel
@@ -140,6 +163,19 @@ namespace HotelManagementApp
             lblPrice.Text = $"Chi phí: {room.Price:N0} đ/đêm";
             txtDescription.Text = string.IsNullOrWhiteSpace(room.Description) ? "(Không có mô tả)" : room.Description;
             btnPayment.Enabled = !room.IsOccupied;
+
+            // Show existing reservations summary in description (append)
+            if (room.Reservations != null && room.Reservations.Count > 0)
+            {
+                var sb = new System.Text.StringBuilder();
+                sb.AppendLine();
+                sb.AppendLine("=== Các đặt trước ===");
+                foreach (var r in room.Reservations.OrderBy(x => x.StartDate))
+                {
+                    sb.AppendLine($"{r.StartDate:dd/MM/yyyy} → {r.EndDate:dd/MM/yyyy}  ({r.CustomerName ?? "khách"})");
+                }
+                txtDescription.Text += Environment.NewLine + sb.ToString();
+            }
 
             // Load thumbnails list (use ImageResourceNames if set, else fallback to ResourceName)
             var list = new List<string>();
@@ -202,28 +238,114 @@ namespace HotelManagementApp
             }
         }
 
-        // Payment logic unchanged
+        // Payment logic - now with availability check and reservation add
         private void BtnPayment_Click(object sender, EventArgs e)
         {
-            var payForm = new ThanhToanKhachHang(room);
+            // lấy ngày từ picker
+            DateTime from = dtpFrom.Value.Date;
+            DateTime to = dtpTo.Value.Date;
 
-            // đăng ký event để nhận thông báo ngay khi thanh toán xong
-            payForm.RoomPaid += (updatedRoom) =>
+            if (to <= from)
             {
-                // đây chạy trên UI thread vì ShowDialog modal -> an toàn cập nhật UI trực tiếp
-                // update model
-                room.IsOccupied = updatedRoom.IsOccupied;
-                // cập nhật UI chi tiết
-                lblStatus.Text = "Đã thuê";
-                lblStatus.ForeColor = Color.DarkRed;
-                btnPayment.Enabled = false;
+                MessageBox.Show("Ngày rời phải lớn hơn ngày đến.", "Ngày không hợp lệ", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
 
-                // phát tiếp RoomUpdated để form cha (KhachHangDatPhong) cập nhật tile nếu cần
-                RoomUpdated?.Invoke(room);
-            };
+            // kiểm tra hợp lệ theo reservation list
+            if (!IsRoomAvailable(room, from, to))
+            {
+                MessageBox.Show($"Phòng {room.Name} đã được đặt trong khoảng đã chọn. Vui lòng chọn ngày khác.", "Đã có đặt trước", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+            }
+
+            // mở form thanh toán (giữ như trước)
+            // nếu ThanhToanKhachHang có constructor nhận ngày, bạn có thể truyền
+            var payForm = new ThanhToanKhachHang(room); // nếu muốn: new ThanhToanKhachHang(room, from, to);
+
+            // đăng ký sự kiện RoomPaid (nếu form thanh toán raise event này)
+            try
+            {
+                payForm.RoomPaid += (updatedRoom) =>
+                {
+                    if (updatedRoom == null) return;
+
+                    // tạo reservation và thêm vào model
+                    var newRes = new Reservation
+                    {
+                        RoomId = room.Id,
+                        UserId = UserSession.CurrentUserId,   // >>> thêm dòng này <<<
+                        StartDate = from,
+                        EndDate = to,
+                        CustomerName = UserSession.CurrentUsername ?? "Khách"
+                    };
+                    if (room.Reservations == null) room.Reservations = new List<Reservation>();
+                    room.Reservations.Add(newRes);
+
+                    // cập nhật trạng thái
+                    room.IsOccupied = true;
+                    lblStatus.Text = "Đã thuê";
+                    lblStatus.ForeColor = Color.DarkRed;
+                    btnPayment.Enabled = false;
+
+                    // notify parent
+                    RoomUpdated?.Invoke(room);
+                };
+            }
+            catch
+            {
+                // nếu payForm không expose RoomPaid, fallback: we'll check DialogResult
+            }
 
             var dr = payForm.ShowDialog(this);
-            // tuỳ bạn vẫn có thể xử lý DialogResult nếu cần
+
+            // nếu form thanh toán không có RoomPaid event but returns DialogResult.OK on success
+            if (dr == DialogResult.OK)
+            {
+                // add reservation (same as above) only if none added yet for the period
+                if (room.Reservations == null) room.Reservations = new List<Reservation>();
+
+                // safety: ensure not duplicate
+                if (IsRoomAvailable(room, from, to))
+                {
+                    var newRes = new Reservation
+                    {
+                        RoomId = room.Id,
+                        StartDate = from,
+                        EndDate = to,
+                        CustomerName = UserSession.CurrentUsername ?? "Khách"
+                    };
+                    room.Reservations.Add(newRes);
+
+                    room.IsOccupied = true;
+                    lblStatus.Text = "Đã thuê";
+                    lblStatus.ForeColor = Color.DarkRed;
+                    btnPayment.Enabled = false;
+
+                    RoomUpdated?.Invoke(room);
+                }
+                // else: maybe already added by RoomPaid event
+            }
+        }
+
+        private bool IsRoomAvailable(Room r, DateTime requestedFrom, DateTime requestedTo)
+        {
+            if (r == null) return false;
+            if (r.Reservations == null || r.Reservations.Count == 0) return true;
+
+            DateTime b1 = requestedFrom.Date;
+            DateTime b2 = requestedTo.Date; // exclusive by convention
+
+            foreach (var res in r.Reservations)
+            {
+                DateTime a1 = res.StartDate.Date;
+                DateTime a2 = res.EndDate.Date;
+                // overlap if (a1 < b2) && (b1 < a2)
+                if (a1 < b2 && b1 < a2)
+                {
+                    return false;
+                }
+            }
+            return true;
         }
 
         private Image LoadImageFromResourcesVariants(string baseName, int desiredWidth = 0, int desiredHeight = 0)
@@ -307,10 +429,10 @@ namespace HotelManagementApp
             this.ResumeLayout(false);
 
         }
-
+        //184, 244, 228
         private void RoomDetailForm_Load(object sender, EventArgs e)
         {
-
+           // this.BackColor = Color.FromArgb(184, 244, 228);
         }
     }
 }

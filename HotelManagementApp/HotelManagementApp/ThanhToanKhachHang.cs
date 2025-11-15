@@ -177,7 +177,22 @@ namespace HotelManagementApp
         // keep existing auto-generated event handlers
         private void label5_Click(object sender, EventArgs e) { }
         private void button3_Click(object sender, EventArgs e) { }
-        private void ThanhToanKhachHang_Load(object sender, EventArgs e) { }
+        private void ThanhToanKhachHang_Load(object sender, EventArgs e) {
+            // Hiển thị username nếu có UserSession
+            try
+            {
+                var lblUser = this.Controls.Find("label2", true).FirstOrDefault() as Label;
+                if (lblUser == null)
+                {
+                    // tạo label tạm nếu Designer không có
+                    lblUser = new Label { Name = "label2", AutoSize = true, Location = new Point(12, 12) };
+                    this.Controls.Add(lblUser);
+                    lblUser.BringToFront();
+                }
+                lblUser.Text = UserSession.CurrentUsername;
+            }
+            catch { }
+        }
 
       
 
@@ -213,5 +228,23 @@ namespace HotelManagementApp
             this.Close();
         }
 
+        private void button5_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            Trang_Chu trang_Chu = new Trang_Chu();
+            trang_Chu.Show();
+            this.Hide();
+        }
+
+        private void button8_Click(object sender, EventArgs e)
+        {
+            TaiKhoanKhachHang taiKhoanKhachHang = new TaiKhoanKhachHang();
+            taiKhoanKhachHang.Show();
+            this.Hide();
+        }
     }
 }

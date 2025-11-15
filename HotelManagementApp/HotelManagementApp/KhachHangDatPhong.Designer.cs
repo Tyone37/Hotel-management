@@ -30,11 +30,11 @@
         {
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             this.trangdau = new System.Windows.Forms.Panel();
-            this.button8 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
+            this.button8 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.textBox1 = new System.Windows.Forms.TextBox();
+            this.button2 = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
@@ -49,7 +49,6 @@
             this.lblStatus1 = new System.Windows.Forms.Label();
             this.lblRoomName1 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.label7 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.pictureBox6 = new System.Windows.Forms.PictureBox();
             this.button7 = new System.Windows.Forms.Button();
@@ -75,61 +74,49 @@
             // 
             // trangdau
             // 
-            this.trangdau.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
-            this.trangdau.Controls.Add(this.button8);
-            this.trangdau.Controls.Add(this.button2);
+            this.trangdau.BackColor = System.Drawing.Color.White;
+            this.trangdau.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.trangdau.Controls.Add(this.label2);
+            this.trangdau.Controls.Add(this.button8);
             this.trangdau.Controls.Add(this.button1);
             this.trangdau.Controls.Add(this.textBox1);
+            this.trangdau.Controls.Add(this.button2);
             this.trangdau.Controls.Add(this.label1);
-            this.trangdau.Dock = System.Windows.Forms.DockStyle.Top;
-            this.trangdau.Location = new System.Drawing.Point(0, 0);
+            this.trangdau.Location = new System.Drawing.Point(12, 12);
             this.trangdau.Name = "trangdau";
-            this.trangdau.Size = new System.Drawing.Size(800, 70);
+            this.trangdau.Size = new System.Drawing.Size(781, 73);
             this.trangdau.TabIndex = 0;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.Color.Black;
+            this.label2.Location = new System.Drawing.Point(587, 8);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(119, 25);
+            this.label2.TabIndex = 3;
+            this.label2.Text = "User Name";
+            this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
             // button8
             // 
-            this.button8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
             this.button8.FlatAppearance.BorderSize = 0;
             this.button8.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button8.Image = global::HotelManagementApp.Properties.Resources.user_icon_icons_com_66546;
-            this.button8.Location = new System.Drawing.Point(704, 8);
+            this.button8.Location = new System.Drawing.Point(703, 8);
             this.button8.Name = "button8";
             this.button8.Size = new System.Drawing.Size(84, 54);
             this.button8.TabIndex = 5;
             this.button8.UseVisualStyleBackColor = false;
             this.button8.Click += new System.EventHandler(this.button8_Click);
             // 
-            // button2
-            // 
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.button2.Location = new System.Drawing.Point(588, 11);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(95, 44);
-            this.button2.TabIndex = 4;
-            this.button2.Text = "Sign out";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.label2.Location = new System.Drawing.Point(461, 20);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(119, 25);
-            this.label2.TabIndex = 3;
-            this.label2.Text = "User Name";
-            // 
             // button1
             // 
             this.button1.BackgroundImage = global::HotelManagementApp.Properties.Resources.pngtree_search_icon_png_image_15738214;
             this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.button1.Location = new System.Drawing.Point(422, 23);
+            this.button1.Location = new System.Drawing.Point(520, 23);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(33, 23);
             this.button1.TabIndex = 2;
@@ -137,33 +124,48 @@
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(150, 24);
+            this.textBox1.Location = new System.Drawing.Point(248, 23);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(266, 22);
             this.textBox1.TabIndex = 1;
             this.textBox1.Text = "Tìm kiếm";
             this.textBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
+            // 
+            // button2
+            // 
+            this.button2.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button2.ForeColor = System.Drawing.Color.Black;
+            this.button2.Location = new System.Drawing.Point(592, 36);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(111, 29);
+            this.button2.TabIndex = 4;
+            this.button2.Text = "Đăng xuất";
+            this.button2.UseVisualStyleBackColor = false;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.label1.Location = new System.Drawing.Point(25, 25);
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.Black;
+            this.label1.Location = new System.Drawing.Point(25, 20);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(61, 22);
+            this.label1.Size = new System.Drawing.Size(189, 25);
             this.label1.TabIndex = 0;
-            this.label1.Text = "Home";
+            this.label1.Text = "Khách sạn Lý Anh";
             // 
             // label3
             // 
-            this.label3.Font = new System.Drawing.Font("Microsoft YaHei UI", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.ForeColor = System.Drawing.Color.Yellow;
-            this.label3.Location = new System.Drawing.Point(215, 73);
+            this.label3.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.ForeColor = System.Drawing.Color.CornflowerBlue;
+            this.label3.Location = new System.Drawing.Point(246, 88);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(339, 69);
+            this.label3.Size = new System.Drawing.Size(320, 58);
             this.label3.TabIndex = 1;
-            this.label3.Text = "Khách Sạn Name Xin Chào Quý Khách";
+            this.label3.Text = "Khách Sạn Lý Anh Xin Chào Quý Khách";
             this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // panel1
@@ -238,7 +240,7 @@
             this.roomPanel1.Controls.Add(this.lblStatus1);
             this.roomPanel1.Controls.Add(this.lblRoomName1);
             this.roomPanel1.Controls.Add(this.pictureBox1);
-            this.roomPanel1.Location = new System.Drawing.Point(289, 3);
+            this.roomPanel1.Location = new System.Drawing.Point(3, 162);
             this.roomPanel1.Name = "roomPanel1";
             this.roomPanel1.Size = new System.Drawing.Size(280, 153);
             this.roomPanel1.TabIndex = 0;
@@ -292,15 +294,6 @@
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
             // 
-            // label7
-            // 
-            this.label7.BackColor = System.Drawing.Color.White;
-            this.label7.Location = new System.Drawing.Point(-3, 407);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(144, 42);
-            this.label7.TabIndex = 3;
-            this.label7.Text = "VỀ CHÚNG TÔI....";
-            // 
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.White;
@@ -313,9 +306,9 @@
             this.panel2.Controls.Add(this.button5);
             this.panel2.Controls.Add(this.pictureBox3);
             this.panel2.Controls.Add(this.button4);
-            this.panel2.Location = new System.Drawing.Point(0, 145);
+            this.panel2.Location = new System.Drawing.Point(-7, 145);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(184, 259);
+            this.panel2.Size = new System.Drawing.Size(205, 259);
             this.panel2.TabIndex = 4;
             // 
             // pictureBox6
@@ -338,7 +331,7 @@
             this.button7.Location = new System.Drawing.Point(30, 144);
             this.button7.Name = "button7";
             this.button7.Padding = new System.Windows.Forms.Padding(12, 0, 0, 0);
-            this.button7.Size = new System.Drawing.Size(164, 36);
+            this.button7.Size = new System.Drawing.Size(208, 36);
             this.button7.TabIndex = 6;
             this.button7.Text = "Lịch sử giao dịch";
             this.button7.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -366,7 +359,7 @@
             this.button6.Location = new System.Drawing.Point(30, 110);
             this.button6.Name = "button6";
             this.button6.Padding = new System.Windows.Forms.Padding(12, 0, 0, 0);
-            this.button6.Size = new System.Drawing.Size(128, 36);
+            this.button6.Size = new System.Drawing.Size(164, 36);
             this.button6.TabIndex = 4;
             this.button6.Text = "Đặt phòng";
             this.button6.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -394,7 +387,7 @@
             this.button5.Location = new System.Drawing.Point(30, 74);
             this.button5.Name = "button5";
             this.button5.Padding = new System.Windows.Forms.Padding(12, 0, 0, 0);
-            this.button5.Size = new System.Drawing.Size(176, 36);
+            this.button5.Size = new System.Drawing.Size(208, 36);
             this.button5.TabIndex = 2;
             this.button5.Text = "Tình trạng phòng";
             this.button5.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -422,7 +415,7 @@
             this.button4.Location = new System.Drawing.Point(30, 38);
             this.button4.Name = "button4";
             this.button4.Padding = new System.Windows.Forms.Padding(12, 0, 0, 0);
-            this.button4.Size = new System.Drawing.Size(144, 36);
+            this.button4.Size = new System.Drawing.Size(208, 36);
             this.button4.TabIndex = 0;
             this.button4.Text = "Tài khoản";
             this.button4.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -436,23 +429,23 @@
             this.panelRoomsContainer.BackColor = System.Drawing.Color.OldLace;
             this.panelRoomsContainer.Controls.Add(this.panel1);
             this.panelRoomsContainer.Controls.Add(this.roomPanel1);
-            this.panelRoomsContainer.Location = new System.Drawing.Point(181, 145);
+            this.panelRoomsContainer.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
+            this.panelRoomsContainer.Location = new System.Drawing.Point(201, 145);
             this.panelRoomsContainer.Name = "panelRoomsContainer";
             this.panelRoomsContainer.Size = new System.Drawing.Size(570, 433);
             this.panelRoomsContainer.TabIndex = 5;
             this.panelRoomsContainer.WrapContents = false;
+            this.panelRoomsContainer.Paint += new System.Windows.Forms.PaintEventHandler(this.panelRoomsContainer_Paint);
             // 
             // KhachHangDatPhong
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-            this.BackgroundImage = global::HotelManagementApp.Properties.Resources.pngtree_sky_blue_background_design_template_image_599644;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(184)))), ((int)(((byte)(244)))), ((int)(((byte)(228)))));
             this.ClientSize = new System.Drawing.Size(800, 578);
             this.Controls.Add(this.panelRoomsContainer);
-            this.Controls.Add(this.label7);
-            this.Controls.Add(this.panel2);
             this.Controls.Add(this.label3);
+            this.Controls.Add(this.panel2);
             this.Controls.Add(this.trangdau);
             this.Name = "KhachHangDatPhong";
             this.Text = "KhachHangDatPhong";
@@ -497,7 +490,6 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.PictureBox pictureBox2;
-        private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.PictureBox pictureBox3;

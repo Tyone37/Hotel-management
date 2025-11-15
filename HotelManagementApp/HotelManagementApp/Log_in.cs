@@ -51,10 +51,24 @@ namespace HotelManagementApp
 
                         if (userCount > 0)
                         {
-                            // ✅ Khi người dùng đăng nhập đúng, chuyển sang form KhachHangDatPhong
-                            KhachHangDatPhong khachHangDatPhong = new KhachHangDatPhong();
-                            khachHangDatPhong.Show();
-                            this.Hide(); 
+                            string sqlGetId = "SELECT Id FROM User_infor WHERE Account = @tk AND Password = @mk";
+                            using (SqlCommand cmdId = new SqlCommand(sqlGetId, connection))
+                            {
+                                cmdId.Parameters.AddWithValue("@tk", tk);
+                                cmdId.Parameters.AddWithValue("@mk", mk);
+
+                                int userId = Convert.ToInt32(cmdId.ExecuteScalar());
+
+                                // lưu vào session
+                                UserSession.CurrentUserId = userId;
+                                UserSession.CurrentUsername = tk;
+
+                                // mở form KhachHangDatPhong
+                                KhachHangDatPhong f = new KhachHangDatPhong();
+                                f.Show();
+                                this.Hide();
+                            }
+
                         }
                     }
                     using (SqlCommand command = new SqlCommand(query1, connection))

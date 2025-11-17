@@ -89,9 +89,19 @@ namespace HotelManagementApp
 
         private void button4_Click(object sender, EventArgs e)
         {
-            TaiKhoanKhachHang taiKhoanKhachHang = new TaiKhoanKhachHang();
-            taiKhoanKhachHang.Show();
-            this.Hide();
+            try
+            {
+                int id = UserSession.CurrentUserId;
+                TaiKhoanKhachHang tk = new TaiKhoanKhachHang(id);
+                tk.Show();
+                this.Hide();
+            }
+            catch
+            {
+                TaiKhoanKhachHang tk = new TaiKhoanKhachHang();
+                tk.Show();
+                this.Hide();
+            }
         }
 
         private void button5_Click(object sender, EventArgs e)

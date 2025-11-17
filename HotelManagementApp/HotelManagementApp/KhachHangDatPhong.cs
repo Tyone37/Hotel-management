@@ -26,6 +26,9 @@ namespace HotelManagementApp
 
         private void KhachHangDatPhong_Load(object sender, EventArgs e)
         {
+            
+            
+
             // Hiển thị username nếu có UserSession
             try
             {
@@ -449,5 +452,11 @@ namespace HotelManagementApp
 
         private void label2_Click(object sender, EventArgs e) { }
         private void panelRoomsContainer_Paint(object sender, PaintEventArgs e) { }
+
+       
+
+       
+
+       
     }
 }

@@ -52,6 +52,12 @@
     <Compile Include="DatPhongKhachHang.Designer.cs">
       <DependentUpon>DatPhongKhachHang.cs</DependentUpon>
     </Compile>
+    <Compile Include="Dieu_Khoan.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dieu_Khoan.Designer.cs">
+      <DependentUpon>Dieu_Khoan.cs</DependentUpon>
+    </Compile>
     <Compile Include="KhachHangDatPhong.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -187,6 +193,9 @@
     </Compile>
     <EmbeddedResource Include="DatPhongKhachHang.resx">
       <DependentUpon>DatPhongKhachHang.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dieu_Khoan.resx">
+      <DependentUpon>Dieu_Khoan.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="KhachHangDatPhong.resx">
       <DependentUpon>KhachHangDatPhong.cs</DependentUpon>
@@ -337,6 +346,8 @@
   <ItemGroup>
     <None Include="Resources\premium_photo-1701646600168-5d599b350398.jpg" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Content Include="Dieu_Khoan.txt" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

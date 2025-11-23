@@ -20,6 +20,7 @@ namespace HotelManagementApp
 
         // Danh sách tên resource chi tiết (thumbnails) — ex: "room101_jpg", "room101_2_jpg"
         public List<string> ImageResourceNames { get; set; } = new List<string>();
+        public List<Reservation> Reservations { get; set; } = new List<Reservation>();
 
     }
 }

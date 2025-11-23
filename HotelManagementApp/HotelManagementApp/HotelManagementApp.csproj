@@ -138,10 +138,12 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Reservation.cs" />
     <Compile Include="Room.cs" />
     <Compile Include="RoomDetailForm.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="RoomStore.cs" />
     <Compile Include="Session.cs" />
     <Compile Include="Sign_in.cs">
       <SubType>Form</SubType>
@@ -185,6 +187,7 @@
     <Compile Include="Trang_Chu.Designer.cs">
       <DependentUpon>Trang_Chu.cs</DependentUpon>
     </Compile>
+    <Compile Include="UserSession.cs" />
     <EmbeddedResource Include="DatPhongKhachHang.resx">
       <DependentUpon>DatPhongKhachHang.cs</DependentUpon>
     </EmbeddedResource>
@@ -337,6 +340,92 @@
   <ItemGroup>
     <None Include="Resources\premium_photo-1701646600168-5d599b350398.jpg" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <None Include="Resources\room103.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\room103_2.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\room103_3.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\room103_4.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\room110.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\room110_1.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\room110_2.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\room110_3.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\room109.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\room109_1.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\room109_2.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\room108.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\room108_1.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\room108_2.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\room108_3.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\room104.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\room104_1.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\room105.jpeg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\room105_1.jpeg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\room105_2.jpeg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\room106.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\room106_1.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\room106_2.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\room107.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\room107_1.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\room107_2.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\room1021.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\room102_1.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\room102_2.jpg" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

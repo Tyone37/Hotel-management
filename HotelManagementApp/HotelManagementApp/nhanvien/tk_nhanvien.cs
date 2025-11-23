@@ -264,6 +264,21 @@ namespace HotelManagementApp
 
         private void button2_Click(object sender, EventArgs e)
         {
+            Session.Username = null;
+            Session.DisplayName = null;
+
+            Log_in loginForm = new Log_in();
+            loginForm.Show();
+            this.Close();
+        }
+
+        private void button3_Click_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
             Log_in loginForm = new Log_in();
             loginForm.Show();
             this.Close();

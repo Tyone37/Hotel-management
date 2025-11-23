@@ -55,6 +55,72 @@ namespace HotelManagementApp.nv_capnhap
 
         private void button2_Click(object sender, EventArgs e)
         {
+            Session.Username = null;
+            Session.DisplayName = null;
+
+            Log_in loginForm = new Log_in();
+            loginForm.Show();
+            this.Close();
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+            Staff staffForm = new Staff();
+            staffForm.Show();
+            this.Close();
+        }
+
+        private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            tk_nhanvien tkNhanVienForm = new tk_nhanvien();
+            tkNhanVienForm.Show();
+            this.Close();
+        }
+
+        private void linkLabel3_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            nv_cacphong nvCacPhongForm = new nv_cacphong();
+            nvCacPhongForm.Show();
+            this.Close();
+        }
+
+        private void linkLabel4_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            nv_khachhang nvKhachHangForm = new nv_khachhang();
+            nvKhachHangForm.Show();
+            this.Close();
+        }
+
+        private void linkLabel5_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            capNhap CapNhapForm = new capNhap();
+            CapNhapForm.Show();
+            this.Close();
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            trang_phong_sua trangPhongSuaForm = new trang_phong_sua();
+            trangPhongSuaForm.Show();
+            this.Close();
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            trang_phong_xoa trangPhongXoaForm = new trang_phong_xoa();
+            trangPhongXoaForm.Show();
+            this.Close();
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            trang_phong_them trangPhongThemForm = new trang_phong_them();
+            trangPhongThemForm.Show();
+            this.Close();
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
             Log_in loginForm = new Log_in();
             loginForm.Show();
             this.Close();

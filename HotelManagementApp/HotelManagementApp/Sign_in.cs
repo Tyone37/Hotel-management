@@ -8,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Text.RegularExpressions;
 
 namespace HotelManagementApp
 {
@@ -51,10 +52,34 @@ namespace HotelManagementApp
                 return;
             }
 
+            if (!Regex.IsMatch(name, @"^[a-zA-ZÀ-ỹ\s]+$"))
+            {
+                MessageBox.Show("Họ tên không hợp lệ. Không được chứa số hoặc ký tự đặc biệt.");
+                return;
+            }
+
+            if (!((sdt.Length) == 10))
+            {
+                MessageBox.Show("Số điện thoại phải đủ 10 số");
+                return;
+            }
+
             if(sdt.All(char.IsDigit) == false)
             {
                 MessageBox.Show("Số điện thoại phải là số");
                 return;
+            }
+
+            if (!email.Contains("@gmail.com"))
+            {
+                MessageBox.Show("Email phải theo định dạng @gmail.com");
+                return;
+            }
+
+            if ((pass.Length) < 6)
+            {
+                MessageBox.Show("Mật khẩu phải có ít nhất 6 ký tự");
+                return ;
             }
 
             try
@@ -132,6 +157,18 @@ namespace HotelManagementApp
             bool ticked = checkBox1.Checked;
 
             button1.Enabled = ticked;
+        }
+
+        private void textBox2_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void linkLabel2_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            Dieu_Khoan d_k = new Dieu_Khoan();
+            d_k.Show();
+            this.Hide();
         }
     }
 }

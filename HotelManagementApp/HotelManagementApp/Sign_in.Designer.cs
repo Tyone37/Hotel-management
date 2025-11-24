@@ -47,6 +47,7 @@
             this.textBox6 = new System.Windows.Forms.TextBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.linkLabel2 = new System.Windows.Forms.LinkLabel();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -83,9 +84,9 @@
             this.checkBox1.Location = new System.Drawing.Point(83, 315);
             this.checkBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(162, 20);
+            this.checkBox1.Size = new System.Drawing.Size(93, 20);
             this.checkBox1.TabIndex = 15;
-            this.checkBox1.Text = "Chấp nhận điều khoản";
+            this.checkBox1.Text = "Chấp nhận";
             this.checkBox1.UseVisualStyleBackColor = true;
             this.checkBox1.CheckedChanged += new System.EventHandler(this.checkBox1_CheckedChanged);
             // 
@@ -96,6 +97,7 @@
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(120, 22);
             this.textBox2.TabIndex = 14;
+            this.textBox2.TextChanged += new System.EventHandler(this.textBox2_TextChanged);
             // 
             // textBox1
             // 
@@ -249,12 +251,26 @@
             this.pictureBox1.TabIndex = 21;
             this.pictureBox1.TabStop = false;
             // 
+            // linkLabel2
+            // 
+            this.linkLabel2.AutoSize = true;
+            this.linkLabel2.ForeColor = System.Drawing.Color.CornflowerBlue;
+            this.linkLabel2.LinkColor = System.Drawing.Color.CornflowerBlue;
+            this.linkLabel2.Location = new System.Drawing.Point(168, 316);
+            this.linkLabel2.Name = "linkLabel2";
+            this.linkLabel2.Size = new System.Drawing.Size(73, 16);
+            this.linkLabel2.TabIndex = 32;
+            this.linkLabel2.TabStop = true;
+            this.linkLabel2.Text = "điều khoản";
+            this.linkLabel2.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel2_LinkClicked);
+            // 
             // Sign_in
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(184)))), ((int)(((byte)(244)))), ((int)(((byte)(228)))));
             this.ClientSize = new System.Drawing.Size(804, 450);
+            this.Controls.Add(this.linkLabel2);
             this.Controls.Add(this.textBox6);
             this.Controls.Add(this.textBox5);
             this.Controls.Add(this.textBox4);
@@ -306,5 +322,6 @@
         private System.Windows.Forms.TextBox textBox4;
         private System.Windows.Forms.TextBox textBox5;
         private System.Windows.Forms.TextBox textBox6;
+        private System.Windows.Forms.LinkLabel linkLabel2;
     }
 }

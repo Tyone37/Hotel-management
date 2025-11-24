@@ -1,0 +1,211 @@
+﻿A. GIỚI THIỆU
+
+Thỏa thuận này điều chỉnh việc bạn sử dụng các dịch vụ của Apple (“Dịch vụ”), thông qua đó bạn có thể mua, nhận, cấp quyền sử dụng, thuê hoặc đăng ký nội dung, Ứng dụng (như định nghĩa bên dưới) và các dịch vụ khác trong ứng dụng (gọi chung là “Nội dung”). Nội dung có thể do Apple hoặc bên thứ ba cung cấp thông qua Dịch vụ. Các ví dụ về Dịch vụ, nếu có, bao gồm: App Store, Gói đăng ký (như định nghĩa bên dưới), Apple Arcade, Apple Books, Apple Fitness+, Apple Games, Game Center, Apple Music, Apple News, Apple One, Apple Podcasts, Apple Sports, Apple TV, iTunes và Shazam. Dịch vụ của chúng tôi dành cho bạn sử dụng ở quốc gia hoặc vùng lãnh thổ nơi bạn cư trú (“Quốc gia sở tại”). Bằng việc tạo tài khoản để sử dụng Dịch vụ ở một quốc gia hoặc vùng lãnh thổ nhất định, bạn đang thể hiện đó là Quốc gia sở tại của mình. Để sử dụng Dịch vụ của chúng tôi, bạn cần có phần cứng, phần mềm tương thích (nên và đôi khi bắt buộc dùng phiên bản mới nhất) và truy cập Internet (có thể mất phí). Hiệu suất Dịch vụ của chúng tôi có thể bị ảnh hưởng bởi các yếu tố này.
+
+B. CÁC KHOẢN THANH TOÁN, THUẾ VÀ HOÀN TIỀN
+
+Bạn có thể có được Nội dung trên Dịch vụ của chúng tôi theo cách miễn phí hoặc tính phí, cả hai đều được gọi là “Giao dịch”. Mỗi Giao dịch là một hợp đồng điện tử giữa bạn và Apple hoặc giữa bạn và tổ chức cung cấp Nội dung trên Dịch vụ của chúng tôi, hoặc cả hai. Tuy nhiên, nếu bạn là khách hàng của Apple Distribution International Ltd. hoặc Apple Services Pte. Ltd., thì tổ chức đó là người bán trên hồ sơ đối với một số Nội dung bạn có được từ Apple Books, Apple Podcasts hoặc App Store như được hiển thị trên trang sản phẩm và/hoặc trong quá trình bạn có được Nội dung của Dịch vụ tương ứng. Trong trường hợp đó, bạn có được Nội dung từ Apple Distribution International Ltd. hoặc Apple Services Pte. Ltd., tùy trường hợp áp dụng, do nhà cung cấp Nội dung (ví dụ: Nhà cung cấp ứng dụng (theo định nghĩa bên dưới), nhà xuất bản sách, v.v.) cấp phép. Khi bạn thực hiện Giao dịch đầu tiên, chúng tôi sẽ đề nghị bạn chọn tần suất yêu cầu mật khẩu cho các Giao dịch trong tương lai. Trên phần cứng của Apple mà bạn sử dụng, nếu bạn bật Touch ID cho Giao dịch, chúng tôi sẽ yêu cầu bạn xác thực tất cả Giao dịch bằng dấu vân tay và nếu bạn bật Face ID cho Giao dịch, chúng tôi sẽ yêu cầu bạn xác thực tất cả Giao dịch bằng tính năng nhận dạng khuôn mặt. Bạn có thể quản lý phần cài đặt mật khẩu bất kỳ lúc nào bằng cách thực hiện theo các hướng dẫn sau: https://support.apple.com/HT204030. 
+
+Apple sẽ tính phí theo phương thức thanh toán bạn chọn đối với mọi Giao dịch được thanh toán, bao gồm mọi khoản thuế hiện hành. Nếu bạn cũng đã thêm phương thức thanh toán đó vào Ví Apple của mình, thì thông qua Apple Pay, Apple có thể tính phí theo phương thức thanh toán bạn chọn trong Ví Apple. Bạn có thể liên kết nhiều phương thức thanh toán với Tài khoản Apple của mình và bạn đồng ý rằng Apple có thể lưu trữ và tính phí Giao dịch theo các phương thức thanh toán đó. Phương thức thanh toán chính của bạn xuất hiện ở đầu trang thanh toán trong phần cài đặt tài khoản. 
+
+Nếu chúng tôi không thể tính phí theo phương thức thanh toán chính của bạn vì bất kỳ lý do gì (chẳng hạn như hết hạn hoặc số dư không đủ), thì bạn cho phép Apple tìm cách tính phí theo các phương thức thanh toán đủ điều kiện khác theo thứ tự từ trên xuống dưới trên trang thanh toán trong phần cài đặt tài khoản của bạn. Nếu chúng tôi không tính phí được thì bạn vẫn phải chịu trách nhiệm thanh toán mọi khoản tiền chưa thu và chúng tôi có thể cố gắng tính phí lại hoặc yêu cầu bạn cung cấp một phương thức thanh toán khác. Nếu bạn đặt trước Nội dung, bạn sẽ bị tính phí khi Nội dung được phân phối cho bạn (trừ phi bạn hủy trước khi Nội dung được phát hành). Tuân theo luật địa phương, Apple có thể tự động cập nhật các phương thức thanh toán trong thông tin thanh toán của bạn, nếu thông tin đó do mạng thanh toán hoặc tổ chức tài chính của bạn cung cấp. Các điều khoản liên quan đến tín dụng cửa hàng và mã/thẻ quà tặng có tại đây: https://www.apple.com/legal/internet-services/itunes/giftcards/vn/terms.html. Để biết thêm chi tiết về cách thanh toán các Giao dịch, vui lòng truy cập http://support.apple.com/HT201359. Tất cả các Giao dịch đều không thể thay đổi. Giá của Nội dung có thể thay đổi bất cứ lúc nào. Nếu các sự cố kỹ thuật ngăn hoặc trì hoãn một cách vô lý việc phân phối Nội dung, biện pháp khắc phục duy nhất của riêng bạn là thay thế Nội dung hoặc hoàn lại khoản tiền đã thanh toán, tùy theo Apple quyết định. Tùy từng thời điểm, Apple có thể tạm dừng hoặc hủy thanh toán hoặc từ chối yêu cầu hoàn tiền nếu chúng tôi tìm thấy bằng chứng về hành vi gian lận, lạm dụng, bất hợp pháp hoặc hành vi thao túng khác khiến Apple có quyền yêu cầu bồi thường ngược lại tương ứng. 
+
+C. TÀI KHOẢN 
+
+Có thể bạn sẽ cần dùng Tài khoản Apple để sử dụng Dịch vụ của chúng tôi và truy cập Nội dung của bạn. Tài khoản Apple (trước đây gọi là ID Apple) là tài khoản bạn sử dụng trên toàn hệ sinh thái Apple. Việc sử dụng Game Center tuân theo Thỏa thuận này và bạn cũng cần phải có tài khoản Game Center. Tài khoản của bạn có giá trị và bạn chịu trách nhiệm duy trì tính bí mật cũng như sự an toàn của tài khoản. Apple không chịu trách nhiệm về bất kỳ tổn thất nào phát sinh từ việc sử dụng trái phép tài khoản của bạn. Vui lòng liên hệ với Apple nếu bạn nghi ngờ rằng tài khoản của mình đã bị xâm phạm.
+
+Bạn phải đủ mười ba (13) tuổi (hoặc độ tuổi tối thiểu tương đương ở Quốc gia sở tại của bạn, theo quy định trong quy trình tạo Tài khoản Apple) để tạo tài khoản và sử dụng Dịch vụ của chúng tôi. Tài khoản Apple dành cho những người dưới độ tuổi này có thể được tạo bởi cha mẹ hoặc người giám hộ hợp pháp bằng cách sử dụng tính năng Chia sẻ trong gia đình hoặc có thể được tạo bởi một tổ chức giáo dục được phê duyệt, mặc dù một số thiết bị nhất định có thể ngăn Tài khoản Apple đó truy cập vào một số Dịch vụ nhất định trên thiết bị. Cha mẹ hoặc người giám hộ hợp pháp muốn tạo tài khoản cho trẻ vị thành niên nên xem lại Thỏa thuận này cùng với trẻ để đảm bảo rằng cả hai bên đều hiểu rõ.   
+
+Bạn có thể thêm, thông báo hoặc xóa Liên hệ kế thừa cho Tài khoản Apple của mình theo mô tả tại http://support.apple.com/HT212360. Quyền truy cập của Liên hệ kế thừa vào Tài khoản Apple của bạn bị hạn chế theo nội dung mô tả tại http://support.apple.com/HT212361. 
+
+D. QUYỀN RIÊNG TƯ
+
+Việc bạn sử dụng Dịch vụ của chúng tôi phải tuân thủ Chính sách quyền riêng tư của Apple, có tại địa chỉ https://www.apple.com/legal/privacy/vn.
+
+E. TRỢ NĂNG
+
+Để tìm hiểu về các tính năng trợ năng và thông tin khác về trợ năng liên quan đến Dịch vụ, hãy truy cập https://www.apple.com/vn/accessibility/labels.
+
+F. QUY TẮC SỬ DỤNG DỊCH VỤ VÀ NỘI DUNG
+
+Việc bạn sử dụng Dịch vụ và Nội dung phải tuân theo các quy tắc được nêu trong phần này (“Quy tắc sử dụng”). Mọi hành vi sử dụng Dịch vụ và Nội dung theo cách khác đều vi phạm nghiêm trọng Thỏa thuận này. Apple có thể giám sát việc bạn sử dụng Dịch vụ và Nội dung để đảm bảo rằng bạn đang tuân thủ các Quy tắc sử dụng này.
+
+Tất cả Dịch vụ:
+
+– Bạn chỉ có thể sử dụng Dịch vụ và Nội dung cho các mục đích cá nhân, phi thương mại (ngoại trừ được quy định trong phần Nội dung App Store bên dưới hoặc theo quy định khác của Apple).
+
+– Việc Apple phân phối Dịch vụ hoặc Nội dung không chuyển nhượng bất kỳ quyền sử dụng thương mại hoặc quảng cáo nào cho bạn và không cấu thành việc cấp hoặc từ bỏ bất kỳ quyền nào của chủ sở hữu bản quyền.
+
+– Bạn có thể sử dụng Nội dung bằng tối đa năm (5) Tài khoản Apple khác nhau trên mỗi thiết bị.
+
+– Đối với bất kỳ Dịch vụ nào, bạn có thể đăng nhập bằng Tài khoản Apple của mình trên tối đa mười (10) thiết bị (nhưng chỉ tối đa năm (5) máy tính) cùng một lúc, mặc dù số luồng Nội dung đồng thời hoặc lượt tải về có thể bị giới hạn ở số lượng thiết bị thấp hơn theo quy định ở phần bên dưới về nội dung Apple Music và Apple TV. Mỗi máy tính cũng phải được cấp phép sử dụng cùng một Tài khoản Apple (để tìm hiểu thêm về việc cấp phép cho máy tính, hãy truy cập https://support.apple.com/HT201251). Cứ sau chín mươi (90) ngày, các thiết bị có thể được liên kết với một Tài khoản Apple khác.
+
+– Bạn không được thao túng số lượt phát, lượt tải về, xếp hạng hoặc lượt đánh giá bằng bất kỳ phương tiện nào – chẳng hạn như (i) sử dụng bot, tập lệnh hoặc quy trình tự động; hoặc (ii) trao hoặc nhận bất kỳ hình thức thù lao hoặc khuyến khích nào.
+
+– Bạn không được sử dụng bất kỳ phần mềm, thiết bị, quy trình tự động hoặc bất kỳ quy trình thủ công tương tự hoặc tương đương nào để rút trích, sao chép hoặc thực hiện đo lường, phân tích hoặc giám sát bất kỳ phần nào của Nội dung hoặc Dịch vụ.
+
+– Bạn có trách nhiệm không làm mất, phá hủy hoặc làm hỏng Nội dung sau khi tải về. Chúng tôi khuyến khích bạn thường xuyên sao lưu Nội dung.
+
+– Bạn không được can thiệp hoặc phá vỡ bất kỳ công nghệ bảo mật nào có trong Dịch vụ hoặc Nội dung.
+
+– Bạn chỉ có thể truy cập Dịch vụ của chúng tôi bằng phần mềm của Apple và không được sửa đổi hoặc sử dụng các phiên bản đã sửa đổi của phần mềm đó.
+
+– Đối với Nội dung video, bạn cần có kết nối HDCP.
+
+Bán và cho thuê Nội dung âm thanh và video:
+
+– Bạn có thể sử dụng Nội dung không có Quản lý bản quyền kỹ thuật số (DRM) trên một số thiết bị tương thích hợp lý mà bạn sở hữu hoặc kiểm soát. Bạn có thể sử dụng Nội dung được bảo vệ DRM trên tối đa năm (5) máy tính và số thiết bị bất kỳ mà bạn đồng bộ hóa từ các máy tính đó. 
+
+– Nội dung cho thuê có thể xem trên một thiết bị tại một thời điểm, phải được xem trong vòng ba mươi (30) ngày và xem hết trong vòng bốn mươi tám (48) giờ kể từ khi bắt đầu (việc dừng hẳn, tạm dừng hoặc khởi động lại sẽ không giúp kéo dài khoảng thời gian này).
+
+– Bạn có thể ghi một danh sách nhạc đã mua ra đĩa tối đa bảy (7) lần để nghe; giới hạn này không áp dụng cho Nội dung không có DRM. Bạn không được ghi Nội dung khác ra đĩa.
+
+– Đối với Nội dung đã mua, thường bạn vẫn sẽ có thể tải về, tải lại hoặc truy cập theo cách khác từ Apple. Mặc dù khó xảy ra, nhưng sau khi bạn mua, Nội dung vẫn có thể bị xóa khỏi Dịch vụ và không thể tải về hoặc truy cập thêm từ Apple (ví dụ: vì Apple mất quyền cung cấp Nội dung từ nhà cung cấp Nội dung đó). Để đảm bảo bạn có thể tiếp tục thưởng thức Nội dung, chúng tôi khuyến khích bạn tải tất cả Nội dung đã mua về thiết bị mà bạn sở hữu và sao lưu nội dung đó.
+
+Nội dung trên App Store:
+
+– Nghĩa của từ “Ứng dụng” bao gồm cả ứng dụng và Ứng dụng thu nhỏ cho bất kỳ nền tảng và/hoặc hệ điều hành nào của Apple, kể cả mọi giao dịch mua in-app, tiện ích mở rộng (chẳng hạn như bàn phím), nhãn dán và Gói đăng ký được cung cấp trong các ứng dụng hoặc Ứng dụng thu nhỏ đó.
+
+– Các cá nhân hành động thay mặt cho một doanh nghiệp thương mại, tổ chức chính phủ hoặc tổ chức giáo dục (“Doanh nghiệp”) có thể tải về và đồng bộ hóa Ứng dụng không trong Arcade để (i) một cá nhân sử dụng trên một (1) hoặc nhiều thiết bị do Doanh nghiệp sở hữu hoặc kiểm soát; hoặc (ii) nhiều cá nhân cùng sử dụng trên một thiết bị dùng chung duy nhất do một Doanh nghiệp sở hữu hoặc kiểm soát. Để cho rõ ràng, xin lưu ý rằng mỗi thiết bị được nhiều người dùng sử dụng luân phiên hoặc sử dụng chung đều yêu cầu một giấy phép riêng.
+
+Apple Music:
+
+– Gói thành viên cá nhân trên Apple Music cho phép bạn nghe nhạc trực tuyến trên một thiết bị tại một thời điểm; gói thành viên Gia đình cho phép bạn hoặc các thành viên Gia đình nghe nhạc trực tuyến trên tối đa sáu (6) thiết bị cùng một lúc.
+
+Apple Arcade:
+
+– Bạn chỉ có thể tải về hoặc tải về lại Ứng dụng trong Apple Arcade nếu có bản dùng thử hoặc Gói đăng ký Apple Arcade hợp lệ.
+
+– Nếu Gói đăng ký của bạn kết thúc, bạn sẽ không thể truy cập các Ứng dụng đã tải về qua Apple Arcade nữa.
+
+Nội dung trên Apple TV:
+
+– Đối với hầu hết các kênh, bạn có thể xem trực tuyến Nội dung video trên tối đa ba (3) thiết bị cùng một lúc. 
+
+– Tìm hiểu thêm về Quy tắc sử dụng Nội dung Apple TV tại https://support.apple.com/HT210074. 
+
+G. CHẤM DỨT VÀ TẠM NGỪNG DỊCH VỤ
+
+Nếu bạn không tuân thủ hoặc Apple nghi ngờ rằng bạn không tuân thủ điều khoản bất kỳ nào trong Thỏa thuận này, thì không cần thông báo cho bạn, Apple có thể: (i) chấm dứt Thỏa thuận này và/hoặc Tài khoản Apple của bạn, và bạn sẽ vẫn phải chịu trách nhiệm thanh toán tất cả các khoản tiền phải trả đối với Tài khoản Apple của mình tính đến hết ngày chấm dứt; và/hoặc (ii) chấm dứt giấy phép sử dụng phần mềm của bạn; và/hoặc (iii) ngăn bạn truy cập vào Dịch vụ.
+
+Ngoài ra, Apple bảo lưu quyền sửa đổi, tạm dừng hoặc ngừng Dịch Vụ (hoặc bất kỳ phần hoặc Nội dung nào trong đó) vào bất kỳ lúc nào, dù có hay không thông báo cho bạn. Đồng thời, Apple sẽ không chịu trách nhiệm pháp lý đối với bạn hay bất kỳ bên thứ ba nào nếu Apple thực thi các quyền đó.
+
+H. TẢI VỀ 
+
+Bạn có thể bị giới hạn về số Nội dung mà bạn có thể tải về và một số Nội dung đã tải về có thể hết hạn sau một khoảng thời gian nhất định kể từ khi bạn tải về hoặc phát lần đầu. Một số Nội dung nhất định có thể hoàn toàn không thể tải về.
+
+Bạn có thể tải lại Nội dung đã mua từ trước (“Tải lại”) trên các thiết bị được đăng nhập bằng cùng một Tài khoản Apple (“Thiết bị được liên kết”). Bạn có thể xem các loại Nội dung có thể Tải lại ở Quốc gia sở tại của bạn tại https://support.apple.com/HT204632. Bạn sẽ không thể Tải lại những Nội dung không còn được cung cấp trên nền tảng Dịch vụ của chúng tôi.
+
+Nội dung cũng có thể bị xóa khỏi Dịch vụ của chúng tôi bất kỳ lúc nào (ví dụ: vì Apple mất quyền cung cấp nội dung từ Nhà cung cấp Nội dung đó), sau đó bạn sẽ không thể tải về, tải lại hoặc truy cập Nội dung theo cách khác từ Apple. Chúng tôi khuyến khích bạn thường xuyên sao lưu Nội dung.
+
+I. GÓI ĐĂNG KÝ
+
+Dịch vụ và một số Ứng dụng nhất định có thể cho phép bạn truy cập vào Nội dung hoặc Dịch vụ thông qua gói đăng ký (“Gói đăng ký”). Gói đăng ký sẽ tự động gia hạn cho đến khi bạn hủy ở mục Quản lý đăng ký trong phần cài đặt tài khoản. Để tìm hiểu thêm về việc hủy Gói đăng ký, hãy truy cập https://support.apple.com/HT202039. Bạn sẽ được thông báo nếu giá của Gói đăng ký tăng lên và trong trường hợp cần thiết, phải có sự đồng ý của bạn thì gói mới tiếp tục. Bạn sẽ bị tính phí không sớm hơn hai mươi bốn (24) giờ trước khi bắt đầu giai đoạn của Gói đăng ký gần nhất. Nếu chúng tôi không thể tính phí theo phương thức thanh toán của bạn vì bất kỳ lý do gì (chẳng hạn như hết hạn hoặc không đủ số dư) và bạn chưa hủy Gói đăng ký, bạn vẫn chịu trách nhiệm về mọi khoản tiền chưa thu được và chúng tôi sẽ cố gắng tính phí theo phương thức thanh toán của bạn sau khi bạn cập nhật thông tin về phương thức thanh toán. Điều này có thể dẫn đến việc thay đổi thời điểm bắt đầu giai đoạn của Gói đăng ký tiếp theo và có thể thay đổi ngày mà bạn thanh toán cho từng giai đoạn, theo nội dung hiển thị trên biên lai. Một số Gói đăng ký nhất định có thể cho thời gian dùng thử miễn phí trước khi tính phí theo phương thức thanh toán của bạn. Nếu bạn quyết định hủy một Gói đăng ký trước khi chúng tôi bắt đầu tính phí theo phương thức thanh toán của bạn, hãy hủy Gói đăng ký đó ít nhất hai mươi bốn (24) giờ trước khi thời gian dùng thử miễn phí kết thúc. Chúng tôi có quyền hủy Gói đăng ký của bạn nếu bạn không đồng ý với các thay đổi quan trọng đối với Gói đăng ký mà chúng tôi yêu cầu sự đồng ý của bạn hoặc nếu chúng tôi không thể tính phí thành công theo phương thức thanh toán của bạn để gia hạn Gói đăng ký.
+
+Nếu bạn bắt đầu dùng thử miễn phí Gói đăng ký do Apple cung cấp với tư cách là nhà cung cấp Nội dung (“Gói đăng ký của Apple”) và hủy trước khi hết hạn, thì bạn sẽ không thể kích hoạt lại thời gian dùng thử miễn phí. Không thể kết hợp thời gian dùng thử miễn phí hoặc ưu đãi miễn phí cho Gói đăng ký của Apple, ngoại trừ iCloud, với bất kỳ thời gian dùng thử hoặc ưu đãi miễn phí nào của Apple One. Nếu bạn đang dùng thử miễn phí hoặc dùng ưu đãi miễn phí theo bất kỳ Gói đăng ký nào của Apple và bạn đăng ký Apple One, thì ưu đãi hoặc thời gian dùng thử của bạn sẽ không bị tạm dừng ngay cả khi bạn có thể sử dụng Gói đăng ký đó của Apple thông qua Gói đăng ký Apple One. Bạn công nhận rằng thời gian dùng thử miễn phí hoặc ưu đãi miễn phí có thể hết hạn dù bạn là người đăng ký dịch vụ Apple One và Apple sẽ không có nghĩa vụ khôi phục, hoàn trả hay bồi thường cho bạn bất kỳ phần nào của thời gian dùng thử miễn phí hoặc ưu đãi miễn phí đã hết hạn đó. Khi Gói đăng ký cho bất kỳ Dịch vụ hoặc Nội dung nào kết thúc, bạn sẽ không thể truy cập vào mọi chức năng hoặc Nội dung của Dịch vụ có yêu cầu Gói đăng ký.
+
+J. TÍNH SẴN CÓ CỦA NỘI DUNG VÀ DỊCH VỤ
+
+Các điều khoản có trong Thỏa thuận này liên quan đến Dịch vụ, loại Nội dung, tính năng hoặc chức năng không có ở Quốc gia sở tại của bạn sẽ không áp dụng cho bạn, trừ phi và cho đến khi chúng được cung cấp cho bạn. Để xem các loại Nội dung có ở Quốc gia sở tại của bạn, hãy truy cập vào Dịch vụ hoặc trang https://support.apple.com/HT204411. Một số Dịch vụ và Nội dung có ở Quốc gia sở tại của bạn có thể sẽ không có khi bạn ra khỏi Quốc gia sở tại.
+
+K. THIẾT BỊ CỦA BÊN THỨ BA
+
+Bạn có thể sẽ không sử dụng được tất cả các tính năng của Dịch vụ khi truy cập trên thiết bị không mang nhãn hiệu Apple. Ngoài ra, một số Dịch vụ nhất định có thể yêu cầu, hướng dẫn hoặc gợi ý bạn sử dụng thiết bị của bên thứ ba trong một số trường hợp và/hoặc cho một số hoạt động nhất định. Việc sử dụng như vậy phải tuân theo các điều khoản và điều kiện sử dụng thiết bị đó cũng như theo hướng dẫn của nhà sản xuất thiết bị. Bằng việc sử dụng Dịch vụ, bạn đồng ý rằng tùy từng thời điểm, Apple có thể tự động tải về và cài đặt các bản cập nhật nhỏ cho phần mềm của mình trên thiết bị của bên thứ ba.
+
+L. NỘI DUNG BẠN GỬI ĐẾN DỊCH VỤ CỦA CHÚNG TÔI
+
+Dịch vụ của chúng tôi có thể cho phép bạn gửi hoặc đăng các nội dung như bình luận, xếp hạng, bài đánh giá, ảnh, video và podcast (bao gồm cả siêu dữ liệu và ảnh hình minh họa kèm). Việc bạn sử dụng các tính năng đó phải tuân thủ Nguyên tắc gửi nội dung ở dưới đây (có thể được cập nhật tùy từng thời điểm) và nếu chúng tôi biết nội dung bạn gửi vi phạm Nguyên tắc gửi nội dung của chúng tôi, chúng tôi sẽ xóa nội dung đó. Nếu bạn thấy các tài liệu không tuân thủ Nguyên tắc gửi nội dung, bao gồm bất kỳ nội dung mang tính xúc phạm, lạm dụng hoặc bất hợp pháp nào, vui lòng cho chúng tôi biết tại reportaproblem.apple.com hoặc bằng cách liên hệ với Bộ phận hỗ trợ của Apple. Ngoại trừ trường hợp bị pháp luật cấm, qua đây, bạn cấp cho Apple giấy phép vĩnh viễn, không độc quyền, miễn phí bản quyền và áp dụng trên toàn cầu để sử dụng nội dung bạn gửi trong Dịch vụ và hoạt động tiếp thị có liên quan, cũng như vì các mục đích nội bộ của Apple. Apple có thể giám sát và quyết định xóa hoặc chỉnh sửa bất kỳ nội dung nào được gửi lên, bao gồm thông qua bộ lọc nội dung tự động và/hoặc người kiểm duyệt. 
+
+Nguyên tắc gửi nội dung: Bạn không được sử dụng Dịch vụ để:
+
+– đăng bất kỳ nội dung nào (i) bạn không có được sự cho phép, quyền hay giấy phép sử dụng hoặc (ii) vi phạm quyền của bất kỳ bên thứ ba nào;
+
+– đăng nội dung mang tính phản cảm, xúc phạm, bất hợp pháp, lừa đảo, không chính xác hoặc có hại;
+
+– đăng thông tin cá nhân, riêng tư hoặc bí mật của người khác;
+
+– yêu cầu trẻ vị thành niên cung cấp thông tin cá nhân;
+
+– mạo danh hoặc xuyên tạc mối quan hệ của bạn với người hoặc tổ chức khác;
+
+– đăng hoặc truyền nội dung rác, bao gồm nhưng không giới hạn ở quảng cáo không được yêu cầu hoặc trái phép, tài liệu quảng bá hoặc thông báo cung cấp thông tin;
+
+– đăng, sửa đổi hoặc xóa xếp hạng hoặc bài đánh giá để đổi lấy bất kỳ hình thức thù lao hoặc khuyến khích nào; 
+
+– đăng xếp hạng hoặc bài đánh giá mang tính không trung thực, xúc phạm, có hại, gây hiểu lầm, thiếu thiện chí hoặc không liên quan đến Nội dung đang được đánh giá;
+
+– lên kế hoạch hoặc tham gia vào bất kỳ hoạt động nào mang tính bất hợp pháp, gian lận hoặc thao túng.
+
+M. CHIA SẺ TRONG GIA ĐÌNH
+
+Người tổ chức Gia đình (“Người tổ chức”) phải từ mười tám (18) tuổi (hoặc độ tuổi trưởng thành tương đương ở Quốc gia sở tại của họ) trở lên và là cha mẹ hoặc người giám hộ hợp pháp của bất kỳ thành viên Gia đình nào dưới mười ba (13) tuổi (hoặc độ tuổi tối thiểu tương đương ở Quốc gia sở tại theo quy định trong quá trình đăng ký). Cần có thiết bị Apple để truy cập vào tất cả tính năng Chia sẻ trong gia đình. Tính năng Chia sẻ trong gia đình cho phép tối đa sáu (6) thành viên của Gia đình dùng chung các Gói đăng ký đủ điều kiện. Để tìm hiểu thêm về tính năng Chia sẻ trong gia đình, hãy truy cập: https://support.apple.com/HT201060.
+
+Chia sẻ mục mua: Tính năng Chia sẻ mục mua của Chia sẻ trong gia đình cho phép tối đa sáu (6) thành viên của một Gia đình chia sẻ Nội dung đủ điều kiện. Người tổ chức mời các thành viên khác tham gia và đồng ý thanh toán cho tất cả Giao dịch do các thành viên Gia đình thực hiện. Các phương thức thanh toán đủ điều kiện của Người tổ chức được sử dụng để thanh toán cho mọi Giao dịch do một thành viên Gia đình thực hiện (khi tài khoản của thành viên Gia đình có tín dụng cửa hàng thì tín dụng luôn được sử dụng trước). Các thành viên Gia đình đóng vai trò người đại diện của Người tổ chức khi các phương thức thanh toán đủ điều kiện của Người tổ chức được sử dụng. Qua đây, Người tổ chức đồng ý: (1) thanh toán cho các Giao dịch đó; (2) rằng các Giao dịch do thành viên Gia đình thực hiện đều được cho phép; và (3) các Giao dịch sẽ được tính phí theo các phương thức thanh toán đủ điều kiện theo cách được nêu trong Phần B ở trên. Người tổ chức chịu trách nhiệm tuân thủ các hợp đồng về phương thức thanh toán và chịu mọi rủi ro liên quan đến việc chia sẻ khả năng sử dụng các phương thức thanh toán đủ điều kiện của họ với các Thành viên gia đình. Biên lai hoặc hóa đơn cho mọi Giao dịch của thành viên Gia đình được gửi đến thành viên Gia đình đã thực hiện giao dịch, và nếu Giao dịch được thanh toán theo phương thức thanh toán của Người tổ chức thì Người tổ chức cũng nhận được biên lai hoặc hóa đơn này. 
+
+Hỏi để mua: Hỏi để mua là một tính năng cho phép Người tổ chức phê duyệt các Giao dịch do thành viên Gia đình dưới mười tám (18) tuổi (hoặc độ tuổi trưởng thành tương đương ở Quốc gia sở tại của họ) thực hiện. Nội dung dùng chung của các thành viên Gia đình hoặc có được thông qua mã nội dung nói chung không cần Hỏi để mua; còn mã nội dung hỗ trợ truy cập vào các Gói đăng ký sẽ cần Hỏi để mua. Người tổ chức phải là cha mẹ hoặc người giám hộ hợp pháp của bất kỳ thành viên Gia đình nào đã kích hoạt Hỏi để mua. Tính năng Hỏi để mua được bật theo mặc định cho mọi thành viên Gia đình dưới mười ba (13) tuổi (hoặc độ tuổi tối thiểu tương đương ở Quốc gia sở tại của họ) và tiếp tục bật cho đến khi phụ huynh hoặc người giám hộ hợp pháp tắt tính năng này. Nếu tắt tính năng Hỏi để mua sau khi thành viên Gia đình tròn mười tám (18) tuổi (hoặc đến tuổi trưởng thành ở Quốc gia sở tại của họ), thì sẽ không thể bật tính năng này được nữa. Hỏi để mua không yêu cầu bạn phải bật tính năng Chia sẻ mục mua.
+
+Thay đổi thành viên trong Gia đình: Khi một thành viên rời khỏi hoặc bị xóa khỏi Gia đình, các thành viên Gia đình còn lại sẽ không truy cập được Nội dung của thành viên cũ nữa, bao gồm cả Nội dung có được bằng phương thức thanh toán của Người tổ chức.
+
+Quy tắc của Chia sẻ trong gia đình: Tại một thời điểm, bạn chỉ có thể thuộc một (1) Gia đình và bạn có thể tham gia bất kỳ Gia đình nào không quá hai lần mỗi năm. Bạn chỉ có thể thay đổi Tài khoản Apple mà bạn liên kết với Gia đình không quá một lần mỗi chín mươi (90) ngày. Tất cả thành viên Gia đình phải có cùng một Quốc gia sở tại. Không phải tất cả Nội dung, bao gồm cả nội dung Mua in-app, Gói đăng ký và một số Ứng dụng đã mua từ trước, đều đủ điều kiện để Chia sẻ mục mua. Các gói đăng ký mà Gia đình dùng chung có thể phải tuân theo các giới hạn sử dụng Nội dung cho từng gói đăng ký.
+
+N. THẺ XEM PHẦN VÀ THẺ XEM NHIỀU TẬP
+
+Khi dùng Thẻ, bạn có thể mua và thưởng thức Nội dung truyền hình ngay khi có. Thẻ xem phần áp dụng cho Nội dung truyền hình có số lượng tập giới hạn mỗi phần; còn Thẻ xem nhiều tập áp dụng cho Nội dung truyền hình được cung cấp liên tục. Bạn thanh toán đầy đủ giá của Thẻ xem phần và Thẻ xem nhiều tập ngay tại thời điểm Giao dịch. Đối với Nội dung sử dụng Thẻ xem phần hoặc Thẻ xem nhiều tập, bạn có thể tải về tối đa chín mươi (90) ngày sau khi có tập cuối cùng. Nếu một nhà cung cấp Nội dung cung cấp cho Apple ít tập phim truyền hình hơn so với kế hoạch khi bạn mua Thẻ xem phần, thì chúng tôi sẽ ghi có vào Tài khoản Apple của bạn giá trị bán lẻ tương ứng với số tập phim không được cung cấp cho Apple.
+
+O. CÁC ĐIỀU KHOẢN BỔ SUNG VỀ APP STORE (KHÔNG ÁP DỤNG CHO CÁC ỨNG DỤNG APPLE ARCADE)
+
+GIẤY PHÉP NỘI DUNG TRÊN APP STORE 
+
+Giấy phép ứng dụng do Apple hoặc nhà phát triển bên thứ ba (“Nhà cung cấp ứng dụng”) cung cấp cho bạn. Apple đóng vai trò đại lý cho Nhà cung cấp ứng dụng trong việc vận hành App Store và không phải là một bên trong hợp đồng mua bán hoặc thỏa thuận người dùng giữa bạn và Nhà cung cấp ứng dụng. Tuy nhiên, nếu bạn là khách hàng của Apple Distribution International Ltd. hoặc Apple Services Pte. Ltd., thì người bán trên hồ sơ là tổ chức đó, có nghĩa là bạn có được giấy phép Ứng dụng từ Apple Distribution International Ltd. hoặc Apple Services Pte. Ltd., tùy trường hợp áp dụng, nhưng Ứng dụng là do Nhà cung cấp ứng dụng cấp phép. Ứng dụng được Apple cấp phép là “Ứng dụng của Apple”; còn Ứng dụng được Nhà cung cấp ứng dụng cấp phép là “Ứng dụng bên thứ ba”. Bất kỳ Ứng dụng nào bạn có được đều chịu sự điều chỉnh của Thỏa thuận cấp phép cho người dùng cuối đối với ứng dụng được cấp phép (“EULA tiêu chuẩn”) được quy định bên dưới, trừ phi Apple hoặc Nhà cung cấp ứng dụng đưa ra một thỏa thuận cấp phép riêng có ý nghĩa quan trọng hơn (“EULA riêng”). Theo luật pháp địa phương, Nhà cung cấp ứng dụng của mọi Ứng dụng bên thứ ba phải hoàn toàn chịu trách nhiệm về nội dung và bảo đảm của ứng dụng đó, cũng như mọi khiếu nại mà bạn có thể có liên quan đến Ứng dụng bên thứ ba. Bạn công nhận và đồng ý rằng Apple là bên thứ ba thụ hưởng EULA tiêu chuẩn hoặc EULA riêng áp dụng cho từng Ứng dụng bên thứ ba nên có thể thực thi thỏa thuận đó. Một số Ứng dụng, chẳng hạn như nhãn dán và ứng dụng iMessage, có thể không xuất hiện trên màn hình menu tiêu chuẩn của thiết bị nhưng bạn có thể truy cập và sử dụng trong ngăn ứng dụng Tin nhắn.
+
+MUA IN-APP
+
+Ứng dụng có thể cung cấp nội dung, dịch vụ hoặc chức năng để sử dụng trong các Ứng dụng đó (“Mua in-app”). Các mặt hàng Mua in-app mà bạn dùng trong quá trình sử dụng Ứng dụng (ví dụ: ngọc ảo) không thể chuyển giữa các thiết bị và chỉ có thể tải về một lần. Bạn phải xác thực tài khoản của mình trước khi Mua in-app – khác với các yêu cầu xác thực để tải Nội dung khác – bằng cách nhập mật khẩu hoặc sử dụng Touch ID/Face ID. Bạn sẽ có thể tiếp tục Mua in-app trong mười lăm (15) phút mà không cần xác thực lại, trừ phi bạn đã đề nghị chúng tôi yêu cầu mật khẩu cho mọi giao dịch mua hoặc đã bật Touch ID/Face ID. Bạn có thể tắt khả năng Mua in-app theo các hướng dẫn tại: https://support.apple.com/HT201304.
+
+BẢO TRÌ VÀ HỖ TRỢ ỨNG DỤNG
+
+Apple chỉ chịu trách nhiệm cung cấp dịch vụ bảo trì và hỗ trợ cho Ứng dụng Apple hoặc theo yêu cầu của luật hiện hành. Nhà cung cấp ứng dụng chịu trách nhiệm cung cấp dịch vụ bảo trì và hỗ trợ cho Ứng dụng bên thứ ba.
+
+GÓI ỨNG DỤNG
+
+Một số Ứng dụng có thể được bán cùng nhau dưới dạng gói (“Gói ứng dụng”). Giá hiển thị cho Gói ứng dụng là giá bạn sẽ phải trả khi mua Gói ứng dụng. Giá của Gói ứng dụng có thể giảm tương ứng với các Ứng dụng bạn đã mua hoặc có được, nhưng có thể bao gồm một khoản phí tối thiểu để mua toàn bộ Gói ứng dụng.
+
+KẾT QUẢ TÌM KIẾM VÀ THỨ HẠNG
+
+Khi xác định cách sắp xếp Ứng dụng trong kết quả tìm kiếm, các tham số chính được xem xét là siêu dữ liệu do Nhà cung cấp ứng dụng cung cấp, cách khách hàng tương tác với Ứng dụng và App Store cũng như mức độ phổ biến của Ứng dụng trong App Store. Các tham số chính này mang lại kết quả phù hợp nhất cho các truy vấn tìm kiếm của khách hàng.
+
+THỎA THUẬN CẤP PHÉP CHO NGƯỜI DÙNG CUỐI ĐỐI VỚI ỨNG DỤNG ĐƯỢC CẤP PHÉP
+
+Các ứng dụng được cung cấp thông qua App Store được cấp phép chứ không bán cho bạn. Giấy phép của bạn đối với từng Ứng dụng tùy thuộc vào việc trước đó, bạn đã chấp nhận Thỏa thuận cấp phép cho người dùng cuối đối với ứng dụng được cấp phép này (“EULA tiêu chuẩn”) hay một thỏa thuận cấp phép cho người dùng cuối được giao kết riêng giữa bạn và Nhà cung cấp ứng dụng (“EULA riêng”), nếu có. Giấy phép của bạn đối với bất kỳ Ứng dụng của Apple nào theo EULA tiêu chuẩn này hoặc EULA riêng đều là do Apple cấp, còn giấy phép của bạn đối với bất kỳ Ứng dụng bên thứ ba nào theo EULA tiêu chuẩn này hoặc EULA riêng là do Nhà cung cấp ứng dụng của Ứng dụng bên thứ ba đó cấp. Bất kỳ Ứng dụng nào tuân theo EULA tiêu chuẩn này đều được gọi là “Ứng dụng được cấp phép” trong văn bản này. Tùy từng trường hợp, Nhà cung cấp ứng dụng hoặc Apple (“Đơn vị cấp phép”) giữ tất cả quyền về Ứng dụng được cấp phép mà không được cấp rõ ràng cho bạn theo EULA tiêu chuẩn này.
+
+a. Phạm vi cấp phép: Đơn vị cấp phép cấp cho bạn một giấy phép không thể chuyển nhượng để sử dụng Ứng dụng được cấp phép trên mọi sản phẩm mang thương hiệu Apple mà bạn sở hữu hoặc kiểm soát và như được cho phép trong Quy tắc sử dụng. Các điều khoản của EULA tiêu chuẩn này sẽ điều chỉnh mọi nội dung, tài liệu hoặc dịch vụ có thể truy cập hoặc mua trong Ứng dụng được cấp phép cũng như các bản nâng cấp do Đơn vị cấp phép cung cấp để thay thế hoặc bổ sung cho Ứng dụng được cấp phép ban đầu, trừ phi bản nâng cấp đó đi kèm với EULA riêng. Trừ phi được nêu trong Quy tắc sử dụng, bạn không được phân phối hoặc cung cấp Ứng dụng được cấp phép qua mạng nơi nhiều thiết bị có thể dùng ứng dụng đó cùng một lúc. Bạn không được chuyển nhượng, phân phối lại hoặc cấp phép lại Ứng dụng được cấp phép trừ phi được cho phép rõ ràng trong Thỏa thuận này và nếu bạn bán Thiết bị Apple của mình cho bên thứ ba, bạn phải xóa Ứng dụng được cấp phép khỏi Thiết bị Apple trước khi bán. Bạn không được sao chép (trừ phi được giấy phép này và Quy tắc sử dụng cho phép), dùng kỹ nghệ đảo ngược, phân tách, tìm cách lấy mã nguồn, sửa đổi hoặc tạo các sản phẩm phái sinh của Ứng dụng được cấp phép, mọi bản cập nhật hoặc bất kỳ phần nào của bản cập nhật (ngoại trừ và chỉ trong phạm vi mà bất kỳ hạn chế nào nêu trên đều bị cấm theo luật hiện hành hoặc trong phạm vi cho phép của các điều khoản cấp phép điều chỉnh việc sử dụng bất kỳ thành phần nguồn mở nào có trong Ứng dụng được cấp phép).
+
+b. Chấp thuận việc sử dụng dữ liệu: Bạn đồng ý rằng Đơn vị cấp phép có thể thu thập và sử dụng dữ liệu kỹ thuật cũng như thông tin liên quan – bao gồm nhưng không giới hạn ở thông tin kỹ thuật về thiết bị, hệ thống và phần mềm ứng dụng cũng như thiết bị ngoại vi của bạn – được thu thập định kỳ để tạo điều kiện cung cấp cho bạn các bản cập nhật phần mềm, dịch vụ hỗ trợ sản phẩm và các dịch vụ khác (nếu có) liên quan đến Ứng dụng được cấp phép. Đơn vị cấp phép có thể sử dụng thông tin này, miễn sao đó không phải thông tin nhận dạng cá nhân bạn, để cải thiện sản phẩm hoặc để cung cấp dịch vụ hoặc công nghệ cho bạn.
+
+c. Chấm dứt. EULA tiêu chuẩn này có hiệu lực cho đến khi bạn hoặc Đơn vị cấp phép chấm dứt. Các quyền của bạn theo EULA tiêu chuẩn này sẽ tự động chấm dứt nếu bạn không tuân thủ điều khoản bất kỳ trong đó.
+
+d. Dịch vụ bên ngoài. Ứng dụng được cấp phép có thể cho phép truy cập vào các dịch vụ và trang web của Đơn vị cấp phép và/hoặc bên thứ ba (gọi chung và gọi riêng là “Dịch vụ bên ngoài”). Bạn đồng ý tự chịu rủi ro khi sử dụng Dịch vụ bên ngoài. Đơn vị cấp phép không chịu trách nhiệm kiểm tra hay đánh giá nội dung hoặc tính chính xác của bất kỳ Dịch vụ bên ngoài nào của bên thứ ba và sẽ không chịu trách nhiệm pháp lý đối với bất kỳ Dịch vụ bên ngoài nào của bên thứ mà bạn sử dụng. Dữ liệu được hiển thị bởi bất kỳ Ứng dụng được cấp phép hoặc Dịch vụ bên ngoài nào, bao gồm nhưng không giới hạn ở thông tin tài chính, y tế và vị trí, chỉ nhằm cung cấp thông tin chung và không được Đơn vị cấp phép hoặc các đại lý của họ đảm bảo. Bạn sẽ không sử dụng Dịch vụ bên ngoài theo bất kỳ cách nào không phù hợp với các điều khoản của EULA tiêu chuẩn này hay vi phạm quyền sở hữu trí tuệ của Đơn vị cấp phép hoặc bất kỳ bên thứ ba nào. Bạn đồng ý không sử dụng Dịch vụ bên ngoài để quấy rối, xúc phạm, theo dõi, đe dọa hoặc bôi nhọ bất kỳ cá nhân hoặc tổ chức nào và Đơn vị cấp phép không chịu trách nhiệm cho bất kỳ trường hợp sử dụng nào như vậy. Dịch vụ bên ngoài có thể không hỗ trợ một số ngôn ngữ hoặc không có ở Quốc gia sở tại của bạn và có thể không phù hợp hoặc không sử dụng được ở địa điểm cụ thể bất kỳ. Trong phạm vi bạn chọn sử dụng các Dịch vụ bên ngoài đó, bạn hoàn toàn chịu trách nhiệm tuân thủ mọi luật hiện hành. Đơn vị cấp phép bảo lưu quyền thay đổi, đình chỉ, xóa, vô hiệu hóa hoặc áp đặt các hạn chế hoặc giới hạn truy cập đối với bất kỳ Dịch vụ bên ngoài nào vào bất kỳ lúc nào mà không cần thông báo hay chịu trách nhiệm pháp lý với bạn.
+
+e. KHÔNG BẢO ĐẢM: BẠN CÔNG NHẬN VÀ ĐỒNG Ý MỘT CÁCH RÕ RÀNG RẰNG BẠN SẼ CHỊU MỌI RỦI RO LIÊN QUAN ĐẾN VIỆC SỬ DỤNG ỨNG DỤNG ĐƯỢC CẤP PHÉP. TRONG PHẠM VI TỐI ĐA PHÁP LUẬT HIỆN HÀNH CHO PHÉP, ỨNG DỤNG ĐƯỢC CẤP PHÉP VÀ MỌI DỊCH VỤ DO ỨNG DỤNG ĐƯỢC CẤP PHÉP ĐÓ CUNG CẤP HOẶC THỰC HIỆN ĐƯỢC CUNG CẤP THEO NGUYÊN TẮC “NGUYÊN TRẠNG” VÀ “KHI CÓ SẴN”, BAO GỒM MỌI KHIẾM KHUYẾT VÀ KHÔNG CÓ BẤT KỲ HÌNH THỨC BẢO ĐẢM NÀO. QUA ĐÂY, ĐƠN VỊ CẤP PHÉP TUYÊN BỐ MIỄN TRỪ MỌI ĐIỀU KIỆN VÀ SỰ BẢO ĐẢM VỚI ỨNG DỤNG ĐƯỢC CẤP PHÉP VÀ BẤT KỲ DỊCH VỤ NÀO, DÙ ĐƯỢC THỂ HIỆN RÕ RÀNG, NGẦM ĐỊNH HAY DO PHÁP LUẬT QUY ĐỊNH, BAO GỒM NHƯNG KHÔNG GIỚI HẠN Ở CÁC ĐIỀU KIỆN VÀ/HOẶC SỰ BẢO ĐẢM NGẦM ĐỊNH VỀ KHẢ NĂNG BÁN ĐƯỢC, CHẤT LƯỢNG THỎA ĐÁNG, TÍNH PHÙ HỢP VỚI MỘT MỤC ĐÍCH CỤ THỂ, TÍNH CHÍNH XÁC, KHẢ NĂNG HƯỞNG THỤ KHÔNG GÂY PHIỀN TOÁI, CŨNG NHƯ VIỆC KHÔNG VI PHẠM QUYỀN CỦA CÁC BÊN THỨ BA. NHỮNG THÔNG TIN HOẶC NỘI DUNG TƯ VẤN BẰNG LỜI HOẶC BẰNG VĂN BẢN DO ĐƠN VỊ CẤP PHÉP HOẶC NGƯỜI ĐẠI DIỆN ĐƯỢC ỦY QUYỀN CỦA HỌ ĐƯA RA SẼ KHÔNG TẠO THÀNH SỰ BẢO ĐẢM. NẾU ỨNG DỤNG ĐƯỢC CẤP PHÉP HOẶC CÁC DỊCH VỤ CÓ LỖI, BẠN SẼ CHỊU TOÀN BỘ CHI PHÍ BẢO DƯỠNG, SỬA CHỮA HOẶC ĐIỀU CHỈNH CẦN THIẾT. MỘT SỐ KHU VỰC PHÁP LÝ KHÔNG CHO PHÉP LOẠI TRỪ CÁC BẢO ĐẢM NGẦM ĐỊNH HOẶC HẠN CHẾ VỀ QUYỀN CỦA NGƯỜI TIÊU DÙNG THEO QUY ĐỊNH ÁP DỤNG. VÌ VẬY, CÁC ĐIỀU KHOẢN LOẠI TRỪ VÀ HẠN CHẾ TRÊN CÓ THỂ KHÔNG ÁP DỤNG CHO BẠN.
+
+f. Giới hạn trách nhiệm pháp lý. TRONG PHẠM VI KHÔNG BỊ PHÁP LUẬT CẤM, TRONG BẤT KỲ TRƯỜNG HỢP NÀO, ĐƠN VỊ CẤP PHÉP CŨNG KHÔNG CHỊU TRÁCH NHIỆM PHÁP LÝ VỀ THƯƠNG TÍCH CÁ NHÂN HOẶC THIỆT HẠI NGẪU NHIÊN, ĐẶC BIỆT, GIÁN TIẾP HOẶC DO HẬU QUẢ, BAO GỒM NHƯNG KHÔNG GIỚI HẠN Ở CÁC THIỆT HẠI DO MẤT LỢI NHUẬN, HỎNG HOẶC MẤT DỮ LIỆU, VIỆC KHÔNG TRUYỀN HOẶC NHẬN ĐƯỢC DỮ LIỆU (BAO GỒM NHƯNG KHÔNG GIỚI HẠN Ở CÁC HƯỚNG DẪN VỀ KHÓA HỌC, BÀI TẬP VÀ TÀI LIỆU), GIÁN ĐOẠN KINH DOANH HOẶC BẤT KỲ THIỆT HẠI HOẶC MẤT MÁT NÀO VỀ MẶT THƯƠNG MẠI, PHÁT SINH TỪ HOẶC LIÊN QUAN ĐẾN VIỆC BẠN SỬ DỤNG HOẶC KHÔNG THỂ SỬ DỤNG ỨNG DỤNG ĐƯỢC CẤP PHÉP, CHO DÙ ĐƯỢC GÂY RA BẰNG CÁCH NÀO, BẤT KỂ THUYẾT TRÁCH NHIỆM PHÁP LÝ LÀ GÌ (HỢP ĐỒNG, SAI LẦM CÁ NHÂN HOẶC TRƯỜNG HỢP KHÁC) VÀ KỂ CẢ KHI ĐƠN VỊ CẤP PHÉP ĐÃ ĐƯỢC THÔNG BÁO VỀ KHẢ NĂNG XẢY RA NHỮNG THIỆT HẠI NHƯ VẬY. MỘT SỐ KHU VỰC PHÁP LÝ KHÔNG CHO PHÉP LOẠI TRỪ HOẶC HẠN CHẾ TRÁCH NHIỆM PHÁP LÝ ĐỐI VỚI THƯƠNG TÍCH CÁ NHÂN, THIỆT HẠI NGẪU NHIÊN HAY CÓ TÍNH HẬU QUẢ. VÌ VẬY, HẠN CHẾ NÀY CÓ THỂ KHÔNG ÁP DỤNG ĐỐI VỚI BẠN. Trong mọi trường hợp, tổng trách nhiệm pháp lý của Đơn vị cấp phép về mọi thiệt hại xảy ra với bạn (trừ phi luật hiện hành yêu cầu trong các trường hợp liên quan tới thương tích cá nhân) không vượt quá hai trăm năm mươi đô la ($250,00). Các quy định giới hạn trên sẽ áp dụng ngay cả khi biện pháp khắc phục nêu trên không đạt được mục đích chính.
+
+g. Bạn không được sử dụng hoặc bằng cách nào đó xuất khẩu/tái xuất khẩu Ứng dụng được cấp phép trừ phi được cho phép bởi pháp luật Hoa Kỳ và pháp luật của khu vực pháp lý nơi bạn có được Ứng dụng được cấp phép. Cụ thể, nhưng không giới hạn ở quy định này, Ứng dụng được cấp phép không được xuất khẩu hoặc tái xuất khẩu (a) sang bất cứ nước nào bị Hoa Kỳ cấm vận hoặc (b) cho bất cứ cá nhân nào thuộc Danh sách các quốc gia được chỉ định đặc biệt của Bộ Tài chính Hoa Kỳ hoặc Danh sách các cá nhân hoặc tổ chức bị từ chối của Bộ Thương mại Hoa Kỳ. Bằng việc sử dụng Ứng dụng được cấp phép, bạn cam kết và bảo đảm rằng bạn không ở bất kỳ quốc gia nào hoặc nằm trong bất kỳ danh sách nào nêu trên. Bạn cũng đồng ý rằng bạn sẽ không sử dụng các sản phẩm này vào bất kỳ mục đích nào không được pháp luật Hoa Kỳ cho phép, bao gồm nhưng không giới hạn ở mục đích phát triển, thiết kế, chế tạo hoặc sản xuất vũ khí hạt nhân, tên lửa, vũ khí hóa học hoặc sinh học.
+
+h. Người dùng cuối là Chính phủ Hoa Kỳ. Ứng dụng được cấp phép và tài liệu liên quan là “Mặt hàng thương mại”, theo định nghĩa thuật ngữ này trong 48 C.F.R. §2.101, bao gồm “Phần mềm máy tính thương mại” và “Tài liệu phần mềm máy tính thương mại”, theo cách sử dụng các thuật ngữ này trong 48 C.F.R. §12.212 hoặc 48 C.F.R. §227.7202, tùy trường hợp áp dụng. Phù hợp với quy định tại 48 C.F.R. §12.212 hoặc 48 C.F.R. §227.7202-1 đến 227.7202-4, tùy trường hợp áp dụng, Phần mềm máy tính thương mại và Tài liệu phần mềm máy tính thương mại được cấp quyền sử dụng cho những người dùng cuối là Chính phủ Hoa Kỳ (a) chỉ dưới hình thức là Mặt hàng thương mại và (b) chỉ với các quyền như được cấp cho tất cả những người dùng cuối khác theo các điều khoản và điều kiện được nêu trong tài liệu này. Các quyền không được công bố được bảo lưu theo luật bản quyền của Hoa Kỳ.
+
+i. Ngoại trừ trường hợp được quy định rõ ràng trong đoạn dưới đây, Thỏa thuận này và mối quan hệ giữa bạn và Apple sẽ được điều chỉnh theo luật pháp Bang California, ngoại trừ các điều khoản của bang này về nội dung mâu thuẫn trong luật. Bạn và Apple đồng ý tuân theo quyền xét xử riêng biệt và duy nhất của tòa án nằm trong phạm vi hạt Santa Clara, California khi giải quyết bất kỳ tranh chấp hoặc khiếu nại nào phát sinh từ Thỏa thuận này. Nếu (a) bạn không phải là công dân Hoa Kỳ; (b) bạn không cư trú tại Hoa Kỳ; (c) bạn không truy cập vào Dịch vụ từ Hoa Kỳ; và (d) bạn là công dân của một trong những quốc gia nêu dưới đây thì qua Thỏa thuận này, bạn đồng ý rằng mọi tranh chấp hoặc khiếu nại phát sinh từ Thỏa thuận này sẽ chịu sự điều chỉnh của luật hiện hành nêu dưới đây, bất kể mọi xung đột trong quy định pháp luật, và bạn cũng tuyệt đối tuân theo quyền xét xử không riêng biệt của các tòa án nằm trong phạm vi bang, tỉnh hoặc quốc gia được nêu dưới đây mà pháp luật của bang, tỉnh hoặc quốc gia đó điều chỉnh:
+
+Nếu bạn là công dân của bất kỳ quốc gia nào thuộc Liên minh châu Âu hoặc Vương quốc Anh, Thụy Sĩ, Na Uy hoặc Iceland, thì luật điều chỉnh và cơ quan giải quyết tranh chấp sẽ là luật và tòa án tại nơi thường trú của bạn.
+
+Công ước của Liên hợp quốc về Mua bán hàng hóa quốc tế được loại trừ một cách cụ thể và không áp dụng đối với Thỏa thuận này.
+
+P. ĐIỀU KHOẢN BỔ SUNG DÀNH CHO APP STORE, APPLE BOOKS, APPLE PODCASTS VÀ MỘT SỐ NỘI DUNG
+
+Một số Nội dung trên App Store, Apple Books và Apple Podcasts (bao gồm cả Gói đăng ký Apple Podcasts) mà bạn có được là do bên thứ ba cung cấp (theo nội dung hiển thị trên trang sản phẩm và/hoặc trong quá trình để bạn có được Nội dung đó), không phải Apple. Trong trường hợp như vậy, Apple đóng vai trò là đại lý cho nhà cung cấp Nội dung trong việc cung cấp Nội dung cho bạn nên Apple không phải là một bên trong Giao dịch giữa bạn và nhà cung cấp Nội dung. Tuy nhiên, nếu bạn là khách hàng của Apple Distribution International Ltd. hoặc Apple Services Pte. Ltd., thì tổ chức đó là người bán trên hồ sơ đối với Nội dung bạn có được, nhưng Nội dung là do nhà cung cấp Nội dung đó cấp phép. Nhà cung cấp Nội dung bảo lưu quyền thực thi các điều khoản sử dụng liên quan đến Nội dung đó. Nhà cung cấp Nội dung hoàn toàn chịu trách nhiệm về Nội dung đó, mọi điều khoản bảo đảm trong phạm vi không bị từ chối và mọi khiếu nại mà bạn hoặc bất kỳ bên nào khác có thể đưa ra liên quan đến Nội dung đó.
+
+Khi xác định cách sắp xếp kết quả tìm kiếm trên App Store, Apple Books và Apple Podcasts, các tham số chính được xem xét là siêu dữ liệu do nhà cung cấp Nội dung cung cấp và cách khách hàng tương tác với Nội dung.
+
+Q. ĐIỀU KHOẢN BỔ SUNG VỀ APPLE MUSIC
+
+Thư viện nhạc iCloud là một tính năng của Apple Music cho phép bạn truy cập các bài hát, danh sách bài hát và video đã đồng bộ hóa hoặc đã tải lên từ Apple Music, iTunes Store hoặc một nguồn khác (“Nội dung thư viện nhạc iCloud”) trên các thiết bị hỗ trợ Apple Music của bạn. Thư viện nhạc iCloud được bật tự động khi bạn thiết lập gói thành viên Apple Music. Thư viện nhạc iCloud thu thập thông tin về Nội dung thư viện nhạc iCloud của bạn. Thông tin này được liên kết với Tài khoản Apple của bạn và được so sánh với Nội dung thư viện nhạc iCloud hiện có trên Apple Music. Nội dung thư viện nhạc iCloud chưa đồng bộ hóa được tải lên máy chủ Thư viện nhạc iCloud của Apple (ở định dạng do Apple xác định). Bạn có thể tải lên tối đa một trăm nghìn (100.000) bài hát. Các bài hát mua trên iTunes Store không tính vào giới hạn này. Các bài hát không đáp ứng các tiêu chí nhất định (ví dụ: tệp quá lớn) hoặc không được cấp phép cho thiết bị của bạn sẽ không đủ điều kiện để đưa vào Thư viện nhạc iCloud. Khi bạn sử dụng Thư viện nhạc iCloud, Apple sẽ ghi lại các thông tin như bản nhạc bạn phát, dừng hoặc bỏ qua, thiết bị bạn sử dụng cũng như thời gian và thời lượng phát. Bạn đồng ý chỉ sử dụng Thư viện nhạc iCloud cho nội dung được mua hợp pháp. Thư viện nhạc iCloud được cung cấp “NGUYÊN TRẠNG”, có thể chứa lỗi hoặc thông tin không chính xác. Bạn nên sao lưu dữ liệu và thông tin của mình trước khi sử dụng Thư viện nhạc iCloud. Nếu không phải là thành viên Apple Music, bạn có thể mua Gói đăng ký iTunes Match. Gói đăng ký này sử dụng Thư viện nhạc iCloud. Khi gói thành viên Apple Music của bạn kết thúc, bạn sẽ mất quyền truy cập vào Thư viện nhạc iCloud, bao gồm cả Nội dung thư viện nhạc iCloud được tải lên máy chủ Thư viện nhạc iCloud.

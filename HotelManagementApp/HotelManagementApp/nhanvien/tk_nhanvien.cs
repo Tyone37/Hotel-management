@@ -84,7 +84,7 @@ namespace HotelManagementApp
                 try
                 {
                     connection.Open();
-                    string query = @"SELECT Name, Phone, Email, Username, Attendance, salary FROM Staff WHERE Username = @Username";
+                    string query = @"SELECT Username, Email, Phone, Name, Attendance, salary, avatar FROM Staff WHERE Username = @Username";
 
                     using (SqlCommand command = new SqlCommand(query, connection))
                     {
@@ -94,28 +94,28 @@ namespace HotelManagementApp
                         {
                             if (read.Read())
                             {
-                                label14.Text = read["Name"].ToString();
+                                label7.Text = read["Name"].ToString();
 
-                                label13.Text = read["Phone"].ToString();
+                                label10.Text = read["Phone"].ToString();
 
-                                label12.Text = read["Email"].ToString();
+                                label11.Text = read["Email"].ToString();
 
-                                label11.Text = read["Username"].ToString();
+                                label15.Text = read["Username"].ToString();
 
                                 object attendanceValue = read["Attendance"];
                                 if (attendanceValue == DBNull.Value)
                                 {
-                                    label10.Text = "XX/24";
+                                    label13.Text = "XX/24";
                                 }
                                 else
                                 {
-                                    label10.Text = $"{attendanceValue.ToString()}/24";
+                                    label13.Text = $"{attendanceValue.ToString()}/24";
                                 }
 
                                 object salaryValue = read["salary"];
                                 if (salaryValue == DBNull.Value)
                                 {
-                                    label9.Text = "N/A";
+                                    label14.Text = "N/A";
                                 }
                                 else
                                 {
@@ -123,7 +123,23 @@ namespace HotelManagementApp
                                     long salary = Convert.ToInt64(salaryValue);
 
                                     CultureInfo viCulture = new CultureInfo("vi-VN");
-                                    label9.Text = salary.ToString("N0", viCulture) + " VND";
+                                    label14.Text = salary.ToString("N0", viCulture) + " VND";
+                                }
+
+                                object avatarValue = read["avatar"];
+
+                                if (avatarValue != DBNull.Value)
+                                {
+                                    byte[] imageData = (byte[])avatarValue;
+
+                                    using (MemoryStream ms = new MemoryStream(imageData))
+                                    {
+                                        pictureBox4.Image = Image.FromStream(ms);
+                                    }
+                                }
+                                else
+                                {
+                                    ImageHelper.SetAvatarToPictureBox(pictureBox4);
                                 }
                             }
                         }
@@ -286,7 +302,14 @@ namespace HotelManagementApp
 
         private void button3_Click_1(object sender, EventArgs e)
         {
+            if(openFileDialog1.ShowDialog() == DialogResult.OK)
+            {
+                string filePath = openFileDialog1.FileName;
 
+                pictureBox4.Image = Image.FromFile(filePath);
+
+                SaveImageToDatabase(filePath);
+            }
         }
 
         private void label1_Click_1(object sender, EventArgs e)
@@ -294,6 +317,16 @@ namespace HotelManagementApp
             Staff staffForm = new Staff();
             staffForm.Show();
             this.Close();
+        }
+
+        private void label2_Click_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void pictureBox4_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

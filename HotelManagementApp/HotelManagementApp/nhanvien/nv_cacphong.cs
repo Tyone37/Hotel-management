@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.IO;
 using System.Linq;
@@ -20,6 +21,8 @@ namespace HotelManagementApp
 
         private void nv_cacphong_Load(object sender, EventArgs e)
         {
+            if (string.IsNullOrEmpty(Session.Username)) return;
+
             if (!string.IsNullOrEmpty(Session.DisplayName))
             {
                 label2.Text = Session.DisplayName;
@@ -29,6 +32,31 @@ namespace HotelManagementApp
                 label2.Text = "Tên người dùng";
             }
             ImageHelper.SetAvatarToPictureBox(pictureBox2);
+
+            string connectionString = "Data Source=26.250.133.82,5000;Initial Catalog=QLKS;User ID=admin;Password=12345678";
+            string query = "SELECT Room, Price, Information FROM Hotel_room";
+
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+                try
+                {
+                    
+                    SqlDataAdapter adapter = new SqlDataAdapter(query, connection);
+
+                    
+                    DataTable dt = new DataTable();
+
+                    
+                    adapter.Fill(dt);
+
+                    
+                    dataGridView1.DataSource = dt;
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Lỗi khi tải dữ liệu: " + ex.Message);
+                }
+            }
         }
 
         public static class ImageHelper
@@ -68,6 +96,42 @@ namespace HotelManagementApp
             Staff staffForm = new Staff();
             staffForm.Show();
             this.Close();
+        }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            string room = textBox2.Text.ToString();
+
+            string connectionString = "Data Source=26.250.133.82,5000;Initial Catalog=QLKS;User ID=admin;Password=12345678";
+            string query = "SELECT Room, Price, Information FROM Hotel_room where Room = @Room";
+
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+                try
+                {
+
+                    SqlDataAdapter adapter = new SqlDataAdapter(query, connection);
+
+                    adapter.SelectCommand.Parameters.AddWithValue("@Room", room);
+
+                    DataTable dt = new DataTable();
+
+
+                    adapter.Fill(dt);
+
+
+                    dataGridView1.DataSource = dt;
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Lỗi khi tải dữ liệu: " + ex.Message);
+                }
+            }
         }
     }
 }

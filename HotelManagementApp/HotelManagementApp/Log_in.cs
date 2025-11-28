@@ -105,8 +105,8 @@ namespace HotelManagementApp
 
                                 string displayName = read["Name"].ToString();
 
-                                Session.Username = read["Username"].ToString();
-                                Session.DisplayName = read["Name"].ToString();
+                                StaffSession.Username = read["Username"].ToString();
+                                StaffSession.DisplayName = read["Name"].ToString();
                                 //Session.AvatarData = read["avatar"] is DBNull ? null : (byte[])read["avatar"];
 
                                 Staff staffForm = new Staff();

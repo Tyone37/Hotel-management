@@ -1,6 +1,6 @@
 namespace HotelManagementApp
 {
-    public static class Session
+    public static class StaffSession
     {
         public static string Username { get; set; }
         public static string DisplayName { get; set; }

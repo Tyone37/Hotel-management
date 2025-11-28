@@ -75,7 +75,7 @@ namespace HotelManagementApp
 
         private void LoadStaffInfo()
         {
-            if (string.IsNullOrEmpty(Session.Username)) return;
+            if (string.IsNullOrEmpty(StaffSession.Username)) return;
 
             string connectionString = "Data Source=26.250.133.82,5000;Initial Catalog=QLKS;User ID=admin;Password=12345678";
 
@@ -88,7 +88,7 @@ namespace HotelManagementApp
 
                     using (SqlCommand command = new SqlCommand(query, connection))
                     {
-                        command.Parameters.AddWithValue("@Username", Session.Username);
+                        command.Parameters.AddWithValue("@Username", StaffSession.Username);
 
                         using (SqlDataReader read = command.ExecuteReader())
                         {
@@ -154,9 +154,9 @@ namespace HotelManagementApp
 
         private void tk_nhanvien_Load(object sender, EventArgs e)
         {
-            if (!string.IsNullOrEmpty(Session.DisplayName))
+            if (!string.IsNullOrEmpty(StaffSession.DisplayName))
             {
-                label2.Text = Session.DisplayName;
+                label2.Text = StaffSession.DisplayName;
             }
             else
             {
@@ -171,11 +171,11 @@ namespace HotelManagementApp
         {
             public static void SetAvatarToPictureBox(PictureBox pbx)
             {
-                if (Session.AvatarData != null)
+                if (StaffSession.AvatarData != null)
                 {
                     try
                     {
-                        using (MemoryStream ms = new MemoryStream(Session.AvatarData))
+                        using (MemoryStream ms = new MemoryStream(StaffSession.AvatarData))
                         {
                             pbx.Image = Image.FromStream(ms);
                             pbx.SizeMode = PictureBoxSizeMode.Zoom;
@@ -240,7 +240,7 @@ namespace HotelManagementApp
             }
 
             string connectionString = "Data Source=26.250.133.82,5000;Initial Catalog=QLKS;User ID=admin;Password=12345678";
-            string username = Session.Username;
+            string username = StaffSession.Username;
 
             using (SqlConnection connection = new SqlConnection(connectionString))
             {
@@ -278,27 +278,16 @@ namespace HotelManagementApp
 
         }
 
-        private void button2_Click(object sender, EventArgs e)
+        private void button2_Click_1(object sender, EventArgs e)
         {
-            Session.Username = null;
-            Session.DisplayName = null;
+            StaffSession.Username = null;
+            StaffSession.DisplayName = null;
 
             Log_in loginForm = new Log_in();
             loginForm.Show();
             this.Close();
         }
 
-        private void button3_Click_1(object sender, EventArgs e)
-        {
-
-        }
-
-        private void button2_Click(object sender, EventArgs e)
-        {
-            Log_in loginForm = new Log_in();
-            loginForm.Show();
-            this.Close();
-        }
 
         private void button3_Click_1(object sender, EventArgs e)
         {
@@ -328,5 +317,6 @@ namespace HotelManagementApp
         {
 
         }
+ 
     }
 }

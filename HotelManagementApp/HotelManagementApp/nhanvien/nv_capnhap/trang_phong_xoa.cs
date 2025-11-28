@@ -21,9 +21,9 @@ namespace HotelManagementApp.nv_capnhap
 
         private void trang_phong_xoa_Load(object sender, EventArgs e)
         {
-            if (!string.IsNullOrEmpty(Session.DisplayName))
+            if (!string.IsNullOrEmpty(StaffSession.DisplayName))
             {
-                label2.Text = Session.DisplayName;
+                label2.Text = StaffSession.DisplayName;
             }
             else
             {
@@ -61,11 +61,11 @@ namespace HotelManagementApp.nv_capnhap
         {
             public static void SetAvatarToPictureBox(PictureBox pbx)
             {
-                if (Session.AvatarData != null)
+                if (StaffSession.AvatarData != null)
                 {
                     try
                     {
-                        using (MemoryStream ms = new MemoryStream(Session.AvatarData))
+                        using (MemoryStream ms = new MemoryStream(StaffSession.AvatarData))
                         {
                             pbx.Image = Image.FromStream(ms);
                             pbx.SizeMode = PictureBoxSizeMode.Zoom;
@@ -79,17 +79,17 @@ namespace HotelManagementApp.nv_capnhap
             }
         }
 
-        private void button2_Click(object sender, EventArgs e)
+        private void button2_Click_1(object sender, EventArgs e)
         {
-            Session.Username = null;
-            Session.DisplayName = null;
+            StaffSession.Username = null;
+            StaffSession.DisplayName = null;
 
             Log_in loginForm = new Log_in();
             loginForm.Show();
             this.Close();
         }
 
-        private void label1_Click(object sender, EventArgs e)
+        private void label1_Click_1(object sender, EventArgs e)
         {
             Staff staffForm = new Staff();
             staffForm.Show();
@@ -152,19 +152,6 @@ namespace HotelManagementApp.nv_capnhap
         {
 
         }
-
-        private void button2_Click(object sender, EventArgs e)
-        {
-            Log_in loginForm = new Log_in();
-            loginForm.Show();
-            this.Close();
-        }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-            Staff staffForm = new Staff();
-            staffForm.Show();
-            this.Close();
-        }
+ 
     }
 }

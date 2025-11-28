@@ -150,7 +150,7 @@
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="RoomStore.cs" />
-    <Compile Include="Session.cs" />
+    <Compile Include="StaffSession.cs" />
     <Compile Include="Sign_in.cs">
       <SubType>Form</SubType>
     </Compile>

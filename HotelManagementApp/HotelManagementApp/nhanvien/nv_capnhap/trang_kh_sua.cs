@@ -15,6 +15,9 @@ namespace HotelManagementApp.nv_capnhap
 {
     public partial class trang_kh_sua : Form
     {
+        string connectionString = "Data Source=26.250.133.82,5000;Initial Catalog=QLKS;User ID=admin;Password=12345678";
+        SqlDataAdapter adapter;
+        DataTable dt;
         public trang_kh_sua()
         {
             InitializeComponent();
@@ -43,23 +46,22 @@ namespace HotelManagementApp.nv_capnhap
             ImageHelper.SetAvatarToPictureBox(pictureBox2);
 
             string connectionString = "Data Source=26.250.133.82,5000;Initial Catalog=QLKS;User ID=admin;Password=12345678";
-            string query = "SELECT Name, Phone, Email, Account, Password FROM User_infor";
+            string query = "SELECT Id, Name, Phone, Email, Account, Password FROM User_infor";
 
             using (SqlConnection connection = new SqlConnection(connectionString))
             {
                 try
                 {
 
-                    SqlDataAdapter adapter = new SqlDataAdapter(query, connection);
-
+                    adapter = new SqlDataAdapter(query, connection);
+                    SqlCommandBuilder builder = new SqlCommandBuilder(adapter);
 
                     DataTable dt = new DataTable();
-
-
                     adapter.Fill(dt);
 
-
                     dataGridView2.DataSource = dt;
+                    if (dataGridView2.Columns["Id"] != null)
+                        dataGridView2.Columns["Id"].Visible = false;
                 }
                 catch (Exception ex)
                 {
@@ -198,7 +200,35 @@ namespace HotelManagementApp.nv_capnhap
 
         private void button6_Click(object sender, EventArgs e)
         {
+            try
+            {
+                if (dt == null || adapter == null) return;
 
+                dataGridView2.EndEdit();
+                DataTable changes = dt.GetChanges();
+
+                if (changes != null)
+                {
+                    using (SqlConnection connection = new SqlConnection(connectionString))
+                    {
+                        adapter.SelectCommand.Connection = connection; 
+                        SqlCommandBuilder builder = new SqlCommandBuilder(adapter);
+                        int rowsUpdated = adapter.Update(dt);
+
+                        MessageBox.Show($"Đã cập nhật thành công {rowsUpdated} dòng!", "Thông báo");
+                        dt.AcceptChanges();
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Bạn chưa thay đổi thông tin nào cả.");
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Lỗi khi lưu: " + ex.Message);
+                dt.RejectChanges(); 
+            }
         }
     }
 }

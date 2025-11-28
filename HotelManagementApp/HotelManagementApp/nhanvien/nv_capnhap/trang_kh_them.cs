@@ -129,10 +129,10 @@ namespace HotelManagementApp.nv_capnhap
 
         private void button6_Click(object sender, EventArgs e)
         {
-            string name = textBox1.Text.ToString();
-            string sdt = textBox2.Text.ToString();
-            string email = textBox3.Text.ToString();
-            string acc = textBox4.Text.ToString();
+            string name = textBox4.Text.ToString();
+            string sdt = textBox3.Text.ToString();
+            string email = textBox2.Text.ToString();
+            string acc = textBox1.Text.ToString();
             string pass = textBox5.Text.ToString();
             string confirm_pass = textBox6.Text.ToString();
 

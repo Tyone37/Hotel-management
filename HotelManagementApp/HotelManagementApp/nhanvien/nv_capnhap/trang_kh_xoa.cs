@@ -35,7 +35,7 @@ namespace HotelManagementApp.nv_capnhap
 
 
             string connectionString = "Data Source=26.250.133.82,5000;Initial Catalog=QLKS;User ID=admin;Password=12345678";
-            string query = "SELECT Name, Phone, Email, Account, Password FROM User_infor";
+            string query = "SELECT Id, Name, Phone, Email, Account, Password FROM User_infor";
 
             using (SqlConnection connection = new SqlConnection(connectionString))
             {
@@ -45,8 +45,11 @@ namespace HotelManagementApp.nv_capnhap
 
                     this.userDataTable = new DataTable();
                     adapter.Fill(this.userDataTable);
-
                     dataGridView2.DataSource = this.userDataTable;
+                    if (dataGridView2.Columns["Id"] != null)
+                    {
+                        dataGridView2.Columns["Id"].Visible = false;
+                    }
 
                     dataGridView2.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
                     dataGridView2.MultiSelect = true;
@@ -210,7 +213,7 @@ namespace HotelManagementApp.nv_capnhap
                 }
 
                 string connectionString = "Data Source=26.250.133.82,5000;Initial Catalog=QLKS;User ID=admin;Password=12345678";
-                string selectQuery = "SELECT Name, Phone, Email, Account, Password FROM User_infor";
+                string selectQuery = "SELECT Id, Name, Phone, Email, Account, Password FROM User_infor";
 
                 using (SqlConnection connection = new SqlConnection(connectionString))
                 {

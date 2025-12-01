@@ -25,7 +25,16 @@ namespace HotelManagementApp
 
         private void Dieu_Khoan_Load(object sender, EventArgs e)
         {
-            richTextBox1.Text = File.ReadAllText("E:\\Workspace\\C++_VisualStudio\\THLVN\\Hotel-management\\HotelManagementApp\\HotelManagementApp\\Dieu_Khoan.txt");
+            string filePath = Path.Combine(Application.StartupPath, "Dieu_Khoan.txt");
+
+            if (File.Exists(filePath))
+            {
+                richTextBox1.Text = File.ReadAllText(filePath);
+            }
+            else
+            {
+                richTextBox1.Text = "Không tìm thấy nội dung điều khoản.";
+            }
         }
     }
 }

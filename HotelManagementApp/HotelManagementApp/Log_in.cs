@@ -67,6 +67,7 @@ namespace HotelManagementApp
                                 KhachHangDatPhong f = new KhachHangDatPhong();
                                 f.Show();
                                 this.Hide();
+                                return;
                             }
 
                         }
@@ -80,12 +81,21 @@ namespace HotelManagementApp
                         {
                             if (read.Read())
                             {
-                                if (tk == "admin" && mk == "admin")
+                                // local admin check (fallback) - also allow admin/admin without DB
+                                if ((tk == "admin" && mk == "admin") || (tk == read["TK"].ToString() && mk == read["MK"].ToString()))
                                 {
                                     check_acc = true;
-                                    Manager manager = new Manager();
-                                    manager.Show();
+
+                                    // lưu session cho manager
+                                    UserSession.CurrentUserId = 0;
+                                    UserSession.CurrentUsername = tk;
+
+                                    // open ManagerHome (central manager UI)
+                                    var mgrHome = new HotelManagementApp.quanly.ManagerHome();
+                                    mgrHome.Show();
                                     this.Hide();
+
+                                    return;
                                 }
                             }
                         }
@@ -112,6 +122,7 @@ namespace HotelManagementApp
                                 Staff staffForm = new Staff();
                                 staffForm.Show();
                                 this.Hide();
+                                return;
                             }
                         }
                     }

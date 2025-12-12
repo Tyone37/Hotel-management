@@ -8,13 +8,18 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace HotelManagementApp
+namespace HotelManagementApp.quanly
 {
-    public partial class Manager : Form
+    public partial class UC_QuanLyPhong : Form
     {
-        public Manager()
+        public UC_QuanLyPhong()
         {
             InitializeComponent();
+        }
+
+        private void UC_QuanLyPhong_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

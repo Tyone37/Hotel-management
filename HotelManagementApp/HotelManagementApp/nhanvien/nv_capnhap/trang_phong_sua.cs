@@ -14,6 +14,9 @@ namespace HotelManagementApp.nv_capnhap
 {
     public partial class trang_phong_sua : Form
     {
+        // ✔ THÊM BIẾN NÀY – KHÔNG CÓ SẼ BÁO LỖI
+        private int currentRoomId = -1;
+
         public trang_phong_sua()
         {
             InitializeComponent();
@@ -22,15 +25,19 @@ namespace HotelManagementApp.nv_capnhap
         private void trang_phong_sua_Load(object sender, EventArgs e)
         {
             if (!string.IsNullOrEmpty(StaffSession.DisplayName))
-            {
                 label2.Text = StaffSession.DisplayName;
-            }
             else
-            {
                 label2.Text = "Tên người dùng";
-            }
+
             ImageHelper.SetAvatarToPictureBox(pictureBox2);
 
+            // ✔ Gọi hàm load dữ liệu (tách riêng để tái sử dụng)
+            LoadDataGridAgain();
+        }
+
+        // ✔ THÊM HÀM NÀY – ĐỂ UPDATE XONG LOAD LẠI
+        private void LoadDataGridAgain()
+        {
             string connectionString = "Data Source=26.250.133.82,5000;Initial Catalog=QLKS;User ID=admin;Password=12345678";
             string query = "SELECT * FROM Hotel_room";
 
@@ -38,16 +45,9 @@ namespace HotelManagementApp.nv_capnhap
             {
                 try
                 {
-
                     SqlDataAdapter adapter = new SqlDataAdapter(query, connection);
-
-
                     DataTable dt = new DataTable();
-
-
                     adapter.Fill(dt);
-
-
                     dataGridView2.DataSource = dt;
                 }
                 catch (Exception ex)
@@ -55,6 +55,26 @@ namespace HotelManagementApp.nv_capnhap
                     MessageBox.Show("Lỗi khi tải dữ liệu: " + ex.Message);
                 }
             }
+        }
+
+        // ✔ THÊM SỰ KIỆN NÀY – LẤY ID DÒNG ĐƯỢC CHỌN
+        private void dataGridView2_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex < 0) return;
+
+            try
+            {
+                DataGridViewRow row = dataGridView2.Rows[e.RowIndex];
+
+                currentRoomId = Convert.ToInt32(row.Cells["id"].Value);
+
+                textBox2.Text = row.Cells["Room"].Value?.ToString();
+                textBox3.Text = row.Cells["Price"].Value?.ToString();
+                textBox4.Text = row.Cells["image"].Value?.ToString();
+                textBox5.Text = row.Cells["Information"].Value?.ToString();
+
+            }
+            catch { }
         }
 
         public static class ImageHelper
@@ -71,7 +91,7 @@ namespace HotelManagementApp.nv_capnhap
                             pbx.SizeMode = PictureBoxSizeMode.Zoom;
                         }
                     }
-                    catch (Exception)
+                    catch
                     {
                         pbx.Image = null;
                     }
@@ -79,123 +99,159 @@ namespace HotelManagementApp.nv_capnhap
             }
         }
 
-        private void button2_Click_1(object sender, EventArgs e)
+        private void button6_Click(object sender, EventArgs e)
         {
-            StaffSession.Username = null;
-            StaffSession.DisplayName = null;
+            if (string.IsNullOrWhiteSpace(textBox2.Text) ||
+    string.IsNullOrWhiteSpace(textBox3.Text) ||
+    string.IsNullOrWhiteSpace(textBox5.Text))
+            {
+                MessageBox.Show("Vui lòng nhập đầy đủ thông tin!");
+                return;
+            }
 
-            Log_in loginForm = new Log_in();
-            loginForm.Show();
-            this.Close();
+            // Nếu chưa chọn phòng, thử tìm id theo số phòng nhập
+            if (currentRoomId == -1)
+            {
+                string connString = "Data Source=26.250.133.82,5000;Initial Catalog=QLKS;User ID=admin;Password=12345678";
+                using (SqlConnection conn = new SqlConnection(connString))
+                {
+                    string sqlFind = "SELECT id FROM Hotel_room WHERE Room = @room";
+                    SqlCommand cmdFind = new SqlCommand(sqlFind, conn);
+                    cmdFind.Parameters.AddWithValue("@room", textBox2.Text);
+
+                    conn.Open();
+                    object result = cmdFind.ExecuteScalar();
+                    if (result == null)
+                    {
+                        MessageBox.Show("Không tìm thấy phòng có số này!");
+                        return;
+                    }
+                    currentRoomId = Convert.ToInt32(result);
+                }
+            }
+
+            // Tiếp tục sửa như cũ
+            string connString2 = "Data Source=26.250.133.82,5000;Initial Catalog=QLKS;User ID=admin;Password=12345678";
+            using (SqlConnection conn2 = new SqlConnection(connString2))
+            {
+                string sql = @"UPDATE Hotel_room 
+              SET Room=@room, Price=@price, image=@pic, Information=@detail 
+              WHERE id=@id";
+
+                SqlCommand cmd = new SqlCommand(sql, conn2);
+                cmd.Parameters.AddWithValue("@id", currentRoomId);
+                cmd.Parameters.AddWithValue("@room", textBox2.Text);
+                cmd.Parameters.AddWithValue("@price", textBox3.Text);
+                byte[] imgBytes = null;
+
+                // nếu người dùng có chọn ảnh mới
+                if (!string.IsNullOrEmpty(selectedImagePath) && File.Exists(selectedImagePath))
+                {
+                    imgBytes = File.ReadAllBytes(selectedImagePath);
+                }
+
+                SqlParameter pImg = new SqlParameter("@pic", SqlDbType.VarBinary);
+                pImg.Value = (object)imgBytes ?? DBNull.Value;
+                cmd.Parameters.Add(pImg);
+
+
+                cmd.Parameters.AddWithValue("@detail", textBox5.Text);
+                try
+                {
+                    conn2.Open();
+                    int rows = cmd.ExecuteNonQuery();
+                    MessageBox.Show("Đã cập nhật: " + rows + " dòng.");
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Lỗi khi cập nhật phòng: " + ex.Message);
+                }
+
+                LoadDataGridAgain();
+            }
         }
 
-        private void label1_Click_1(object sender, EventArgs e)
+        private string selectedImagePath = "";
+
+        private void button8_Click(object sender, EventArgs e)
         {
-            Staff staffForm = new Staff();
-            staffForm.Show();
-            this.Close();
+            using (OpenFileDialog ofd = new OpenFileDialog())
+            {
+                ofd.Filter = "Image files|*.jpg;*.jpeg;*.png";
+
+                if (ofd.ShowDialog() == DialogResult.OK)
+                {
+                    selectedImagePath = ofd.FileName;
+                    textBox4.Text = Path.GetFileName(ofd.FileName); // chỉ hiện tên
+                    pictureBox3.Image = null; // không hiển thị ảnh
+                }
+            }
         }
 
-        private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
-        {
-            tk_nhanvien tkNhanVienForm = new tk_nhanvien();
-            tkNhanVienForm.Show();
-            this.Close();
-        }
 
-        private void linkLabel3_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
-        {
-            nv_cacphong nvCacPhongForm = new nv_cacphong();
-            nvCacPhongForm.Show();
-            this.Close();
-        }
 
-        private void linkLabel4_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
-        {
-            nv_khachhang nvKhachHangForm = new nv_khachhang();
-            nvKhachHangForm.Show();
-            this.Close();
-        }
-
-        private void linkLabel5_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
-        {
-            capNhap CapNhapForm = new capNhap();
-            CapNhapForm.Show();
-            this.Close();
-        }
-
-        private void button5_Click(object sender, EventArgs e)
-        {
-            trang_phong_sua trangPhongSuaForm = new trang_phong_sua();
-            trangPhongSuaForm.Show();
-            this.Close();
-        }
-
-        private void button4_Click(object sender, EventArgs e)
-        {
-            trang_phong_xoa trangPhongXoaForm = new trang_phong_xoa();
-            trangPhongXoaForm.Show();
-            this.Close();
-        }
-
-        private void button3_Click(object sender, EventArgs e)
-        {
-            trang_phong_them trangPhongThemForm = new trang_phong_them();
-            trangPhongThemForm.Show();
-            this.Close();
-        }
-
-        private void dataGridView2_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
-
-        private void textBox6_TextChanged(object sender, EventArgs e)
+        private void textBox3_TextChanged(object sender, EventArgs e)
         {
 
         }
 
         private void button7_Click(object sender, EventArgs e)
         {
-            string connectionString = "Data Source=26.250.133.82,5000;Initial Catalog=QLKS;User ID=admin;Password=12345678";
-            string selectQuery = "SELECT Room FROM Hotel_room";
-            DataTable changes = (DataTable)dataGridView2.DataSource;
+            string connString = "Data Source=26.250.133.82,5000;Initial Catalog=QLKS;User ID=admin;Password=12345678";
 
-            if (changes == null)
+            using (SqlConnection conn = new SqlConnection(connString))
             {
-                MessageBox.Show("Không có dữ liệu để lưu.");
-                return;
-            }
+                string sql = "SELECT * FROM Hotel_room WHERE Room = @room";
 
-            try
-            {
-                using (SqlConnection connection = new SqlConnection(connectionString))
+                SqlCommand cmd = new SqlCommand(sql, conn);
+                cmd.Parameters.Add("@room", SqlDbType.Int).Value = int.Parse(textBox6.Text.Trim());
+
+
+                try
                 {
-                    connection.Open();
+                    conn.Open();
+                    SqlDataReader rd = cmd.ExecuteReader();
 
-                    using (SqlDataAdapter adapter = new SqlDataAdapter(selectQuery, connection))
+                    if (rd.Read())
                     {
-                        using (SqlCommandBuilder builder = new SqlCommandBuilder(adapter))
-                        {
-                            int rowsAffected = adapter.Update(changes);
+                        // Lấy ID cho việc cập nhật
+                        currentRoomId = Convert.ToInt32(rd["id"]);
 
-                            MessageBox.Show($"Đã lưu thành công! Số hàng bị ảnh hưởng: {rowsAffected}");
-                            changes.AcceptChanges();
+                        // Gán dữ liệu vào TextBox
+                        textBox3.Text = rd["Price"].ToString();
+                        textBox5.Text = rd["Information"].ToString();
+
+                        // Nếu có ảnh thì hiển thị lên pictureBox3
+                        if (rd["image"] != DBNull.Value)
+                        {
+                            byte[] imgBytes = (byte[])rd["image"];
+                            using (MemoryStream ms = new MemoryStream(imgBytes))
+                            {
+                                pictureBox3.Image = Image.FromStream(ms);
+                                pictureBox3.SizeMode = PictureBoxSizeMode.Zoom;
+                            }
                         }
+                        else
+                        {
+                            pictureBox3.Image = null;
+                        }
+
+                        MessageBox.Show("Đã tìm thấy phòng!");
                     }
+                    else
+                    {
+                        MessageBox.Show("Không tìm thấy phòng!");
+                    }
+
+                    rd.Close();
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Lỗi tìm kiếm: " + ex.Message);
                 }
             }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Lỗi khi lưu dữ liệu: " + ex.Message);
-            }
         }
 
-        private void button6_Click(object sender, EventArgs e)
-        {
 
-        }
-
- 
     }
 }

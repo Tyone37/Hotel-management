@@ -156,71 +156,78 @@ namespace HotelManagementApp.nv_capnhap
 
         private void button6_Click(object sender, EventArgs e)
         {
-            string room = textBox1.Text.ToString();
-            string price = textBox2.Text.ToString();
-            string information = textBox4.Text.ToString();
+            string room = textBox1.Text.Trim();
+            string price = textBox2.Text.Trim();
+            string information = textBox4.Text.Trim();
 
-            if (string.IsNullOrEmpty(room) || string.IsNullOrEmpty(price) || string.IsNullOrEmpty(fileAddress) || string.IsNullOrEmpty(information))
+            // Kiểm tra dữ liệu nhập vào
+            if (string.IsNullOrEmpty(room) || string.IsNullOrEmpty(price) ||
+                string.IsNullOrEmpty(information) || string.IsNullOrEmpty(fileAddress))
             {
-                MessageBox.Show("Không được để trống thông tin");
+                MessageBox.Show("Vui lòng nhập đầy đủ thông tin và chọn ảnh!");
+                return;
+            }
+
+            // Kiểm tra giá phòng có phải là số không
+            if (!decimal.TryParse(price, out decimal giaPhong) || giaPhong <= 0)
+            {
+                MessageBox.Show("Giá phòng phải là số và lớn hơn 0!");
+                return;
+            }
+
+            // Kiểm tra file ảnh có tồn tại không
+            if (!File.Exists(fileAddress))
+            {
+                MessageBox.Show("File ảnh không tồn tại!");
                 return;
             }
 
             try
             {
-                byte[] imageBytes = null;
-                using (FileStream fs = new FileStream(fileAddress, FileMode.Open, FileAccess.Read))
-                {
-                    using (BinaryReader br = new BinaryReader(fs))
-                    {
-                        imageBytes = br.ReadBytes((int)fs.Length);
-                    }
-                }
+                // Đọc file ảnh thành mảng byte
+                byte[] imageBytes = File.ReadAllBytes(fileAddress);
 
                 using (SqlConnection connection = new SqlConnection(connectionString))
                 {
                     connection.Open();
 
-                    string query = "INSERT INTO Hotel_room (Room, Price, Information, image) VALUES (@room, @price, @information, @image)";
-
-                    string query1 = "SELECT * FROM Hotel_room WHERE Room = @room";
-
-                    using (SqlCommand command = new SqlCommand(query1, connection))
+                    // Kiểm tra số phòng đã tồn tại chưa
+                    string queryCheck = "SELECT COUNT(*) FROM Hotel_room WHERE Room = @room";
+                    using (SqlCommand cmd = new SqlCommand(queryCheck, connection))
                     {
-                        command.Parameters.AddWithValue("@room", room);
-                        object check = command.ExecuteScalar();
+                        cmd.Parameters.AddWithValue("@room", room);
 
-                        if (check != null)
+                        int count = (int)cmd.ExecuteScalar();
+                        if (count > 0)
                         {
-                            DialogResult warning = MessageBox.Show(
-                                "Số phòng đã tồn tại, bạn có muốn xem lại danh sách phòng Không?",
-                                "Xác Nhận",
-                                MessageBoxButtons.OKCancel,
-                                MessageBoxIcon.Question
-                            );
-                            if (warning == DialogResult.OK)
-                            {
-                                nv_cacphong nvCacPhongForm = new nv_cacphong();
-                                nvCacPhongForm.Show();
-                                this.Hide();
-                                return;
-                            }
-                            else
-                                return;
+                            MessageBox.Show("Số phòng đã tồn tại!");
+                            return;
                         }
                     }
 
-                    using (SqlCommand command = new SqlCommand(query, connection))
+                    
+string getMaxIdQuery = "SELECT ISNULL(MAX(Id), 0) + 1 FROM Hotel_room";
+                    int newId = 1;
+                    using (SqlCommand getIdCmd = new SqlCommand(getMaxIdQuery, connection))
                     {
-                        command.Parameters.AddWithValue("@room", room);
-                        command.Parameters.AddWithValue("@price", price);
-                        command.Parameters.AddWithValue("@image", imageBytes);
-                        command.Parameters.AddWithValue("@information", information);
-                        int rowsAdd = command.ExecuteNonQuery();
+                        newId = (int)getIdCmd.ExecuteScalar();
+                    }
 
-                        if (rowsAdd > 0)
+                    // Thêm phòng mới, có Id
+                    string queryInsert = "INSERT INTO Hotel_room (Id, Room, Price, Information, image) VALUES (@id, @room, @price, @info, @img)";
+                    using (SqlCommand cmd = new SqlCommand(queryInsert, connection))
+                    {
+                        cmd.Parameters.AddWithValue("@id", newId);
+                        cmd.Parameters.AddWithValue("@room", room);
+                        cmd.Parameters.AddWithValue("@price", giaPhong);
+                        cmd.Parameters.AddWithValue("@info", information);
+                        cmd.Parameters.AddWithValue("@img", imageBytes);
+
+                        int result = cmd.ExecuteNonQuery();
+                        if (result > 0)
                         {
-                            MessageBox.Show("Đã đăng ký thành công");
+                            MessageBox.Show("Thêm phòng thành công!");
+                            // Reset form
                             textBox1.Text = "";
                             textBox2.Text = "";
                             textBox3.Text = "";
@@ -229,17 +236,17 @@ namespace HotelManagementApp.nv_capnhap
                         }
                         else
                         {
-                            MessageBox.Show("Đăng ký thất bại");
+                            MessageBox.Show("Thêm phòng thất bại!");
                         }
                     }
                 }
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Lỗi khi thêm dữ liệu");
-                return;
+                MessageBox.Show("Có lỗi xảy ra: " + ex.Message);
             }
         }
+
 
 
     }

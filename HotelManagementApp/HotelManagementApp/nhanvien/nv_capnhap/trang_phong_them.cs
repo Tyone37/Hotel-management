@@ -16,7 +16,8 @@ namespace HotelManagementApp.nv_capnhap
 {
     public partial class trang_phong_them : Form
     {
-        string connectionString = "Data Source=26.250.133.82,5000;Initial Catalog=QLKS;User ID=admin;Password=12345678";
+        string encrypted;
+        string decryptedConn;
         string fileAddress = "";
 
         public trang_phong_them()
@@ -26,6 +27,9 @@ namespace HotelManagementApp.nv_capnhap
 
         private void trang_phong_them_Load(object sender, EventArgs e)
         {
+            encrypted = File.ReadAllText("conn.txt");
+            decryptedConn = AESHelper.Decrypt(encrypted);
+
             if (!string.IsNullOrEmpty(StaffSession.DisplayName))
             {
                 label2.Text = StaffSession.DisplayName;
@@ -177,7 +181,7 @@ namespace HotelManagementApp.nv_capnhap
                     }
                 }
 
-                using (SqlConnection connection = new SqlConnection(connectionString))
+                using (SqlConnection connection = new SqlConnection(decryptedConn))
                 {
                     connection.Open();
 

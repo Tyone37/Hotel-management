@@ -14,6 +14,9 @@ namespace HotelManagementApp
 {
     public partial class nv_khachhang : Form
     {
+        string encrypted;
+        string decryptedConn;
+
         public nv_khachhang()
         {
             InitializeComponent();
@@ -21,6 +24,8 @@ namespace HotelManagementApp
 
         private void nv_khachhang_Load(object sender, EventArgs e)
         {
+            encrypted = File.ReadAllText("conn.txt");
+            decryptedConn = AESHelper.Decrypt(encrypted);
             if (!string.IsNullOrEmpty(StaffSession.DisplayName))
             {
                 label2.Text = StaffSession.DisplayName;
@@ -31,10 +36,9 @@ namespace HotelManagementApp
             }
             ImageHelper.SetAvatarToPictureBox(pictureBox2);
 
-            string connectionString = "Data Source=26.250.133.82,5000;Initial Catalog=QLKS;User ID=admin;Password=12345678";
             string query = "SELECT Name, Phone, Email, Account, Password FROM User_infor";
 
-            using (SqlConnection connection = new SqlConnection(connectionString))
+            using (SqlConnection connection = new SqlConnection(decryptedConn))
             {
                 try
                 {
@@ -105,10 +109,9 @@ namespace HotelManagementApp
         {
             string infor_searching = textBox2.Text.ToString();
 
-            string connectionString = "Data Source=26.250.133.82,5000;Initial Catalog=QLKS;User ID=admin;Password=12345678";
             string query = "SELECT Name, Phone, Email, Account, Password FROM User_infor where Name = @infor_searching OR Phone = @infor_searching OR Email = @infor_searching OR Account = @infor_searching";
 
-            using (SqlConnection connection = new SqlConnection(connectionString))
+            using (SqlConnection connection = new SqlConnection(decryptedConn))
             {
                 try
                 {

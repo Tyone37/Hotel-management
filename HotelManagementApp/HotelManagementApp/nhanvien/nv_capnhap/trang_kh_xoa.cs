@@ -12,8 +12,12 @@ using System.Windows.Forms;
 
 namespace HotelManagementApp.nv_capnhap
 {
+    
+
     public partial class trang_kh_xoa : Form
     {
+        string encrypted;
+        string decryptedConn;
         public trang_kh_xoa()
         {
             InitializeComponent();
@@ -23,6 +27,10 @@ namespace HotelManagementApp.nv_capnhap
 
         private void trang_kh_xoa_Load(object sender, EventArgs e)
         {
+
+            encrypted = File.ReadAllText("conn.txt");
+            decryptedConn = AESHelper.Decrypt(encrypted);
+
             if (!string.IsNullOrEmpty(StaffSession.DisplayName))
             {
                 label2.Text = StaffSession.DisplayName;
@@ -33,11 +41,9 @@ namespace HotelManagementApp.nv_capnhap
             }
             ImageHelper.SetAvatarToPictureBox(pictureBox2);
 
-
-            string connectionString = "Data Source=26.250.133.82,5000;Initial Catalog=QLKS;User ID=admin;Password=12345678";
             string query = "SELECT Id, Name, Phone, Email, Account, Password FROM User_infor";
 
-            using (SqlConnection connection = new SqlConnection(connectionString))
+            using (SqlConnection connection = new SqlConnection(decryptedConn))
             {
                 try
                 {
@@ -158,10 +164,9 @@ namespace HotelManagementApp.nv_capnhap
         {
             string infor_searching = textBox6.Text.ToString();
 
-            string connectionString = "Data Source=26.250.133.82,5000;Initial Catalog=QLKS;User ID=admin;Password=12345678";
             string query = "SELECT Name, Phone, Email, Account, Password FROM User_infor where Name = @infor_searching OR Phone = @infor_searching OR Email = @infor_searching OR Account = @infor_searching";
 
-            using (SqlConnection connection = new SqlConnection(connectionString))
+            using (SqlConnection connection = new SqlConnection(decryptedConn))
             {
                 try
                 {
@@ -212,10 +217,10 @@ namespace HotelManagementApp.nv_capnhap
                     drv.Row.Delete();
                 }
 
-                string connectionString = "Data Source=26.250.133.82,5000;Initial Catalog=QLKS;User ID=admin;Password=12345678";
+               
                 string selectQuery = "SELECT Id, Name, Phone, Email, Account, Password FROM User_infor";
 
-                using (SqlConnection connection = new SqlConnection(connectionString))
+                using (SqlConnection connection = new SqlConnection(decryptedConn))
                 {
                     connection.Open();
 

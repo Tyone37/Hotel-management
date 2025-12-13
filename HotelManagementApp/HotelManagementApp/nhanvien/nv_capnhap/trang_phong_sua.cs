@@ -14,6 +14,9 @@ namespace HotelManagementApp.nv_capnhap
 {
     public partial class trang_phong_sua : Form
     {
+        string encrypted;
+        string decryptedConn;
+
         public trang_phong_sua()
         {
             InitializeComponent();
@@ -21,6 +24,9 @@ namespace HotelManagementApp.nv_capnhap
 
         private void trang_phong_sua_Load(object sender, EventArgs e)
         {
+            encrypted = File.ReadAllText("conn.txt");
+            decryptedConn = AESHelper.Decrypt(encrypted);
+
             if (!string.IsNullOrEmpty(StaffSession.DisplayName))
             {
                 label2.Text = StaffSession.DisplayName;
@@ -31,10 +37,10 @@ namespace HotelManagementApp.nv_capnhap
             }
             ImageHelper.SetAvatarToPictureBox(pictureBox2);
 
-            string connectionString = "Data Source=26.250.133.82,5000;Initial Catalog=QLKS;User ID=admin;Password=12345678";
+            
             string query = "SELECT * FROM Hotel_room";
 
-            using (SqlConnection connection = new SqlConnection(connectionString))
+            using (SqlConnection connection = new SqlConnection(decryptedConn))
             {
                 try
                 {
@@ -157,7 +163,6 @@ namespace HotelManagementApp.nv_capnhap
 
         private void button7_Click(object sender, EventArgs e)
         {
-            string connectionString = "Data Source=26.250.133.82,5000;Initial Catalog=QLKS;User ID=admin;Password=12345678";
             string selectQuery = "SELECT Room FROM Hotel_room";
             DataTable changes = (DataTable)dataGridView2.DataSource;
 
@@ -169,7 +174,7 @@ namespace HotelManagementApp.nv_capnhap
 
             try
             {
-                using (SqlConnection connection = new SqlConnection(connectionString))
+                using (SqlConnection connection = new SqlConnection(decryptedConn))
                 {
                     connection.Open();
 

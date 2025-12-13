@@ -14,6 +14,8 @@ namespace HotelManagementApp
 {
     public partial class nv_cacphong : Form
     {
+        string encrypted;
+        string decryptedConn;
         public nv_cacphong()
         {
             InitializeComponent();
@@ -21,6 +23,9 @@ namespace HotelManagementApp
 
         private void nv_cacphong_Load(object sender, EventArgs e)
         {
+            encrypted = File.ReadAllText("conn.txt");
+            decryptedConn = AESHelper.Decrypt(encrypted);
+
             if (string.IsNullOrEmpty(StaffSession.Username)) return;
 
             if (!string.IsNullOrEmpty(StaffSession.DisplayName))
@@ -33,10 +38,12 @@ namespace HotelManagementApp
             }
             ImageHelper.SetAvatarToPictureBox(pictureBox2);
 
-            string connectionString = "Data Source=26.250.133.82,5000;Initial Catalog=QLKS;User ID=admin;Password=12345678";
+            encrypted = File.ReadAllText("conn.txt");
+            decryptedConn = AESHelper.Decrypt(encrypted);
+
             string query = "SELECT Room, Price, Information FROM Hotel_room";
 
-            using (SqlConnection connection = new SqlConnection(connectionString))
+            using (SqlConnection connection = new SqlConnection(decryptedConn))
             {
                 try
                 {
@@ -107,10 +114,9 @@ namespace HotelManagementApp
         {
             string room = textBox2.Text.ToString();
 
-            string connectionString = "Data Source=26.250.133.82,5000;Initial Catalog=QLKS;User ID=admin;Password=12345678";
             string query = "SELECT Room, Price, Information FROM Hotel_room where Room = @Room";
 
-            using (SqlConnection connection = new SqlConnection(connectionString))
+            using (SqlConnection connection = new SqlConnection(decryptedConn))
             {
                 try
                 {

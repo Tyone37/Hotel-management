@@ -15,7 +15,9 @@ namespace HotelManagementApp.nv_capnhap
 {
     public partial class trang_kh_sua : Form
     {
-        string connectionString = "Data Source=26.250.133.82,5000;Initial Catalog=QLKS;User ID=admin;Password=12345678";
+        string encrypted;
+        string decryptedConn;
+        
         SqlDataAdapter adapter;
         DataTable dt;
         public trang_kh_sua()
@@ -25,15 +27,8 @@ namespace HotelManagementApp.nv_capnhap
 
         private void trang_kh_sua_Load(object sender, EventArgs e)
         {
-            if (!string.IsNullOrEmpty(StaffSession.DisplayName))
-            {
-                label2.Text = StaffSession.DisplayName;
-            }
-            else
-            {
-                label2.Text = "Tên người dùng";
-            }
-            ImageHelper.SetAvatarToPictureBox(pictureBox2);
+            encrypted = File.ReadAllText("conn.txt");
+            decryptedConn = AESHelper.Decrypt(encrypted);
 
             if (!string.IsNullOrEmpty(StaffSession.DisplayName))
             {
@@ -45,10 +40,20 @@ namespace HotelManagementApp.nv_capnhap
             }
             ImageHelper.SetAvatarToPictureBox(pictureBox2);
 
-            string connectionString = "Data Source=26.250.133.82,5000;Initial Catalog=QLKS;User ID=admin;Password=12345678";
+            if (!string.IsNullOrEmpty(StaffSession.DisplayName))
+            {
+                label2.Text = StaffSession.DisplayName;
+            }
+            else
+            {
+                label2.Text = "Tên người dùng";
+            }
+            ImageHelper.SetAvatarToPictureBox(pictureBox2);
+
+            
             string query = "SELECT Id, Name, Phone, Email, Account, Password FROM User_infor";
 
-            using (SqlConnection connection = new SqlConnection(connectionString))
+            using (SqlConnection connection = new SqlConnection(decryptedConn))
             {
                 try
                 {
@@ -166,10 +171,10 @@ namespace HotelManagementApp.nv_capnhap
         {
             string infor_searching = textBox6.Text.ToString();
 
-            string connectionString = "Data Source=26.250.133.82,5000;Initial Catalog=QLKS;User ID=admin;Password=12345678";
+            
             string query = "SELECT Name, Phone, Email, Account, Password FROM User_infor where Name = @infor_searching OR Phone = @infor_searching OR Email = @infor_searching OR Account = @infor_searching";
 
-            using (SqlConnection connection = new SqlConnection(connectionString))
+            using (SqlConnection connection = new SqlConnection(decryptedConn))
             {
                 try
                 {
@@ -209,7 +214,7 @@ namespace HotelManagementApp.nv_capnhap
 
                 if (changes != null)
                 {
-                    using (SqlConnection connection = new SqlConnection(connectionString))
+                    using (SqlConnection connection = new SqlConnection(decryptedConn))
                     {
                         adapter.SelectCommand.Connection = connection; 
                         SqlCommandBuilder builder = new SqlCommandBuilder(adapter);

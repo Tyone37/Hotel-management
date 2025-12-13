@@ -14,8 +14,8 @@ namespace HotelManagementApp.nv_capnhap
 {
     public partial class trang_phong_sua : Form
     {
-        // ✔ THÊM BIẾN NÀY – KHÔNG CÓ SẼ BÁO LỖI
-        private int currentRoomId = -1;
+        string encrypted;
+        string decryptedConn;
 
         public trang_phong_sua()
         {
@@ -24,6 +24,9 @@ namespace HotelManagementApp.nv_capnhap
 
         private void trang_phong_sua_Load(object sender, EventArgs e)
         {
+            encrypted = File.ReadAllText("conn.txt");
+            decryptedConn = AESHelper.Decrypt(encrypted);
+
             if (!string.IsNullOrEmpty(StaffSession.DisplayName))
                 label2.Text = StaffSession.DisplayName;
             else
@@ -41,7 +44,7 @@ namespace HotelManagementApp.nv_capnhap
             string connectionString = "Data Source=26.250.133.82,5000;Initial Catalog=QLKS;User ID=admin;Password=12345678";
             string query = "SELECT * FROM Hotel_room";
 
-            using (SqlConnection connection = new SqlConnection(connectionString))
+            using (SqlConnection connection = new SqlConnection(decryptedConn))
             {
                 try
                 {
@@ -197,7 +200,9 @@ namespace HotelManagementApp.nv_capnhap
 
         private void button7_Click(object sender, EventArgs e)
         {
-            string connString = "Data Source=26.250.133.82,5000;Initial Catalog=QLKS;User ID=admin;Password=12345678";
+            string selectQuery = "SELECT Room FROM Hotel_room";
+            DataTable changes = (DataTable)dataGridView2.DataSource;
+            DataTable changes = (DataTable)dataGridView2.DataSource;
 
             using (SqlConnection conn = new SqlConnection(connString))
             {
@@ -206,7 +211,11 @@ namespace HotelManagementApp.nv_capnhap
                 SqlCommand cmd = new SqlCommand(sql, conn);
                 cmd.Parameters.Add("@room", SqlDbType.Int).Value = int.Parse(textBox6.Text.Trim());
 
-
+            try
+            {
+                using (SqlConnection connection = new SqlConnection(decryptedConn))
+                {
+                    connection.Open();
                 try
                 {
                     conn.Open();
@@ -220,6 +229,7 @@ namespace HotelManagementApp.nv_capnhap
                         // Gán dữ liệu vào TextBox
                         textBox3.Text = rd["Price"].ToString();
                         textBox5.Text = rd["Information"].ToString();
+                    connection.Open();
 
                         // Nếu có ảnh thì hiển thị lên pictureBox3
                         if (rd["image"] != DBNull.Value)

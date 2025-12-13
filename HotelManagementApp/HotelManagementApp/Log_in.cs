@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.IO;
 using System.Data.SqlClient;
 using System.Collections;
 using static System.Collections.Specialized.BitVector32;
@@ -15,7 +16,8 @@ namespace HotelManagementApp
 {
     public partial class Log_in : Form
     {
-        string connectionString = "Data Source=26.250.133.82,5000;Initial Catalog=QLKS;User ID=admin;Password=12345678";
+        string encrypted;
+        string decryptedConn;
 
         public Log_in()
         {
@@ -24,7 +26,8 @@ namespace HotelManagementApp
 
         private void Log_in_Load(object sender, EventArgs e)
         {
-
+            encrypted = File.ReadAllText("conn.txt");
+            decryptedConn = AESHelper.Decrypt(encrypted);
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -33,7 +36,7 @@ namespace HotelManagementApp
             string mk = textBox2.Text.Trim();
             int userCount = 0;
             Boolean check_acc = false;
-            using (SqlConnection connection = new SqlConnection(connectionString))
+            using (SqlConnection connection = new SqlConnection(decryptedConn))
             {
                 try
                 {

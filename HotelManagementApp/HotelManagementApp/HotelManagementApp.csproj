@@ -50,7 +50,7 @@
     <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="BaseViewModel.cs" />
+    <Compile Include="AESHelper.cs" />
     <Compile Include="DatPhongKhachHang.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -493,6 +493,20 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Dieu_Khoan.txt" />
+    <None Include="Resources\Search1.PNG" />
+    <None Include="Resources\room_service_24dp_000000_FILL0_wght400_GRAD0_opsz24.png" />
+    <None Include="Resources\spa_24dp_000000_FILL0_wght400_GRAD0_opsz24.png" />
+    <None Include="Resources\local_dining_24dp_5985E1_FILL0_wght400_GRAD0_opsz241.png" />
+    <None Include="Resources\local_dining_24dp_5985E1_FILL0_wght400_GRAD0_opsz24.png" />
+    <None Include="Resources\local_dining_24dp_1F1F1F_FILL0_wght400_GRAD0_opsz24.png" />
+    <None Include="Resources\be-boi-vo-cuc-31.png" />
+    <None Include="Resources\tieu-chi-bo-tri-mat-bang-sanh-khach-san7.jpg" />
+    <None Include="Resources\be-boi-vo-cuc-3.png" />
+    <None Include="Resources\search-interface-symbol.png" />
+    <None Include="Resources\Search.PNG" />
+    <None Include="Resources\Bed.PNG" />
+    <None Include="Resources\Option_user.PNG" />
+    <None Include="Resources\Dashboard.PNG" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

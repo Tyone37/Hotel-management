@@ -16,6 +16,8 @@ namespace HotelManagementApp.nv_capnhap
     {
         public trang_phong_xoa()
         {
+            
+
             InitializeComponent();
         }
 
@@ -152,6 +154,126 @@ namespace HotelManagementApp.nv_capnhap
         {
 
         }
- 
+
+      
+
+
+
+
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+            if (dataGridView2.SelectedRows.Count == 0)
+            {
+                MessageBox.Show("Vui lòng chọn phòng cần xóa trong danh sách!");
+                return;
+            }
+
+            // Giả sử cột số phòng tên là "Room"
+            string room = dataGridView2.SelectedRows[0].Cells["Room"].Value?.ToString();
+            if (string.IsNullOrEmpty(room))
+            {
+                MessageBox.Show("Không lấy được số phòng từ dòng đã chọn!");
+                return;
+            }
+
+            var confirmResult = MessageBox.Show("Bạn có chắc chắn muốn xóa phòng này không?", "Xác nhận xóa", MessageBoxButtons.YesNo);
+            if (confirmResult != DialogResult.Yes)
+                return;
+
+            string connectionString = "Data Source=26.250.133.82,5000;Initial Catalog=QLKS;User ID=admin;Password=12345678";
+            string query = "DELETE FROM Hotel_room WHERE Room = @room";
+
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+                try
+                {
+                    connection.Open();
+                    using (SqlCommand cmd = new SqlCommand(query, connection))
+                    {
+                        cmd.Parameters.AddWithValue("@room", room);
+                        int result = cmd.ExecuteNonQuery();
+                        if (result > 0)
+                        {
+                            MessageBox.Show("Xóa phòng thành công!");
+                            // Refresh lại danh sách phòng
+                            button8_Click(null, null);
+                        }
+                        else
+                        {
+                            MessageBox.Show("Không tìm thấy phòng để xóa!");
+                        }
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Lỗi khi xóa: " + ex.Message);
+                }
+            }
+        }
+
+        private void linkLabel2_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+
+        }
+
+        private void textBox6_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button8_Click(object sender, EventArgs e)
+        {
+            string room = textBox6.Text.Trim();
+            string connectionString = "Data Source=26.250.133.82,5000;Initial Catalog=QLKS;User ID=admin;Password=12345678";
+            string query;
+
+            if (string.IsNullOrEmpty(room))
+            {
+                // Hiển thị tất cả phòng
+                query = "SELECT * FROM Hotel_room";
+            }
+            else
+            {
+                // Tìm kiếm chính xác theo số phòng (kiểu số nguyên)
+                query = "SELECT * FROM Hotel_room WHERE Room = @Room";
+            }
+
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+                try
+                {
+                    SqlDataAdapter adapter = new SqlDataAdapter(query, connection);
+
+                    if (!string.IsNullOrEmpty(room))
+                    {
+                        if (int.TryParse(room, out int roomNumber))
+                        {
+                            adapter.SelectCommand.Parameters.AddWithValue("@Room", roomNumber);
+                        }
+                        else
+                        {
+                            MessageBox.Show("Vui lòng nhập số phòng là số nguyên!");
+                            return;
+                        }
+                    }
+
+                    DataTable dt = new DataTable();
+                    adapter.Fill(dt);
+                    dataGridView2.DataSource = dt;
+
+                    if (dt.Rows.Count == 0)
+                    {
+                        MessageBox.Show("Không tìm thấy phòng!");
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Lỗi khi tìm kiếm: " + ex.Message);
+                }
+            }
+        }
     }
+
 }
+

@@ -41,7 +41,6 @@ namespace HotelManagementApp.nv_capnhap
         // ✔ THÊM HÀM NÀY – ĐỂ UPDATE XONG LOAD LẠI
         private void LoadDataGridAgain()
         {
-            string connectionString = "Data Source=26.250.133.82,5000;Initial Catalog=QLKS;User ID=admin;Password=12345678";
             string query = "SELECT * FROM Hotel_room";
 
             using (SqlConnection connection = new SqlConnection(decryptedConn))
@@ -200,68 +199,64 @@ namespace HotelManagementApp.nv_capnhap
 
         private void button7_Click(object sender, EventArgs e)
         {
-            string selectQuery = "SELECT Room FROM Hotel_room";
             DataTable changes = (DataTable)dataGridView2.DataSource;
             DataTable changes = (DataTable)dataGridView2.DataSource;
 
-            using (SqlConnection conn = new SqlConnection(connString))
+            using (SqlConnection conn = new SqlConnection(decryptedConn))
             {
                 string sql = "SELECT * FROM Hotel_room WHERE Room = @room";
 
                 SqlCommand cmd = new SqlCommand(sql, conn);
                 cmd.Parameters.Add("@room", SqlDbType.Int).Value = int.Parse(textBox6.Text.Trim());
 
-            try
-            {
                 using (SqlConnection connection = new SqlConnection(decryptedConn))
                 {
                     connection.Open();
-                try
-                {
-                    conn.Open();
-                    SqlDataReader rd = cmd.ExecuteReader();
-
-                    if (rd.Read())
+                    try
                     {
-                        // Lấy ID cho việc cập nhật
-                        currentRoomId = Convert.ToInt32(rd["id"]);
+                        conn.Open();
+                        SqlDataReader rd = cmd.ExecuteReader();
 
-                        // Gán dữ liệu vào TextBox
-                        textBox3.Text = rd["Price"].ToString();
-                        textBox5.Text = rd["Information"].ToString();
-                    connection.Open();
-
-                        // Nếu có ảnh thì hiển thị lên pictureBox3
-                        if (rd["image"] != DBNull.Value)
+                        if (rd.Read())
                         {
-                            byte[] imgBytes = (byte[])rd["image"];
-                            using (MemoryStream ms = new MemoryStream(imgBytes))
+                            // Lấy ID cho việc cập nhật
+                            currentRoomId = Convert.ToInt32(rd["id"]);
+
+                            // Gán dữ liệu vào TextBox
+                            textBox3.Text = rd["Price"].ToString();
+                            textBox5.Text = rd["Information"].ToString();
+                            connection.Open();
+
+                            // Nếu có ảnh thì hiển thị lên pictureBox3
+                            if (rd["image"] != DBNull.Value)
                             {
-                                pictureBox3.Image = Image.FromStream(ms);
-                                pictureBox3.SizeMode = PictureBoxSizeMode.Zoom;
+                                byte[] imgBytes = (byte[])rd["image"];
+                                using (MemoryStream ms = new MemoryStream(imgBytes))
+                                {
+                                    pictureBox3.Image = Image.FromStream(ms);
+                                    pictureBox3.SizeMode = PictureBoxSizeMode.Zoom;
+                                }
                             }
+                            else
+                            {
+                                pictureBox3.Image = null;
+                            }
+
+                            MessageBox.Show("Đã tìm thấy phòng!");
                         }
                         else
                         {
-                            pictureBox3.Image = null;
+                            MessageBox.Show("Không tìm thấy phòng!");
                         }
 
-                        MessageBox.Show("Đã tìm thấy phòng!");
+                        rd.Close();
                     }
-                    else
+                    catch (Exception ex)
                     {
-                        MessageBox.Show("Không tìm thấy phòng!");
+                        MessageBox.Show("Lỗi tìm kiếm: " + ex.Message);
                     }
-
-                    rd.Close();
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show("Lỗi tìm kiếm: " + ex.Message);
                 }
             }
         }
-
-
     }
 }

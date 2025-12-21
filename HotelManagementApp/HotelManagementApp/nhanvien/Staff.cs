@@ -142,5 +142,13 @@ namespace HotelManagementApp
         {
 
         }
+
+        private void linkLabel2_LinkClicked_1(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            lichsuhoatdong lichsuhoatdong = new lichsuhoatdong();
+            lichsuhoatdong.Show();
+            this.Close(); // nếu muốn đóng form hiện tại
+        }
+
     }
 }

@@ -101,10 +101,7 @@ namespace HotelManagementApp.nv_capnhap
             this.Close();
         }
 
-        private void linkLabel2_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
-        {
-
-        }
+       
 
         private void button3_Click(object sender, EventArgs e)
         {

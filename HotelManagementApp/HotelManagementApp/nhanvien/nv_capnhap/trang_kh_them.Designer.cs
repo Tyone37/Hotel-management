@@ -130,7 +130,6 @@
             this.linkLabel2.TabIndex = 112;
             this.linkLabel2.TabStop = true;
             this.linkLabel2.Text = "Lịch sử hoạt động";
-            this.linkLabel2.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel2_LinkClicked);
             // 
             // linkLabel5
             // 

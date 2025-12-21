@@ -66,7 +66,7 @@
             // 
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Location = new System.Drawing.Point(289, 199);
-            this.dataGridView1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dataGridView1.Margin = new System.Windows.Forms.Padding(4);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.Size = new System.Drawing.Size(749, 331);
@@ -76,7 +76,7 @@
             // 
             this.button5.Font = new System.Drawing.Font("Bahnschrift", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button5.Location = new System.Drawing.Point(776, 146);
-            this.button5.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.button5.Margin = new System.Windows.Forms.Padding(4);
             this.button5.Name = "button5";
             this.button5.Size = new System.Drawing.Size(117, 33);
             this.button5.TabIndex = 144;
@@ -88,7 +88,7 @@
             // 
             this.button4.Font = new System.Drawing.Font("Bahnschrift", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button4.Location = new System.Drawing.Point(613, 146);
-            this.button4.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.button4.Margin = new System.Windows.Forms.Padding(4);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(117, 33);
             this.button4.TabIndex = 143;
@@ -100,13 +100,12 @@
             // 
             this.button3.Font = new System.Drawing.Font("Bahnschrift", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button3.Location = new System.Drawing.Point(449, 146);
-            this.button3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.button3.Margin = new System.Windows.Forms.Padding(4);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(117, 33);
             this.button3.TabIndex = 142;
             this.button3.Text = "Thêm";
             this.button3.UseVisualStyleBackColor = true;
-            this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // label3
             // 
@@ -147,7 +146,6 @@
             this.linkLabel5.TabIndex = 138;
             this.linkLabel5.TabStop = true;
             this.linkLabel5.Text = "Cập nhật";
-            this.linkLabel5.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel5_LinkClicked);
             // 
             // linkLabel4
             // 
@@ -162,7 +160,6 @@
             this.linkLabel4.TabIndex = 137;
             this.linkLabel4.TabStop = true;
             this.linkLabel4.Text = "Khách hàng";
-            this.linkLabel4.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel4_LinkClicked);
             // 
             // linkLabel3
             // 
@@ -177,7 +174,6 @@
             this.linkLabel3.TabIndex = 136;
             this.linkLabel3.TabStop = true;
             this.linkLabel3.Text = "Tình trạng phòng";
-            this.linkLabel3.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel3_LinkClicked);
             // 
             // linkLabel1
             // 
@@ -197,13 +193,12 @@
             // button2
             // 
             this.button2.Location = new System.Drawing.Point(847, 23);
-            this.button2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.button2.Margin = new System.Windows.Forms.Padding(4);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(100, 28);
             this.button2.TabIndex = 133;
             this.button2.Text = "Đăng xuất";
             this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click_1);
             // 
             // label2
             // 
@@ -220,7 +215,7 @@
             // button1
             // 
             this.button1.Location = new System.Drawing.Point(575, 18);
-            this.button1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.button1.Margin = new System.Windows.Forms.Padding(4);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(100, 28);
             this.button1.TabIndex = 131;
@@ -230,7 +225,7 @@
             // textBox
             // 
             this.textBox.Location = new System.Drawing.Point(320, 21);
-            this.textBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textBox.Margin = new System.Windows.Forms.Padding(4);
             this.textBox.Name = "textBox";
             this.textBox.Size = new System.Drawing.Size(245, 22);
             this.textBox.TabIndex = 130;
@@ -246,7 +241,6 @@
             this.label1.Size = new System.Drawing.Size(232, 33);
             this.label1.TabIndex = 128;
             this.label1.Text = "Khách sạn Lý Anh";
-            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // pictureBox2
             // 
@@ -255,7 +249,7 @@
             this.pictureBox2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pictureBox2.Image = global::HotelManagementApp.Properties.Resources.user_9055398;
             this.pictureBox2.Location = new System.Drawing.Point(981, 5);
-            this.pictureBox2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pictureBox2.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(59, 53);
             this.pictureBox2.TabIndex = 134;
@@ -265,7 +259,7 @@
             // 
             this.pictureBox1.BackColor = System.Drawing.Color.White;
             this.pictureBox1.Location = new System.Drawing.Point(-3, -10);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(1073, 78);
             this.pictureBox1.TabIndex = 129;
@@ -275,7 +269,7 @@
             // 
             this.pictureBox3.BackColor = System.Drawing.SystemColors.HighlightText;
             this.pictureBox3.Location = new System.Drawing.Point(0, 64);
-            this.pictureBox3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pictureBox3.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox3.Name = "pictureBox3";
             this.pictureBox3.Size = new System.Drawing.Size(268, 500);
             this.pictureBox3.TabIndex = 140;
@@ -296,7 +290,7 @@
             // textBox4
             // 
             this.textBox4.Location = new System.Drawing.Point(575, 370);
-            this.textBox4.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textBox4.Margin = new System.Windows.Forms.Padding(4);
             this.textBox4.Multiline = true;
             this.textBox4.Name = "textBox4";
             this.textBox4.Size = new System.Drawing.Size(371, 98);
@@ -305,7 +299,7 @@
             // textBox2
             // 
             this.textBox2.Location = new System.Drawing.Point(575, 277);
-            this.textBox2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textBox2.Margin = new System.Windows.Forms.Padding(4);
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(245, 22);
             this.textBox2.TabIndex = 209;
@@ -313,7 +307,7 @@
             // textBox3
             // 
             this.textBox3.Location = new System.Drawing.Point(575, 322);
-            this.textBox3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textBox3.Margin = new System.Windows.Forms.Padding(4);
             this.textBox3.Name = "textBox3";
             this.textBox3.Size = new System.Drawing.Size(137, 22);
             this.textBox3.TabIndex = 208;
@@ -321,7 +315,7 @@
             // textBox1
             // 
             this.textBox1.Location = new System.Drawing.Point(575, 230);
-            this.textBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textBox1.Margin = new System.Windows.Forms.Padding(4);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(245, 22);
             this.textBox1.TabIndex = 207;
@@ -329,7 +323,7 @@
             // button6
             // 
             this.button6.Location = new System.Drawing.Point(631, 476);
-            this.button6.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.button6.Margin = new System.Windows.Forms.Padding(4);
             this.button6.Name = "button6";
             this.button6.Size = new System.Drawing.Size(100, 28);
             this.button6.TabIndex = 205;
@@ -376,7 +370,7 @@
             // button7
             // 
             this.button7.Location = new System.Drawing.Point(721, 320);
-            this.button7.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.button7.Margin = new System.Windows.Forms.Padding(4);
             this.button7.Name = "button7";
             this.button7.Size = new System.Drawing.Size(100, 28);
             this.button7.TabIndex = 215;
@@ -417,7 +411,7 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.pictureBox3);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "trang_phong_them";
             this.Text = "trang_phong_them";
             this.Load += new System.EventHandler(this.trang_phong_them_Load);

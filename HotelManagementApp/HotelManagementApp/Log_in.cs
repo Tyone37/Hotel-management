@@ -91,7 +91,7 @@ namespace HotelManagementApp
                         }
                     }
                     //Staff login
-                    string query3 = "SELECT Username, Password, Name FROM Staff WHERE Username = @Username AND Password = @Password";
+                    string query3 = "SELECT Id, Username, Name FROM Staff WHERE Username = @Username AND Password = @Password";
                     using (SqlCommand command = new SqlCommand(query3, connection))
                     {
                         command.Parameters.AddWithValue("@Username", tk);
@@ -103,11 +103,13 @@ namespace HotelManagementApp
                             {
                                 check_acc = true;
 
+                                int staffId = Convert.ToInt32(read["Id"]); // <-- lấy Id
                                 string displayName = read["Name"].ToString();
 
+                                StaffSession.StaffId = staffId;          // <-- gán Id vào session
                                 StaffSession.Username = read["Username"].ToString();
-                                StaffSession.DisplayName = read["Name"].ToString();
-                                //Session.AvatarData = read["avatar"] is DBNull ? null : (byte[])read["avatar"];
+                                StaffSession.DisplayName = displayName;
+                                // StaffSession.AvatarData = read["avatar"] is DBNull ? null : (byte[])read["avatar"];
 
                                 Staff staffForm = new Staff();
                                 staffForm.Show();
@@ -116,6 +118,7 @@ namespace HotelManagementApp
                         }
                     }
                 }
+
 
                 catch (Exception ex)
                 {

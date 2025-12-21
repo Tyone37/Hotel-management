@@ -127,6 +127,7 @@
             this.button5.TabIndex = 192;
             this.button5.Text = "Sửa";
             this.button5.UseVisualStyleBackColor = true;
+            this.button5.Click += new System.EventHandler(this.button5_Click);
             // 
             // button4
             // 
@@ -149,6 +150,7 @@
             this.button3.TabIndex = 190;
             this.button3.Text = "Thêm";
             this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // label3
             // 
@@ -175,6 +177,7 @@
             this.linkLabel2.TabIndex = 187;
             this.linkLabel2.TabStop = true;
             this.linkLabel2.Text = "Lịch sử hoạt động";
+            this.linkLabel2.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel2_LinkClicked);
             // 
             // linkLabel5
             // 
@@ -332,7 +335,6 @@
             this.textBox3.Name = "textBox3";
             this.textBox3.Size = new System.Drawing.Size(161, 22);
             this.textBox3.TabIndex = 199;
-            this.textBox3.TextChanged += new System.EventHandler(this.textBox3_TextChanged);
             // 
             // textBox4
             // 
@@ -411,7 +413,10 @@
             // 
             // button_9
             // 
-           
+            this.button_9.Location = new System.Drawing.Point(0, 0);
+            this.button_9.Name = "button_9";
+            this.button_9.Size = new System.Drawing.Size(75, 23);
+            this.button_9.TabIndex = 0;
             // 
             // trang_phong_sua
             // 

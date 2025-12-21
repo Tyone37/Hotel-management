@@ -67,7 +67,6 @@
             this.dataGridView2.RowHeadersWidth = 51;
             this.dataGridView2.Size = new System.Drawing.Size(716, 251);
             this.dataGridView2.TabIndex = 175;
-            this.dataGridView2.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView2_CellContentClick);
             // 
             // button7
             // 
@@ -94,7 +93,6 @@
             this.textBox6.Name = "textBox6";
             this.textBox6.Size = new System.Drawing.Size(245, 22);
             this.textBox6.TabIndex = 172;
-            this.textBox6.TextChanged += new System.EventHandler(this.textBox6_TextChanged);
             // 
             // dataGridView1
             // 
@@ -116,7 +114,6 @@
             this.button5.TabIndex = 170;
             this.button5.Text = "Sửa";
             this.button5.UseVisualStyleBackColor = true;
-            this.button5.Click += new System.EventHandler(this.button5_Click);
             // 
             // button4
             // 
@@ -128,7 +125,6 @@
             this.button4.TabIndex = 169;
             this.button4.Text = "Xoá ";
             this.button4.UseVisualStyleBackColor = true;
-            this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
             // button3
             // 
@@ -140,7 +136,6 @@
             this.button3.TabIndex = 168;
             this.button3.Text = "Thêm";
             this.button3.UseVisualStyleBackColor = true;
-            this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // label3
             // 
@@ -167,7 +162,6 @@
             this.linkLabel2.TabIndex = 165;
             this.linkLabel2.TabStop = true;
             this.linkLabel2.Text = "Lịch sử hoạt động";
-            this.linkLabel2.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel2_LinkClicked);
             // 
             // linkLabel5
             // 
@@ -182,7 +176,6 @@
             this.linkLabel5.TabIndex = 164;
             this.linkLabel5.TabStop = true;
             this.linkLabel5.Text = "Cập nhật";
-            this.linkLabel5.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel5_LinkClicked);
             // 
             // linkLabel4
             // 
@@ -197,7 +190,6 @@
             this.linkLabel4.TabIndex = 163;
             this.linkLabel4.TabStop = true;
             this.linkLabel4.Text = "Khách hàng";
-            this.linkLabel4.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel4_LinkClicked);
             // 
             // linkLabel3
             // 
@@ -212,7 +204,6 @@
             this.linkLabel3.TabIndex = 162;
             this.linkLabel3.TabStop = true;
             this.linkLabel3.Text = "Tình trạng phòng";
-            this.linkLabel3.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel3_LinkClicked);
             // 
             // linkLabel1
             // 
@@ -227,7 +218,6 @@
             this.linkLabel1.TabIndex = 161;
             this.linkLabel1.TabStop = true;
             this.linkLabel1.Text = "Tài khoản";
-            this.linkLabel1.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel1_LinkClicked);
             // 
             // pictureBox2
             // 
@@ -251,7 +241,6 @@
             this.button2.TabIndex = 159;
             this.button2.Text = "Đăng xuất";
             this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click_1);
             // 
             // label2
             // 
@@ -294,7 +283,6 @@
             this.label1.Size = new System.Drawing.Size(232, 33);
             this.label1.TabIndex = 154;
             this.label1.Text = "Khách sạn Lý Anh";
-            this.label1.Click += new System.EventHandler(this.label1_Click_1);
             // 
             // pictureBox1
             // 
@@ -315,7 +303,6 @@
             this.pictureBox3.Size = new System.Drawing.Size(268, 500);
             this.pictureBox3.TabIndex = 166;
             this.pictureBox3.TabStop = false;
-            this.pictureBox3.Click += new System.EventHandler(this.pictureBox3_Click);
             // 
             // button8
             // 

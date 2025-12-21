@@ -70,6 +70,12 @@
     <Compile Include="LichSuGiaoDichKhachHang.Designer.cs">
       <DependentUpon>LichSuGiaoDichKhachHang.cs</DependentUpon>
     </Compile>
+    <Compile Include="lichsuhoatdong.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="lichsuhoatdong.Designer.cs">
+      <DependentUpon>lichsuhoatdong.cs</DependentUpon>
+    </Compile>
     <Compile Include="nhanvien\nv_capnhap\capNhap.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -212,6 +218,9 @@
     <Compile Include="nhanvien\nv_capnhap\trang_kh.Designer.cs">
       <DependentUpon>trang_kh.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="lichsuhoatdong.resx">
+      <DependentUpon>lichsuhoatdong.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="nhanvien\nv_capnhap\capNhap.resx">
       <DependentUpon>capNhap.cs</DependentUpon>
     </EmbeddedResource>

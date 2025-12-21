@@ -501,6 +501,7 @@
     <None Include="Resources\room102_2.jpg" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="conn.txt" />
     <Content Include="Dieu_Khoan.txt" />
     <None Include="Resources\Search1.PNG" />
     <None Include="Resources\room_service_24dp_000000_FILL0_wght400_GRAD0_opsz24.png" />

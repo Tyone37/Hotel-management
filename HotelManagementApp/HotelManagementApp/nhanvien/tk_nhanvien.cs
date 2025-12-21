@@ -17,6 +17,9 @@ namespace HotelManagementApp
 {
     public partial class tk_nhanvien : Form
     {
+        string encrypted;
+        string decryptedConn;
+
         public tk_nhanvien()
         {
             InitializeComponent();
@@ -77,9 +80,7 @@ namespace HotelManagementApp
         {
             if (string.IsNullOrEmpty(StaffSession.Username)) return;
 
-            string connectionString = "Data Source=26.250.133.82,5000;Initial Catalog=QLKS;User ID=admin;Password=12345678";
-
-            using (SqlConnection connection = new SqlConnection(connectionString))
+            using (SqlConnection connection = new SqlConnection(decryptedConn))
             {
                 try
                 {
@@ -154,6 +155,9 @@ namespace HotelManagementApp
 
         private void tk_nhanvien_Load(object sender, EventArgs e)
         {
+            encrypted = File.ReadAllText("conn.txt");
+            decryptedConn = AESHelper.Decrypt(encrypted);
+
             if (!string.IsNullOrEmpty(StaffSession.DisplayName))
             {
                 label2.Text = StaffSession.DisplayName;
@@ -239,10 +243,9 @@ namespace HotelManagementApp
                 fs.Read(imageData, 0, Convert.ToInt32(fs.Length));
             }
 
-            string connectionString = "Data Source=26.250.133.82,5000;Initial Catalog=QLKS;User ID=admin;Password=12345678";
             string username = StaffSession.Username;
 
-            using (SqlConnection connection = new SqlConnection(connectionString))
+            using (SqlConnection connection = new SqlConnection(decryptedConn))
             {
                 connection.Open();
                 string query = "UPDATE Staff SET avatar = @avatar WHERE Username = @username";

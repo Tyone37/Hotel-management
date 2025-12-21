@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Data.SqlClient;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -14,7 +15,8 @@ namespace HotelManagementApp
 {
     public partial class Sign_in : Form
     {
-        string connectionString = "Data Source=26.250.133.82,5000;Initial Catalog=QLKS;User ID=admin;Password=12345678";
+        string encrypted;
+        string decryptedConn;
         public Sign_in()
         {
             InitializeComponent();
@@ -22,7 +24,8 @@ namespace HotelManagementApp
 
         private void Sign_in_Load(object sender, EventArgs e)
         {
-
+            encrypted = File.ReadAllText("conn.txt");
+            decryptedConn = AESHelper.Decrypt(encrypted);
         }
 
         private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
@@ -84,7 +87,7 @@ namespace HotelManagementApp
 
             try
             {
-                using (SqlConnection connection = new SqlConnection(connectionString))
+                using (SqlConnection connection = new SqlConnection(decryptedConn))
                 {
                     connection.Open();
 

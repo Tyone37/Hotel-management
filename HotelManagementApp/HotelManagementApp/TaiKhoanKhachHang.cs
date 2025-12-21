@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Data.SqlClient;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -14,6 +15,9 @@ namespace HotelManagementApp
     public partial class TaiKhoanKhachHang: Form
     {
         private int _userId;
+        string encrypted;
+        string decryptedConn;
+
         public TaiKhoanKhachHang()
         {
             InitializeComponent();
@@ -27,6 +31,9 @@ namespace HotelManagementApp
         }
         private void TaiKhoanKhachHang_Load(object sender, EventArgs e)
         {
+            encrypted = File.ReadAllText("conn.txt");
+            decryptedConn = AESHelper.Decrypt(encrypted);
+
             if (_userId > 0)
             {
                 LoadUserInfo(_userId);
@@ -37,7 +44,7 @@ namespace HotelManagementApp
         {
             string sql = "SELECT Name, Phone, Email, Account FROM User_infor WHERE Id = @Id";
 
-            using (SqlConnection conn = new SqlConnection("Data Source=26.250.133.82,5000;Initial Catalog=QLKS;User ID=admin;Password=12345678"))
+            using (SqlConnection conn = new SqlConnection(decryptedConn))
             using (SqlCommand cmd = new SqlCommand(sql, conn))
             {
                 cmd.Parameters.AddWithValue("@Id", id);
@@ -63,7 +70,7 @@ namespace HotelManagementApp
         {
             string sql = "UPDATE User_infor SET Name = @Name, Phone = @Phone, Email = @Email WHERE Id = @Id";
 
-            using (SqlConnection conn = new SqlConnection("Data Source=26.250.133.82,5000;Initial Catalog=QLKS;User ID=admin;Password=12345678"))
+            using (SqlConnection conn = new SqlConnection(decryptedConn))
             using (SqlCommand cmd = new SqlCommand(sql, conn))
             {
                 cmd.Parameters.AddWithValue("@Name", txtName.Text);

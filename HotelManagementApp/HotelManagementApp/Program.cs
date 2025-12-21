@@ -22,7 +22,7 @@ namespace HotelManagementApp
             }
 
             // Start app - dùng form đăng nhập của bạn (Log_in)
-            Application.Run(new Log_in());
+            Application.Run(new Trang_Chu());
         }
     }
 }

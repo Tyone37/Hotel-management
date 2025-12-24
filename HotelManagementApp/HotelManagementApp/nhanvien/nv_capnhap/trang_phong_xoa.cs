@@ -25,6 +25,11 @@ namespace HotelManagementApp.nv_capnhap
         // ================= LOAD PHÒNG =================
         void LoadPhong(string filter = "")
         {
+            dataGridView2.DataError += (s, e) =>
+            {
+                e.ThrowException = false;
+            };
+
             using (SqlConnection conn = new SqlConnection(connStr))
             {
                 conn.Open();
@@ -55,28 +60,48 @@ namespace HotelManagementApp.nv_capnhap
 
                 foreach (DataGridViewRow row in dataGridView2.Rows)
                 {
-                    if (row.Cells["image"].Value != DBNull.Value)
+                    try
                     {
-                        if (row.Cells["image"].Value is byte[] imgBytes)
+                        if (row.Cells["image"].Value != DBNull.Value)
                         {
-                            using (MemoryStream ms = new MemoryStream(imgBytes))
+                            byte[] imgBytes = row.Cells["image"].Value as byte[];
+
+                            if (imgBytes != null && imgBytes.Length > 0)
                             {
-                                row.Cells["image_preview"].Value = Image.FromStream(ms);
+                                try
+                                {
+                                    using (MemoryStream ms = new MemoryStream(imgBytes))
+                                    {
+                                        row.Cells["image_preview"].Value = Image.FromStream(ms);
+                                    }
+                                }
+                                catch
+                                {
+                                    // Nếu dữ liệu không phải là ảnh hợp lệ
+                                    row.Cells["image_preview"].Value = null;
+                                }
+                            }
+                            else
+                            {
+                                row.Cells["image_preview"].Value = null;
                             }
                         }
-                        else if (row.Cells["image"].Value is Image img)
+                        else
                         {
-                            row.Cells["image_preview"].Value = img;
+                            row.Cells["image_preview"].Value = null;
                         }
                     }
-                    else
+                    catch
                     {
                         row.Cells["image_preview"].Value = null;
-                    }
+                    
                 }
 
+            }
 
-                dataGridView2.ReadOnly = true;
+
+
+            dataGridView2.ReadOnly = true;
                 dataGridView2.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
                 dataGridView2.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
                 dataGridView2.AllowUserToAddRows = false;
@@ -206,5 +231,6 @@ namespace HotelManagementApp.nv_capnhap
             lichsuhoatdong.Show();
             this.Close(); // nếu muốn đóng form hiện tại
         }
+
     }
 }

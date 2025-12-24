@@ -18,6 +18,7 @@ namespace HotelManagementApp.nv_capnhap
             InitializeComponent();
         }
 
+
         private void trang_phong_sua_Load(object sender, EventArgs e)
         {
             // Hiển thị Username
@@ -37,6 +38,11 @@ namespace HotelManagementApp.nv_capnhap
 
                 dataGridView2.Columns.Clear();
                 dataGridView2.DataSource = dt;
+                dataGridView2.DataError += (s, e) =>
+                {
+                    e.ThrowException = false;
+                };
+
 
                 // Thêm cột hiển thị ảnh nếu có
                 if (!dataGridView2.Columns.Contains("image_preview"))
@@ -50,26 +56,35 @@ namespace HotelManagementApp.nv_capnhap
 
                 foreach (DataGridViewRow row in dataGridView2.Rows)
                 {
-                    if (row.Cells["image"].Value != DBNull.Value)
+                    try
                     {
-                        if (row.Cells["image"].Value is byte[] imgBytes)
+                        if (row.Cells["image"].Value != DBNull.Value)
                         {
-                            using (MemoryStream ms = new MemoryStream(imgBytes))
+                            byte[] imgBytes = row.Cells["image"].Value as byte[];
+
+                            if (imgBytes != null && imgBytes.Length > 0)
                             {
-                                row.Cells["image_preview"].Value = Image.FromStream(ms);
+                                using (MemoryStream ms = new MemoryStream(imgBytes))
+                                {
+                                    row.Cells["image_preview"].Value = Image.FromStream(ms);
+                                }
+                            }
+                            else
+                            {
+                                row.Cells["image_preview"].Value = null;
                             }
                         }
-                        else if (row.Cells["image"].Value is Image img)
+                        else
                         {
-                            row.Cells["image_preview"].Value = img;
+                            row.Cells["image_preview"].Value = null;
                         }
                     }
-                    else
+                    catch
                     {
+                        // Ảnh lỗi → bỏ qua
                         row.Cells["image_preview"].Value = null;
                     }
                 }
-
             }
                 dataGridView2.ReadOnly = true;
             dataGridView2.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;

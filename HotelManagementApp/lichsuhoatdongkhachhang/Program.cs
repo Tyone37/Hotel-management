@@ -1,3 +1,4 @@
+
 namespace lichsuhoatdongkhachhang
 {
     internal static class Program

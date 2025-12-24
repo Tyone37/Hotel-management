@@ -1,6 +1,7 @@
 ﻿using System.ComponentModel;
 using System.Drawing;
 using System.Windows.Forms;
+using System.Windows.Forms.DataVisualization.Charting;
 
 namespace HotelManagementApp.quanly
 {
@@ -15,6 +16,8 @@ namespace HotelManagementApp.quanly
         private Button btnLoad;
         private DataGridView dgvStats;
         private Label lblTotalRevenue;
+        private System.Windows.Forms.DataVisualization.Charting.Chart chartRevenue;
+        private Button btnExport;
 
         protected override void Dispose(bool disposing)
         {
@@ -24,6 +27,9 @@ namespace HotelManagementApp.quanly
 
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.lblTitle = new System.Windows.Forms.Label();
             this.lblFrom = new System.Windows.Forms.Label();
             this.lblTo = new System.Windows.Forms.Label();
@@ -32,7 +38,10 @@ namespace HotelManagementApp.quanly
             this.btnLoad = new System.Windows.Forms.Button();
             this.dgvStats = new System.Windows.Forms.DataGridView();
             this.lblTotalRevenue = new System.Windows.Forms.Label();
+            this.chartRevenue = new System.Windows.Forms.DataVisualization.Charting.Chart();
+            this.btnExport = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvStats)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.chartRevenue)).BeginInit();
             this.SuspendLayout();
             // 
             // lblTitle
@@ -57,7 +66,7 @@ namespace HotelManagementApp.quanly
             // lblTo
             // 
             this.lblTo.AutoSize = true;
-            this.lblTo.Location = new System.Drawing.Point(260, 60);
+            this.lblTo.Location = new System.Drawing.Point(284, 60);
             this.lblTo.Name = "lblTo";
             this.lblTo.Size = new System.Drawing.Size(64, 16);
             this.lblTo.TabIndex = 3;
@@ -74,14 +83,14 @@ namespace HotelManagementApp.quanly
             // dtpTo
             // 
             this.dtpTo.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpTo.Location = new System.Drawing.Point(320, 56);
+            this.dtpTo.Location = new System.Drawing.Point(354, 57);
             this.dtpTo.Name = "dtpTo";
             this.dtpTo.Size = new System.Drawing.Size(200, 22);
             this.dtpTo.TabIndex = 4;
             // 
             // btnLoad
             // 
-            this.btnLoad.Location = new System.Drawing.Point(520, 52);
+            this.btnLoad.Location = new System.Drawing.Point(560, 56);
             this.btnLoad.Name = "btnLoad";
             this.btnLoad.Size = new System.Drawing.Size(100, 28);
             this.btnLoad.TabIndex = 5;
@@ -99,18 +108,43 @@ namespace HotelManagementApp.quanly
             this.dgvStats.ReadOnly = true;
             this.dgvStats.RowHeadersWidth = 51;
             this.dgvStats.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvStats.Size = new System.Drawing.Size(2899, 1023);
+            this.dgvStats.Size = new System.Drawing.Size(609, 293);
             this.dgvStats.TabIndex = 6;
             // 
             // lblTotalRevenue
             // 
             this.lblTotalRevenue.AutoSize = true;
             this.lblTotalRevenue.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
-            this.lblTotalRevenue.Location = new System.Drawing.Point(16, 480);
+            this.lblTotalRevenue.Location = new System.Drawing.Point(18, 566);
             this.lblTotalRevenue.Name = "lblTotalRevenue";
             this.lblTotalRevenue.Size = new System.Drawing.Size(158, 23);
             this.lblTotalRevenue.TabIndex = 7;
             this.lblTotalRevenue.Text = "Tổng doanh thu: 0";
+            // 
+            // chartRevenue
+            // 
+            chartArea2.Name = "ChartArea1";
+            this.chartRevenue.ChartAreas.Add(chartArea2);
+            legend2.Name = "Legend1";
+            this.chartRevenue.Legends.Add(legend2);
+            this.chartRevenue.Location = new System.Drawing.Point(494, 133);
+            this.chartRevenue.Name = "chartRevenue";
+            series2.ChartArea = "ChartArea1";
+            series2.Legend = "Legend1";
+            series2.Name = "Doanh thu";
+            this.chartRevenue.Series.Add(series2);
+            this.chartRevenue.Size = new System.Drawing.Size(676, 322);
+            this.chartRevenue.TabIndex = 8;
+            this.chartRevenue.Text = "chartRevenue";
+            // 
+            // btnExport
+            // 
+            this.btnExport.Location = new System.Drawing.Point(680, 56);
+            this.btnExport.Name = "btnExport";
+            this.btnExport.Size = new System.Drawing.Size(100, 28);
+            this.btnExport.TabIndex = 9;
+            this.btnExport.Text = "Xuất CSV";
+            this.btnExport.Click += new System.EventHandler(this.BtnExport_Click);
             // 
             // UC_ThongKe
             // 
@@ -121,10 +155,14 @@ namespace HotelManagementApp.quanly
             this.Controls.Add(this.dtpTo);
             this.Controls.Add(this.btnLoad);
             this.Controls.Add(this.dgvStats);
+            this.Controls.Add(this.chartRevenue);
+            this.Controls.Add(this.btnExport);
             this.Controls.Add(this.lblTotalRevenue);
             this.Name = "UC_ThongKe";
             this.Size = new System.Drawing.Size(1839, 663);
+            this.Load += new System.EventHandler(this.UC_ThongKe_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvStats)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.chartRevenue)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

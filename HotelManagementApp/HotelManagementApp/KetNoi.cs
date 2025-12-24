@@ -11,7 +11,9 @@ namespace HotelManagementApp
 {
     internal class KetNoi
     {
-        private string strKetNoi = "Data Source=26.250.133.82,5000;Initial Catalog = QLKS; Persist Security Info=True;User ID = admin; Password=***********;Encrypt=True";
+        // If SQL Server uses a self-signed certificate, set TrustServerCertificate=True
+        // so the client accepts the server certificate. For production, use a CA-signed certificate instead.
+        private string strKetNoi = "Data Source=26.250.133.82,5000;Initial Catalog=QLKS;Persist Security Info=True;User ID=admin;Password=12345678;Encrypt=True;TrustServerCertificate=True";
 
         public SqlConnection LayKetNoi()
         {

@@ -156,6 +156,18 @@
     <Compile Include="quanly\ManagerHome.Designer.cs">
       <DependentUpon>ManagerHome.cs</DependentUpon>
     </Compile>
+    <Compile Include="quanly\QL_NhanVien.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="quanly\QL_NhanVien.Designer.cs">
+      <DependentUpon>QL_NhanVien.cs</DependentUpon>
+    </Compile>
+    <Compile Include="quanly\Sua_NhanVien.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="quanly\Sua_NhanVien.Designer.cs">
+      <DependentUpon>Sua_NhanVien.cs</DependentUpon>
+    </Compile>
     <Compile Include="quanly\UC_Dashboard.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -303,6 +315,12 @@
     </Compile>
     <EmbeddedResource Include="quanly\ManagerHome.resx">
       <DependentUpon>ManagerHome.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="quanly\QL_NhanVien.resx">
+      <DependentUpon>QL_NhanVien.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="quanly\Sua_NhanVien.resx">
+      <DependentUpon>Sua_NhanVien.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="quanly\UC_Dashboard.resx">
       <DependentUpon>UC_Dashboard.cs</DependentUpon>
@@ -501,7 +519,9 @@
     <None Include="Resources\room102_2.jpg" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="conn.txt" />
+    <Content Include="conn.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
     <Content Include="Dieu_Khoan.txt" />
     <None Include="Resources\Search1.PNG" />
     <None Include="Resources\room_service_24dp_000000_FILL0_wght400_GRAD0_opsz24.png" />

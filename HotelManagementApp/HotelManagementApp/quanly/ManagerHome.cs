@@ -68,7 +68,11 @@ namespace HotelManagementApp.quanly
         // Tile button handlers (wired in Designer)
         private void BtnDashboardTile_Click(object sender, EventArgs e) => TryLoadControl("HotelManagementApp.quanly.UC_Dashboard");
         private void BtnRoomsTile_Click(object sender, EventArgs e) => TryLoadControl("HotelManagementApp.quanly.UC_QuanLyPhong");
-        private void BtnStaffTile_Click(object sender, EventArgs e) => TryLoadControl("HotelManagementApp.quanly.UC_QuanLyNhanVien");
+        private void BtnStaffTile_Click(object sender, EventArgs e)
+        {
+            QL_NhanVien qL_NhanVien = new QL_NhanVien();
+            qL_NhanVien.Show();
+        }
         private void BtnServicesTile_Click(object sender, EventArgs e) => TryLoadControl("HotelManagementApp.quanly.UC_QuanLyDichVu");
         private void BtnStatsTile_Click(object sender, EventArgs e) => TryLoadControl("HotelManagementApp.quanly.UC_ThongKe");
 

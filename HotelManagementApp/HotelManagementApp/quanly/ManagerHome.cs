@@ -102,35 +102,15 @@ namespace HotelManagementApp.quanly
         }
 
         // Tile button handlers (wired in Designer)
-        private void BtnDashboardTile_Click(object sender, EventArgs e)
-        {
-            TryLoadControl("HotelManagementApp.quanly.UC_Dashboard");
-            SetActiveTile(btnDashboardTile);
-        }
-
-        private void BtnRoomsTile_Click(object sender, EventArgs e)
-        {
-            TryLoadControl("HotelManagementApp.quanly.UC_QuanLyPhong");
-            SetActiveTile(btnRoomsTile);
-        }
-
+        private void BtnDashboardTile_Click(object sender, EventArgs e) => TryLoadControl("HotelManagementApp.quanly.UC_Dashboard");
+        private void BtnRoomsTile_Click(object sender, EventArgs e) => TryLoadControl("HotelManagementApp.quanly.UC_QuanLyPhong");
         private void BtnStaffTile_Click(object sender, EventArgs e)
         {
-            TryLoadControl("HotelManagementApp.quanly.UC_QuanLyNhanVien");
-            SetActiveTile(btnStaffTile);
+            QL_NhanVien qL_NhanVien = new QL_NhanVien();
+            qL_NhanVien.Show();
         }
-
-        private void BtnServicesTile_Click(object sender, EventArgs e)
-        {
-            TryLoadControl("HotelManagementApp.quanly.UC_QuanLyDichVu");
-            SetActiveTile(btnServicesTile);
-        }
-
-        private void BtnStatsTile_Click(object sender, EventArgs e)
-        {
-            TryLoadControl("HotelManagementApp.quanly.UC_ThongKe");
-            SetActiveTile(btnStatsTile);
-        }
+        private void BtnServicesTile_Click(object sender, EventArgs e) => TryLoadControl("HotelManagementApp.quanly.UC_QuanLyDichVu");
+        private void BtnStatsTile_Click(object sender, EventArgs e) => TryLoadControl("HotelManagementApp.quanly.UC_ThongKe");
 
         private void BtnLogout_Click(object sender, EventArgs e)
         {

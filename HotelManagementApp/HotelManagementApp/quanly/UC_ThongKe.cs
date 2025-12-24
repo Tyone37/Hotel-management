@@ -1,7 +1,9 @@
 ﻿using System;
 using System.Data;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Windows.Forms;
+using System.Windows.Forms.DataVisualization.Charting;
 
 namespace HotelManagementApp.quanly
 {
@@ -24,6 +26,81 @@ namespace HotelManagementApp.quanly
 
             // Replace single designer grid by a TabControl with 3 tabs
             InitializeTabGrids();
+        }
+
+        private void BtnExport_Click(object sender, EventArgs e)
+        {
+            // export currently selected tab's grid to CSV
+            try
+            {
+                DataTable dt = null;
+                if (tabStats != null && tabStats.SelectedTab != null)
+                {
+                    var t = tabStats.SelectedTab.Text;
+                    if (t.Contains("Doanh thu") && dgvRevenueByDay != null) dt = dgvRevenueByDay.DataSource as DataTable;
+                    else if (t.Contains("Chi tiết") && dgvDetail != null) dt = dgvDetail.DataSource as DataTable;
+                    else if (t.Contains("Tần suất") && dgvRoomUsage != null) dt = dgvRoomUsage.DataSource as DataTable;
+                }
+
+                if (dt == null || dt.Rows.Count == 0)
+                {
+                    MessageBox.Show("Không có dữ liệu để xuất.", "Xuất báo cáo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    return;
+                }
+
+                using (SaveFileDialog sfd = new SaveFileDialog())
+                {
+                    sfd.Filter = "CSV files (*.csv)|*.csv";
+                    sfd.FileName = "report.csv";
+                    if (sfd.ShowDialog() == DialogResult.OK)
+                    {
+                        ExportDataTableToCsv(dt, sfd.FileName);
+                        MessageBox.Show("Xuất báo cáo thành công.", "Xuất báo cáo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Lỗi khi xuất báo cáo: " + ex.Message, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void ExportDataTableToCsv(DataTable dt, string path)
+        {
+            var sb = new System.Text.StringBuilder();
+            var columnNames = dt.Columns.Cast<DataColumn>().Select(c => c.ColumnName);
+            sb.AppendLine(string.Join(",", columnNames));
+            foreach (DataRow row in dt.Rows)
+            {
+                var fields = row.ItemArray.Select(f => "\"" + (f?.ToString().Replace("\"", "\"\"") ?? "") + "\"");
+                sb.AppendLine(string.Join(",", fields));
+            }
+            System.IO.File.WriteAllText(path, sb.ToString(), System.Text.Encoding.UTF8);
+        }
+
+        // Public method called by ManagerHome search: filter by booking id (simple contains match)
+        public void FilterByBookingId(string bookingId)
+        {
+            if (string.IsNullOrWhiteSpace(bookingId)) return;
+            try
+            {
+                // try to filter detail grid if available
+                if (dgvDetail != null && dgvDetail.DataSource is DataTable dt)
+                {
+                    // BookingID is integer in DB - try parse
+                    if (int.TryParse(bookingId, out int id))
+                    {
+                        var rows = dt.Select($"BookingID = {id}");
+                        dgvDetail.DataSource = rows.Length > 0 ? rows.CopyToDataTable() : dt.Clone();
+                    }
+                    else
+                    {
+                        // fallback: no numeric id provided, show empty
+                        dgvDetail.DataSource = dt.Clone();
+                    }
+                }
+            }
+            catch { }
         }
 
         private void InitializeTabGrids()
@@ -105,68 +182,87 @@ namespace HotelManagementApp.quanly
 
             // NOTE: Adjust table/column names below to match your DB schema.
             // Assumed table: Bookings (Id, RoomNumber, PaymentDate, Total)
-            string whereDate = $"CAST(PaymentDate AS DATE) BETWEEN '{from:yyyy-MM-dd}' AND '{to:yyyy-MM-dd}'";
 
-            string sqlDetail = $"SELECT Id, RoomNumber, PaymentDate, Total FROM Bookings WHERE {whereDate} ORDER BY PaymentDate";
-            string sqlRevenueByDay = $"SELECT CAST(PaymentDate AS DATE) AS [Date], ISNULL(SUM(Total),0) AS Revenue FROM Bookings WHERE {whereDate} GROUP BY CAST(PaymentDate AS DATE) ORDER BY [Date]";
-            string sqlRoomUsage = $"SELECT RoomNumber, COUNT(1) AS Uses FROM Bookings WHERE {whereDate} GROUP BY RoomNumber ORDER BY Uses DESC";
+            // Adjusted to match existing schema: BookingID, UserID, RoomID, CheckInDate, CheckOutDate, TotalAmount, Status, CreatedAt
+            string sqlDetail = "SELECT BookingID, UserID, RoomID, CheckInDate, CheckOutDate, TotalAmount, Status, CreatedAt FROM Bookings WHERE CAST(CheckOutDate AS DATE) BETWEEN @from AND @to ORDER BY CheckOutDate";
+            string sqlRevenueByDay = "SELECT CAST(CheckOutDate AS DATE) AS [Date], ISNULL(SUM(TotalAmount),0) AS Revenue FROM Bookings WHERE CAST(CheckOutDate AS DATE) BETWEEN @from AND @to GROUP BY CAST(CheckOutDate AS DATE) ORDER BY [Date]";
+            string sqlRoomUsage = "SELECT RoomID, COUNT(1) AS Uses FROM Bookings WHERE CAST(CheckOutDate AS DATE) BETWEEN @from AND @to GROUP BY RoomID ORDER BY Uses DESC";
 
             try
             {
-                // load detail
-                DataTable dtDetail = null;
-                try { dtDetail = kn.LayDuLieu(sqlDetail); }
-                catch (Exception ex)
-                {
-                    MessageBox.Show("Không thể tải chi tiết giao dịch: " + ex.Message, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                }
-
-                // load revenue by day
-                DataTable dtRevenue = null;
-                try { dtRevenue = kn.LayDuLieu(sqlRevenueByDay); }
-                catch (Exception ex)
-                {
-                    MessageBox.Show("Không thể tải doanh thu theo ngày: " + ex.Message, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                }
-
-                // load room usage
-                DataTable dtUsage = null;
-                try { dtUsage = kn.LayDuLieu(sqlRoomUsage); }
-                catch (Exception ex)
-                {
-                    MessageBox.Show("Không thể tải tần suất phòng: " + ex.Message, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                }
+                DataTable dtDetail = GetDataTable(sqlDetail, from, to);
+                DataTable dtRevenue = GetDataTable(sqlRevenueByDay, from, to);
+                DataTable dtUsage = GetDataTable(sqlRoomUsage, from, to);
 
                 // bind to grids (if created)
-                if (dgvDetail != null && dtDetail != null) dgvDetail.DataSource = dtDetail;
-                if (dgvRevenueByDay != null && dtRevenue != null) dgvRevenueByDay.DataSource = dtRevenue;
-                if (dgvRoomUsage != null && dtUsage != null) dgvRoomUsage.DataSource = dtUsage;
+                if (dgvDetail != null) dgvDetail.DataSource = dtDetail ?? new DataTable();
+                if (dgvRevenueByDay != null) dgvRevenueByDay.DataSource = dtRevenue ?? new DataTable();
+                if (dgvRoomUsage != null) dgvRoomUsage.DataSource = dtUsage ?? new DataTable();
 
-                // compute total revenue (from detail or revenue table)
+                // bind chart: simple column chart of revenue by date
+                try
+                {
+                    if (this.chartRevenue != null && dtRevenue != null)
+                    {
+                        this.chartRevenue.Series.Clear();
+                        var s = this.chartRevenue.Series.Add("Doanh thu");
+                        s.ChartType = SeriesChartType.Column;
+                        s.XValueMember = "Date";
+                        s.YValueMembers = "Revenue";
+                        this.chartRevenue.DataSource = dtRevenue;
+                        this.chartRevenue.DataBind();
+                    }
+                }
+                catch { }
+
+                // compute total revenue (use TotalAmount column)
                 decimal total = 0;
-                if (dtDetail != null && dtDetail.Columns.Cast<DataColumn>().Any(c => string.Equals(c.ColumnName, "Total", StringComparison.OrdinalIgnoreCase)))
+                if (dtDetail != null && dtDetail.Columns.Contains("TotalAmount"))
                 {
                     foreach (DataRow r in dtDetail.Rows)
                     {
-                        if (decimal.TryParse(r["Total"]?.ToString(), out decimal v)) total += v;
+                        if (r["TotalAmount"] == DBNull.Value) continue;
+                        decimal v;
+                        if (decimal.TryParse(r["TotalAmount"].ToString(), out v)) total += v;
                     }
                 }
-                else if (dtRevenue != null && dtRevenue.Columns.Cast<DataColumn>().Any(c => string.Equals(c.ColumnName, "Revenue", StringComparison.OrdinalIgnoreCase)))
+                else if (dtRevenue != null && dtRevenue.Columns.Contains("Revenue"))
                 {
                     foreach (DataRow r in dtRevenue.Rows)
                     {
-                        if (decimal.TryParse(r["Revenue"]?.ToString(), out decimal v)) total += v;
+                        decimal v;
+                        if (decimal.TryParse(r["Revenue"]?.ToString(), out v)) total += v;
                     }
                 }
 
-                lblTotalRevenue.Text = $"Tổng doanh thu ({from:d} - {to:d}): {total:N0}";
-                // switch to revenue tab by default
+                lblTotalRevenue.Text = string.Format("Tổng doanh thu ({0:d} - {1:d}): {2:N0}", from, to, total);
                 if (tabStats != null && tabStats.TabPages.Count > 0) tabStats.SelectedIndex = 0;
             }
             catch (Exception ex)
             {
                 MessageBox.Show("Lỗi khi tải thống kê: " + ex.Message, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+        }
+
+        // Helper: execute parameterized query and return DataTable
+        private DataTable GetDataTable(string sql, DateTime from, DateTime to)
+        {
+            var dt = new DataTable();
+            using (var conn = kn.LayKetNoi())
+            using (var cmd = new SqlCommand(sql, conn))
+            using (var da = new SqlDataAdapter(cmd))
+            {
+                cmd.Parameters.AddWithValue("@from", from.Date);
+                cmd.Parameters.AddWithValue("@to", to.Date);
+                conn.Open();
+                da.Fill(dt);
+            }
+            return dt;
+        }
+
+        private void UC_ThongKe_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }
